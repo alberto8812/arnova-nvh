@@ -1,0 +1,22 @@
+[
+  {
+    "t": "La historia de un cliente",
+    "poster": "/videos/historia-cliente-poster.jpg",
+    "url": "/videos/historia-cliente.mp4"
+  },
+  {
+    "t": "Solvia en acción",
+    "poster": "/videos/solvia-reel-2-poster.jpg",
+    "url": "/videos/solvia-reel-2.mp4"
+  },
+  {
+    "t": "Así trabajamos en Solvia",
+    "poster": "/videos/solvia-reel-4-poster.jpg",
+    "url": "/videos/solvia-reel-4.mp4"
+  },
+  {
+    "t": "Tu crédito, paso a paso",
+    "poster": "/videos/solvia-reel-5-poster.jpg",
+    "url": "/videos/solvia-reel-5.mp4"
+  }
+]

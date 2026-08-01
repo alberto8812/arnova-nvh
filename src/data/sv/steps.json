@@ -1,0 +1,22 @@
+[
+  {
+    "n": "01",
+    "t": "Elegí el monto que querés solicitar",
+    "d": "Tu primer crédito puede ser de $400 a $5.000. A medida que construís un buen historial de pago, vas accediendo a montos más altos en tus próximas solicitudes."
+  },
+  {
+    "n": "02",
+    "t": "Iniciá tu solicitud por WhatsApp",
+    "d": "Escribinos; un asesor te va a dar la bienvenida. Primero confirmamos en qué ciudad estás para conectarte con el asesor más cercano."
+  },
+  {
+    "n": "03",
+    "t": "Hablá con tu asesor",
+    "d": "El asesor de tu zona te llama para explicarte el proceso, resolver tus dudas y coordinar la firma de la documentación necesaria."
+  },
+  {
+    "n": "04",
+    "t": "Recibí el dinero en la cuenta de tu negocio",
+    "d": "Una vez aprobado, el monto se deposita en tu cuenta bancaria en menos de 24 horas."
+  }
+]

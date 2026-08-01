@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Cobertura",
+  "headline": "Nuestra cobertura",
+  "intro": "Solvia ofrece atención personalizada en las siguientes zonas de Guatemala (cobertura sujeta a confirmación y ampliación por el negocio):",
+  "locations": [
+    {
+      "city": "Ciudad de Guatemala",
+      "region": "Guatemala"
+    },
+    {
+      "city": "Mixco",
+      "region": "Guatemala"
+    },
+    {
+      "city": "Quetzaltenango",
+      "region": "Quetzaltenango"
+    },
+    {
+      "city": "Escuintla",
+      "region": "Escuintla"
+    },
+    {
+      "city": "Villa Nueva",
+      "region": "Guatemala"
+    }
+  ],
+  "requirements": [
+    {
+      "icon": "briefcase",
+      "label": "Negocio activo (formal o informal)"
+    },
+    {
+      "icon": "id-card",
+      "label": "Documento de identificación: DPI"
+    },
+    {
+      "icon": "home",
+      "label": "Comprobante de domicilio residencial y comercial actualizados"
+    },
+    {
+      "icon": "bank",
+      "label": "Comprobante de ingresos"
+    },
+    {
+      "icon": "smartphone",
+      "label": "Número de celular"
+    }
+  ]
+}

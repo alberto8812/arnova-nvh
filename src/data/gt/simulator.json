@@ -1,0 +1,33 @@
+{
+  "interestRate": 1.28,
+  "plazoDias": 16,
+  "montoMin": 400,
+  "montoMax": 5000,
+  "montoStep": 100,
+  "montoDefault": 1000,
+  "quickAmounts": [
+    400,
+    1000,
+    2500,
+    5000
+  ],
+  "rangeSubtext": "Elegí el monto que necesitás, de Q400 a Q5.000, y pagalo en cuotas diarias durante 16 días.",
+  "waNumber": "15559889513",
+  "currency": "GTQ",
+  "locale": "es-GT",
+  "simulatorEyebrow": "Simulador de crédito",
+  "simulatorHeadline": "Calcula tu crédito",
+  "simulatorHeadlineItalic": "en segundos.",
+  "simulatorSubline": "Mové el control para ver tu cuota diaria estimada. Sin compromiso.",
+  "valorLabel": "Monto",
+  "prazoLabel": "Plazo",
+  "diasLabel": "días",
+  "cuotaLabel": "Cuota diaria estimada",
+  "totalLabel": "Total a pagar:",
+  "whatsappCta": "Solicitar por WhatsApp",
+  "amountEyebrow": "Montos disponibles",
+  "amountHeadline": "Elegí el monto",
+  "amountHeadlineItalic": "que te gustaría solicitar.",
+  "amountHelperText": "¿Necesitás otro monto? Escribinos por WhatsApp y te orientamos.",
+  "amountSelectedLabel": "Monto seleccionado"
+}

@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Cobertura",
+  "headline": "Nuestra cobertura",
+  "intro": "Solvia ofrece atención personalizada en las siguientes zonas de El Salvador (cobertura sujeta a confirmación y ampliación por el negocio):",
+  "locations": [
+    {
+      "city": "San Salvador",
+      "region": "San Salvador"
+    },
+    {
+      "city": "Santa Ana",
+      "region": "Santa Ana"
+    },
+    {
+      "city": "San Miguel",
+      "region": "San Miguel"
+    },
+    {
+      "city": "Soyapango",
+      "region": "San Salvador"
+    },
+    {
+      "city": "Santa Tecla",
+      "region": "La Libertad"
+    }
+  ],
+  "requirements": [
+    {
+      "icon": "briefcase",
+      "label": "Negocio activo (formal o informal)"
+    },
+    {
+      "icon": "id-card",
+      "label": "Documento de identidad: DUI"
+    },
+    {
+      "icon": "home",
+      "label": "Comprobante de domicilio residencial y comercial actualizados"
+    },
+    {
+      "icon": "bank",
+      "label": "Comprobante de ingresos"
+    },
+    {
+      "icon": "smartphone",
+      "label": "Número de celular"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "n": "01",
+    "ic": "dollar-sign",
+    "t": "Cero pagos adelantados",
+    "d": "Nunca te pedimos dinero para empezar tu trámite ni para analizar tu crédito. Si alguien te pide un pago para liberar tu préstamo, no confiés: esa práctica es ilegal y no es parte de nuestro proceso."
+  },
+  {
+    "n": "02",
+    "ic": "briefcase",
+    "t": "Trámite sin complicaciones",
+    "d": "Solo necesitás tener un negocio activo, un documento de identificación y una cuenta bancaria."
+  },
+  {
+    "n": "03",
+    "ic": "handshake",
+    "t": "Atención cercana y personalizada",
+    "d": "Asesores reales por WhatsApp que te acompañan en cada paso de tu solicitud."
+  },
+  {
+    "n": "04",
+    "ic": "users",
+    "t": "No necesitás fiador",
+    "d": "No pedimos codeudores."
+  },
+  {
+    "n": "05",
+    "ic": "wallet",
+    "t": "Forma de pago",
+    "d": "Cuotas fijas, ajustadas al flujo de caja de tu negocio."
+  },
+  {
+    "n": "06",
+    "ic": "clock",
+    "t": "Entrega rápida",
+    "d": "El dinero llega a tu cuenta en menos de 24 horas."
+  },
+  {
+    "n": "07",
+    "ic": "badge",
+    "t": "Análisis rápido",
+    "d": "Revisamos tu negocio de forma simple, sin pedirte garantías complicadas."
+  },
+  {
+    "n": "08",
+    "ic": "shield",
+    "t": "Tus datos, protegidos",
+    "d": "Tu información se usa únicamente para evaluar tu solicitud y se maneja con toda seguridad, conforme a la normativa vigente de protección de datos."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "whySolvia": [
+    {
+      "icon": "education",
+      "title": "Crecimiento profesional",
+      "text": "Capacitación continua y un camino claro para crecer dentro del equipo."
+    },
+    {
+      "icon": "shield",
+      "title": "Estabilidad y respaldo",
+      "text": "Una empresa consolidada, con procesos claros y respaldo real detrás de cada función."
+    },
+    {
+      "icon": "handshake",
+      "title": "Impacto real",
+      "text": "Tu trabajo ayuda todos los días a más personas a acceder al crédito que necesitan."
+    }
+  ],
+  "expectations": [
+    { "icon": "graph-up", "label": "Actitud comercial" },
+    { "icon": "headset", "label": "Orientación al servicio" },
+    { "icon": "shirt", "label": "Buena presentación personal" },
+    { "icon": "chat", "label": "Experiencia en ventas o atención al cliente" }
+  ],
+  "availableJobsHeading": "Vacantes disponibles",
+  "noJobsMessage": "Por el momento no tenemos vacantes abiertas, pero nos encantaría conocerte. Escribinos y te contactamos cuando surja una oportunidad para vos.",
+  "noJobsCta": "Escribinos",
+  "noJobsFallbackTitle": "una futura vacante",
+  "publishedLabel": "Publicado el",
+  "viewDetailLabel": "Ver detalle completo →",
+  "applyLabel": "Postularme",
+  "expectationsHeading": "¿Qué esperamos de vos?",
+  "expectationsNote": "Importante: necesitás moto propia y residir en la ciudad de la vacante.",
+  "heroEyebrow": "Trabajá con nosotros",
+  "heroHeadline": "Tenemos",
+  "heroHeadlineItalic": "vacante.",
+  "heroParagraph": "Sumate a una empresa que, todos los días, ayuda a más comerciantes a acceder al apoyo financiero que necesitan. Buscamos personas comprometidas, con actitud de servicio y ganas de crecer con nosotros.",
+  "heroImageAlt": "Equipo Solvia trabajando"
+}

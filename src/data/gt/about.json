@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Sobre Solvia",
+  "headline": "El respaldo financiero que tu negocio necesita para crecer",
+  "body": "Somos una financiera especializada en dar crédito a dueños de negocio y pequeños emprendedores en Guatemala. Te ofrecemos un proceso claro, seguro, transparente y con atención personalizada.",
+  "cta": {
+    "label": "Conocé más de Solvia →",
+    "href": "#contacto"
+  },
+  "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=70",
+  "values": [
+    {
+      "icon": "shield",
+      "title": "Honestidad",
+      "text": "Comunicación clara y transparente en cada paso del proceso."
+    },
+    {
+      "icon": "handshake",
+      "title": "Confianza",
+      "text": "Tu información y tu dinero están protegidos en cada operación."
+    },
+    {
+      "icon": "badge",
+      "title": "Responsabilidad",
+      "text": "Nos tomamos en serio el compromiso de darte la mejor atención."
+    },
+    {
+      "icon": "users",
+      "title": "Inclusión",
+      "text": "Productos pensados según la necesidad real de cada cliente."
+    }
+  ]
+}

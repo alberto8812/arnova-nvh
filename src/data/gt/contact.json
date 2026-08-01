@@ -1,0 +1,56 @@
+{
+  "eyebrow": "Contacto",
+  "headline": "Da el primer paso",
+  "headlineItalic": "hoy mismo.",
+  "subtext": "Dejanos tus datos y un asesor te va a contactar… O escribinos directamente por WhatsApp. Estamos listos para atenderte.",
+  "phone": "+1 555-988-9513",
+  "telHref": "tel:+15559889513",
+  "waNumber": "+15559889513",
+  "waIntro": "Hola, quiero información sobre un crédito. Mis datos:",
+  "assistantName": "Camila",
+  "assistantRole": "Asesora Solvia",
+  "greeting": "¡Hola! 👋 Soy Camila, asesora de Solvia. Te ayudo a armar tu solicitud en menos de un minuto y te conecto directo con un asesor por WhatsApp. Ayudame respondiendo estas preguntas.",
+  "teaser": "¿Necesitás un crédito rápido? 💬",
+  "questions": [
+    {
+      "id": "nombre",
+      "label": "Tu nombre",
+      "type": "text"
+    },
+    {
+      "id": "ciudad",
+      "label": "¿En qué ciudad y departamento te encontrás?",
+      "type": "text"
+    },
+    {
+      "id": "cp",
+      "label": "¿Cuál es tu código postal?",
+      "type": "text"
+    },
+    {
+      "id": "trabajoEstable",
+      "label": "¿Tenés un negocio en funcionamiento?",
+      "type": "boolean"
+    },
+    {
+      "id": "trabajo",
+      "label": "¿A qué se dedica tu negocio?",
+      "type": "text"
+    }
+  ],
+  "email": "contacto@solviagroup.com",
+  "social": {
+    "instagram": "https://www.instagram.com/solvia/",
+    "facebook": "https://www.facebook.com/solvia"
+  },
+  "closeChatLabel": "Cerrar chat",
+  "openChatLabel": "Abrir chat",
+  "closeNoticeLabel": "Cerrar aviso",
+  "reviewAnswersLabel": "Revisá tus respuestas antes de enviarlas:",
+  "sendViaWhatsappLabel": "Enviar por WhatsApp",
+  "answerPlaceholder": "Escribí tu respuesta...",
+  "sendAnswerLabel": "Enviar respuesta",
+  "requestedAmountLabel": "Monto solicitado",
+  "productLabel": "Producto",
+  "productSummaryTemplate": "Producto: {days} días"
+}

@@ -1,0 +1,18 @@
+{
+  "greeting": "¡Hola! 👋 Te ayudo a postularte. Te voy a hacer unas preguntas rápidas y te paso directo con un asesor por WhatsApp.",
+  "teaser": "¿Querés postularte a una vacante? 📝",
+  "waIntroTemplate": "Hola, quiero postularme a la vacante de {jobTitle}. Mis datos:",
+  "waIntroGeneric": "Hola, quiero postularme a una vacante en Solvia. Mis datos:",
+  "questions": [
+    { "id": "nombre", "label": "Nombre completo", "type": "text" },
+    { "id": "telefono", "label": "Número de teléfono", "type": "text" },
+    { "id": "autorizacion", "label": "¿Tenés moto propia?", "type": "boolean" },
+    { "id": "ciudad", "label": "Ciudad donde vivís", "type": "text" },
+    { "id": "experiencia", "label": "¿Tenés experiencia o interés en trabajar en ventas fuera de oficina, visitando clientes?", "type": "boolean" },
+    { "id": "educacion", "label": "Nivel de estudios", "type": "text" },
+    { "id": "email", "label": "Correo electrónico", "type": "text" }
+  ],
+  "vacancyQuestionLabel": "¿A qué vacante te gustaría postularte?",
+  "otherVacancyOption": "Otra vacante",
+  "applicationLabel": "Postulación"
+}
