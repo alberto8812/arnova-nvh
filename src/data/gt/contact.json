@@ -1,12 +1,12 @@
 {
-  "eyebrow": "Contacto",
-  "headline": "Da el primer paso",
-  "headlineItalic": "hoy mismo.",
-  "subtext": "Dejanos tus datos y un asesor te va a contactar… O escribinos directamente por WhatsApp. Estamos listos para atenderte.",
-  "phone": "+1 555-988-9513",
-  "telHref": "tel:+15559889513",
-  "waNumber": "+15559889513",
-  "waIntro": "Hola, quiero información sobre un crédito. Mis datos:",
+  "eyebrow": "Comunícate con nosotros",
+  "headline": "Consulta sin compromiso",
+  "headlineItalic": "Déjanos tus datos y te contactamos",
+  "subtext": "",
+  "phone": "+503 7001 9549",
+  "telHref": "tel:+50370019549",
+  "waNumber": "50370019549",
+  "waIntro": "Hola, quiero más información",
   "assistantName": "Camila",
   "assistantRole": "Asesora Arnova",
   "greeting": "¡Hola! 👋 Soy Camila, asesora de Arnova. Te ayudo a armar tu solicitud en menos de un minuto y te conecto directo con un asesor por WhatsApp. Ayudame respondiendo estas preguntas.",
@@ -38,10 +38,10 @@
       "type": "text"
     }
   ],
-  "email": "contacto@solviagroup.com",
+  "email": "contacto@arnovagroup.com",
   "social": {
-    "instagram": "https://www.instagram.com/solvia/",
-    "facebook": "https://www.facebook.com/solvia"
+    "instagram": "https://www.instagram.com/arnovagroup?igsh=MWRpMWFxOXo3bXlndQ==",
+    "facebook": "https://www.facebook.com/profile.php?id=61560602985576"
   },
   "closeChatLabel": "Cerrar chat",
   "openChatLabel": "Abrir chat",

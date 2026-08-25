@@ -1,7 +1,7 @@
 {
-  "eyebrow": "Sobre Arnova",
-  "headline": "El respaldo financiero que tu negocio necesita para crecer",
-  "body": "Somos una financiera especializada en dar crédito a dueños de negocio y pequeños emprendedores en Guatemala. Te ofrecemos un proceso claro, seguro, transparente y con atención personalizada.",
+  "eyebrow": "Conócenos",
+  "headline": "Nuestro propósito es ayudarte a crecer",
+  "body": "Estamos aquí para ayudarte a crecer tu negocio. Ofrecemos créditos rápidos y sin tanto papeleo. Somos el aliado que necesitas para seguir avanzando y hacer realidad tus sueños.",
   "cta": {
     "label": "Conocé más de Arnova →",
     "href": "#contacto"
@@ -11,22 +11,27 @@
     {
       "icon": "shield",
       "title": "Honestidad",
-      "text": "Comunicación clara y transparente en cada paso del proceso."
+      "text": "Mantenemos una comunicación clara y transparente en cada paso del proceso, garantizando que nuestros clientes siempre reciban información precisa y a tiempo."
     },
     {
       "icon": "handshake",
       "title": "Confianza",
-      "text": "Tu información y tu dinero están protegidos en cada operación."
+      "text": "Nuestros procesos son seguros. Tu información está protegida. Nos encargamos de construir relaciones confiables con nuestros clientes."
     },
     {
       "icon": "badge",
-      "title": "Responsabilidad",
-      "text": "Nos tomamos en serio el compromiso de darte la mejor atención."
+      "title": "Lealtad",
+      "text": "No somos una solución temporal, sino un aliado que te acompaña en el crecimiento de tu negocio y mejora de tu situación personal."
     },
     {
       "icon": "users",
       "title": "Inclusión",
-      "text": "Productos pensados según la necesidad real de cada cliente."
+      "text": "Ofrecemos productos accesibles y ajustados a la necesiad de cada cliente. Creamos oportunidades financieras para comerciantes."
+    },
+    {
+      "icon": "shield",
+      "title": "Responsabilidad",
+      "text": "Asumimos con seriedad y dedicación todo el proceso de un crédito. Aseguramos responsablemente no solo el otorgamiento, sino también la cobranza."
     }
   ]
 }

@@ -1,162 +1,66 @@
 {
-  "eyebrow": "Centro Legal",
-  "title": "Cumplimiento y Regulación",
-  "subtitle": "Tocá cada documento para leerlo. Última revisión general: 4 de septiembre de 2025.",
+  "eyebrow": "Términos y Condiciones",
+  "title": "Aviso legal",
+  "subtitle": "",
   "closeLabel": "Cerrar",
   "documents": [
     {
       "id": "seguranca-informacao",
-      "title": "Política de Seguridad de la Información",
-      "shortTitle": "Seguridad de la Información",
-      "updatedAt": "4 de septiembre de 2025",
+      "title": "Términos y Condiciones",
+      "shortTitle": "Aviso legal",
+      "updatedAt": "",
       "sections": [
         {
-          "heading": "1. Objetivo",
-          "body": "La presente Política de Seguridad de la Información tiene como objetivo establecer los principios, lineamientos y controles necesarios para garantizar la confidencialidad, integridad, disponibilidad y autenticidad de la información gestionada por Solvia, independientemente del formato (físico, digital, verbal o electrónico). Esta política busca que todos los procesos se alineen con estándares internacionales como la norma ISO/IEC 27001:2022, así como con la normativa de protección de datos personales y las regulaciones del sector financiero aplicables en El Salvador (pendientes de confirmación final por el área legal), además de los lineamientos de prevención de lavado de dinero y financiamiento al terrorismo (PLD/FT) vigentes en el país."
-        },
-        {
-          "heading": "2. Alcance",
-          "body": "Esta política aplica a todas las operaciones y activos de información de Solvia: información producida, recibida, almacenada, procesada y compartida en cualquier medio o formato; colaboradores, directivos, prestadores de servicios, socios de negocio y terceros con acceso a la información de la empresa o de sus clientes; sistemas, plataformas tecnológicas, bases de datos, entornos físicos y documentos en papel que soportan los procesos de la organización; y datos de clientes, incluyendo información personal, sensible y financiera tratada en actividades de otorgamiento de crédito, gestión de cobros y operaciones administrativas. Todo el alcance está sujeto a la normativa de protección de datos y a las obligaciones de prevención de lavado de dinero aplicables en El Salvador."
-        },
-        {
-          "heading": "3. Lineamientos — principios básicos",
-          "body": "Solvia adopta cuatro principios básicos para la protección de la información: confidencialidad (acceso restringido a personas debidamente autorizadas), integridad (información correcta, completa y protegida contra alteraciones indebidas), disponibilidad (acceso seguro siempre que sea necesario para el negocio) y autenticidad (toda información verificable en cuanto a su origen y autoría)."
-        },
-        {
-          "heading": "4. Lineamientos — medidas de seguridad implementadas",
-          "body": "Entre las medidas implementadas se encuentran: control de accesos con credenciales individuales, segregación de funciones por perfil y privilegios mínimos necesarios; gestión de contraseñas seguras, con renovación periódica y bloqueo automático en caso de uso indebido; autenticación multifactor (MFA) obligatoria para accesos administrativos y sistemas críticos; almacenamiento seguro en la nube (AWS EC2 y S3) con cifrado, respaldos diarios y registros de auditoría; protección física de las instalaciones, con control de acceso, resguardo de equipos y uso de CCTV cuando aplique; firewall, antivirus corporativo y filtros de correo contra phishing y malware; clasificación de la información por nivel de sensibilidad (pública, interna, confidencial o restringida); gestión de incidentes con comunicación a las autoridades competentes cuando así se requiera; plan de continuidad de negocio con recuperación ante desastres, redundancia de datos y replicación en la nube; capacitaciones periódicas en seguridad de la información y prevención de lavado de dinero; y acuerdos de confidencialidad firmados por colaboradores, prestadores y socios."
-        },
-        {
-          "heading": "5. Responsabilidades",
-          "body": "La Gerencia/Administración provee los recursos y el apoyo necesarios para la implementación de esta política y garantiza su alineación estratégica. El Oficial de Cumplimiento supervisa el cumplimiento de la normativa de protección de datos y demás regulaciones aplicables, atiende a los titulares de datos y coordina auditorías internas. El Auditor Interno, certificado en ISO/IEC 27001:2022, apoya la verificación del cumplimiento, revisa los controles y realiza auditorías independientes. El Administrador de TI implementa, monitorea y actualiza los controles técnicos y operativos de seguridad. Colaboradores, prestadores y socios deben cumplir integralmente esta política y reportar de inmediato cualquier incidente o inconformidad."
-        },
-        {
-          "heading": "6. Cumplimiento y revisión",
-          "body": "El incumplimiento de esta política podrá derivar en medidas disciplinarias, contractuales, administrativas y legales. Esta política será revisada anualmente o siempre que existan cambios significativos en la legislación, en las regulaciones aplicables o en los riesgos identificados para el negocio."
+          "heading": "Aviso legal",
+          "body": "Al utilizar los servicios de Nova Investments S.A. de C.V., aceptas los siguientes términos. Para solicitar un crédito, debes ser mayor de 18 años y proporcionar información verídica. Revisaremos tu solicitud basándonos en tu capacidad de pago y otros factores relevantes. La aprobación del crédito depende exclusivamente de nuestro análisis.\n\nSi se aprueba tu crédito, te informaremos sobre el monto, las tasas de interés, y el plazo de pago. Es tu responsabilidad realizar los pagos en tiempo y forma. Si te atrasas en los pagos, podríamos aplicar cargos adicionales o intereses por mora. El crédito debe ser utilizado para el propósito indicado en la solicitud.\n\nToda la información que nos proporcionas es confidencial y la manejamos de acuerdo con las leyes de protección de datos aplicables. Solo compartiremos tus datos con terceros cuando sea necesario para evaluar tu capacidad crediticia o cumplir con la ley.\n\nNos reservamos el derecho de modificar estos términos en cualquier momento, informándote previamente. Si continúas utilizando nuestros servicios después de una modificación, significa que aceptas los nuevos términos.\n\nEn caso de que no cumplas con tus obligaciones, podríamos tomar acciones legales para recuperar el crédito. Cualquier controversia será resuelta conforme a las leyes de El Salvador y los tribunales de San Salvador tendrán la competencia para resolver el asunto.\n\nSi tienes alguna duda, puedes contactarnos al correo"
         }
       ]
     },
     {
       "id": "cookies",
-      "title": "Política de Cookies",
-      "shortTitle": "Cookies",
-      "updatedAt": "4 de septiembre de 2025",
+      "title": "Términos y Condiciones",
+      "shortTitle": "Aviso legal",
+      "updatedAt": "",
       "sections": [
         {
-          "heading": "1. Objetivo",
-          "body": "Esta política establece los principios y lineamientos para la recolección, uso, almacenamiento, intercambio y gestión de cookies en los sitios y plataformas digitales de Solvia, garantizando que el tratamiento se realice de forma transparente, ética y conforme a la normativa de protección de datos personales aplicable en El Salvador (pendiente de confirmación final por el área legal). Esta política garantiza que los usuarios sean informados sobre qué cookies se utilizan, con qué finalidades y por cuánto tiempo se almacenan, además de asegurar su derecho de elección y de gestión de preferencias en cualquier momento."
-        },
-        {
-          "heading": "2. ¿Qué son las cookies?",
-          "body": "Las cookies son pequeños archivos de texto enviados por los sitios web y almacenados en el navegador del usuario durante su navegación. Permiten reconocer el dispositivo y las preferencias del usuario en visitas futuras, contribuyen a la funcionalidad y personalización de las páginas, posibilitan el análisis de uso y desempeño del sitio, y pueden utilizarse con fines estadísticos, de seguridad y de mercadeo. Las cookies no recolectan automáticamente información personal sensible, pero pueden considerarse datos personales cuando permiten identificar directa o indirectamente a una persona."
-        },
-        {
-          "heading": "3. Cómo utilizamos las cookies",
-          "body": "Solvia utiliza cookies para garantizar funcionalidades esenciales del sitio, mejorar la experiencia del usuario (personalización de contenido y mantenimiento de sesiones seguras), optimizar el desempeño y la usabilidad, analizar el comportamiento de navegación y, cuando aplique, activar funciones de mercadeo y publicidad, como la presentación de anuncios relevantes y la integración con redes sociales. Todas las cookies se tratan conforme a la normativa de protección de datos aplicable y vinculadas al consentimiento del usuario, cuando corresponda."
-        },
-        {
-          "heading": "4. Tipos de cookies",
-          "body": "Clasificamos las cookies utilizadas en: estrictamente necesarias (indispensables para el funcionamiento del sitio y que no pueden desactivarse); de desempeño o analíticas (con fines estadísticos, sin identificar directamente al usuario); funcionales (memorizan elecciones como el idioma y las preferencias de formato); de mercadeo/publicidad (para anuncios relevantes y personalizados, con base en el consentimiento); estadísticas (para dar seguimiento a las páginas y productos más visitados); y cookies de redes sociales (que permiten compartir contenido y vincular el perfil del usuario en otros sitios). Solvia mantiene actualizado el listado de cookies utilizadas, con su descripción, finalidad y periodo de retención, disponible para consulta en el aviso de cookies del sitio."
-        },
-        {
-          "heading": "5. Configuración y preferencias de cookies",
-          "body": "Al ingresar al sitio por primera vez, el usuario ve un aviso de cookies en el que puede aceptar todas, rechazar las no esenciales o configurar sus preferencias de forma individual. El consentimiento puede modificarse o revocarse en cualquier momento desde el aviso de cookies o desde la configuración del navegador utilizado (Chrome, Firefox, Edge o Safari). La desactivación de cookies estrictamente necesarias puede afectar el funcionamiento del sitio; la desactivación de cookies funcionales, analíticas o de mercadeo no impide la navegación, pero puede reducir la personalización de la experiencia. Solvia recomienda que los usuarios revisen periódicamente sus preferencias de cookies para mantener un mayor control sobre sus datos personales."
-        },
-        {
-          "heading": "6. Disposiciones generales y cumplimiento",
-          "body": "Esta política forma parte del Sistema de Gestión de Seguridad de la Información de Solvia y debe interpretarse en conjunto con la Política de Privacidad de Datos y la Política de Seguridad de la Información. El uso de los sitios y plataformas digitales de Solvia implica el conocimiento y la aceptación de estos términos. Las dudas sobre el uso de cookies o el tratamiento de datos personales pueden dirigirse al canal oficial de protección de datos por el correo gestion@solviagroup.com. Los cambios relevantes en esta política se comunicarán a través del sitio oficial de Solvia, garantizando transparencia y actualización continua. Esta política se revisa al menos una vez al año, o siempre que existan cambios relevantes en requisitos legales, tecnológicos u operativos. Su cumplimiento es obligatorio para colaboradores, directivos, prestadores de servicios, proveedores, socios estratégicos y terceros con acceso a información o activos de Solvia, y está sujeta a auditorías internas periódicas; corresponde al Oficial de Cumplimiento coordinar el proceso de revisión y proponer ajustes, siendo la aprobación final responsabilidad de la Dirección de Solvia. El incumplimiento puede derivar en sanciones disciplinarias, contractuales o legales."
+          "heading": "Aviso legal",
+          "body": "Al utilizar los servicios de Nova Investments S.A. de C.V., aceptas los siguientes términos. Para solicitar un crédito, debes ser mayor de 18 años y proporcionar información verídica. Revisaremos tu solicitud basándonos en tu capacidad de pago y otros factores relevantes. La aprobación del crédito depende exclusivamente de nuestro análisis.\n\nSi se aprueba tu crédito, te informaremos sobre el monto, las tasas de interés, y el plazo de pago. Es tu responsabilidad realizar los pagos en tiempo y forma. Si te atrasas en los pagos, podríamos aplicar cargos adicionales o intereses por mora. El crédito debe ser utilizado para el propósito indicado en la solicitud.\n\nToda la información que nos proporcionas es confidencial y la manejamos de acuerdo con las leyes de protección de datos aplicables. Solo compartiremos tus datos con terceros cuando sea necesario para evaluar tu capacidad crediticia o cumplir con la ley.\n\nNos reservamos el derecho de modificar estos términos en cualquier momento, informándote previamente. Si continúas utilizando nuestros servicios después de una modificación, significa que aceptas los nuevos términos.\n\nEn caso de que no cumplas con tus obligaciones, podríamos tomar acciones legales para recuperar el crédito. Cualquier controversia será resuelta conforme a las leyes de El Salvador y los tribunales de San Salvador tendrán la competencia para resolver el asunto.\n\nSi tienes alguna duda, puedes contactarnos al correo"
         }
       ]
     },
     {
       "id": "seguranca-cibernetica",
-      "title": "Política de Seguridad Cibernética",
-      "shortTitle": "Seguridad Cibernética",
-      "updatedAt": "4 de septiembre de 2025",
+      "title": "Términos y Condiciones",
+      "shortTitle": "Aviso legal",
+      "updatedAt": "",
       "sections": [
         {
-          "heading": "1. Objetivo",
-          "body": "Esta política establece principios, lineamientos y controles para garantizar la confidencialidad, integridad y disponibilidad de la información y las transacciones digitales de Solvia, conforme a la normativa de protección de datos aplicable en El Salvador (pendiente de confirmación final por el área legal) y a buenas prácticas internacionales como ISO/IEC 27001:2022 y COBIT 2019."
-        },
-        {
-          "heading": "2. Alcance",
-          "body": "Esta política aplica a todos los colaboradores, prestadores de servicios y socios que utilizan sistemas, redes y datos de Solvia; a todos los activos tecnológicos —servidores, bases de datos, redes, plataformas en la nube, estaciones de trabajo, dispositivos móviles y canales de comunicación—; y a todas las transacciones financieras y administrativas realizadas en entorno digital."
-        },
-        {
-          "heading": "3. Lineamientos",
-          "body": "Solvia adopta control de accesos con credenciales individuales, segregación de funciones y privilegios mínimos necesarios; autenticación multifactor (MFA) obligatoria para accesos administrativos y sistemas críticos; cifrado y respaldos diarios en servidores AWS (EC2 y S3); registros y trazabilidad de accesos y transacciones, con fecha, hora, usuario e IP; protección de infraestructura con firewall corporativo, filtros de correo y antivirus actualizado; monitoreo continuo con detección de incidentes y alertas automáticas; plan de continuidad y recuperación ante desastres; y acuerdos de confidencialidad y cláusulas contractuales de protección de datos firmados por colaboradores, prestadores y socios."
-        },
-        {
-          "heading": "4. Responsabilidades",
-          "body": "El Administrador de TI implementa, monitorea y actualiza los controles técnicos de defensa cibernética. El Oficial de Cumplimiento supervisa el cumplimiento de la normativa de protección de datos aplicable. El Auditor Interno, certificado en ISO/IEC 27001:2022, revisa periódicamente la eficacia de los controles y apoya la gestión de incidentes. Todos los colaboradores deben cumplir integralmente esta política y comunicar de inmediato cualquier incidente de seguridad."
-        },
-        {
-          "heading": "5. Cumplimiento y revisión",
-          "body": "El incumplimiento de esta política podrá derivar en medidas disciplinarias, contractuales y legales. Esta política será revisada anualmente o siempre que existan cambios legales, regulatorios o tecnológicos relevantes."
+          "heading": "Aviso legal",
+          "body": "Al utilizar los servicios de Nova Investments S.A. de C.V., aceptas los siguientes términos. Para solicitar un crédito, debes ser mayor de 18 años y proporcionar información verídica. Revisaremos tu solicitud basándonos en tu capacidad de pago y otros factores relevantes. La aprobación del crédito depende exclusivamente de nuestro análisis.\n\nSi se aprueba tu crédito, te informaremos sobre el monto, las tasas de interés, y el plazo de pago. Es tu responsabilidad realizar los pagos en tiempo y forma. Si te atrasas en los pagos, podríamos aplicar cargos adicionales o intereses por mora. El crédito debe ser utilizado para el propósito indicado en la solicitud.\n\nToda la información que nos proporcionas es confidencial y la manejamos de acuerdo con las leyes de protección de datos aplicables. Solo compartiremos tus datos con terceros cuando sea necesario para evaluar tu capacidad crediticia o cumplir con la ley.\n\nNos reservamos el derecho de modificar estos términos en cualquier momento, informándote previamente. Si continúas utilizando nuestros servicios después de una modificación, significa que aceptas los nuevos términos.\n\nEn caso de que no cumplas con tus obligaciones, podríamos tomar acciones legales para recuperar el crédito. Cualquier controversia será resuelta conforme a las leyes de El Salvador y los tribunales de San Salvador tendrán la competencia para resolver el asunto.\n\nSi tienes alguna duda, puedes contactarnos al correo"
         }
       ]
     },
     {
       "id": "privacidade-dados",
-      "title": "Política de Privacidad de Datos",
-      "shortTitle": "Privacidad de Datos",
-      "updatedAt": "4 de septiembre de 2025",
+      "title": "Términos y Condiciones",
+      "shortTitle": "Aviso legal",
+      "updatedAt": "",
       "sections": [
         {
-          "heading": "1. Objetivo",
-          "body": "Esta política establece principios, lineamientos y procedimientos para el tratamiento de datos personales y datos personales sensibles por parte de Solvia, en cualquier medio (digital, físico, electrónico o verbal), garantizando la protección integral de los derechos de los titulares y el cumplimiento de la normativa de protección de datos personales aplicable en El Salvador (pendiente de confirmación final por el área legal), así como buenas prácticas internacionales como ISO/IEC 27701:2019 e ISO/IEC 27001:2022. Esta política garantiza que el tratamiento sea ético, transparente, proporcional y seguro, incluyendo la gestión de decisiones automatizadas, los derechos fundamentales de privacidad y la observancia de las reglas de transferencia internacional de datos personales cuando aplique."
-        },
-        {
-          "heading": "2. Alcance",
-          "body": "Esta política aplica a todos los datos personales y datos personales sensibles recolectados de clientes, colaboradores, directivos, proveedores, socios, visitantes y terceros; a todas las operaciones de tratamiento —recolección, registro, clasificación, almacenamiento, uso, intercambio, transmisión, retención, anonimización y eliminación—; a todos los colaboradores, prestadores, socios y operadores contratados dentro o fuera de El Salvador con acceso a esos datos; y a todos los sistemas, plataformas y documentos utilizados en el tratamiento, independientemente del medio o lugar de almacenamiento, incluyendo situaciones de transferencia internacional de datos cuando corresponda."
-        },
-        {
-          "heading": "3. Principios de tratamiento de datos",
-          "body": "El tratamiento de datos personales por parte de Solvia sigue principios generalmente aceptados en materia de protección de datos: finalidad (propósitos legítimos e informados al titular), adecuación, necesidad y minimización de datos, libre acceso, transparencia, seguridad, prevención, calidad de los datos, no discriminación, anonimización y seudonimización siempre que sea posible, y rendición de cuentas —incluyendo el mantenimiento de registros de las operaciones de tratamiento y auditorías internas."
-        },
-        {
-          "heading": "4. Derechos de los titulares",
-          "body": "Solvia garantiza a los titulares los derechos reconocidos por la normativa de protección de datos aplicable: confirmación de la existencia de tratamiento, acceso facilitado y gratuito a los datos, corrección de datos incompletos o desactualizados, anonimización, bloqueo o eliminación de datos innecesarios, excesivos o tratados de forma no conforme, portabilidad a otro proveedor, eliminación de datos tratados con base en el consentimiento, revocación del consentimiento en cualquier momento, información sobre con quién se compartieron los datos, oposición a tratamientos irregulares, revisión de decisiones automatizadas que afecten sus intereses —incluyendo el derecho a solicitar explicación sobre los criterios utilizados— y el derecho a presentar reclamos ante la autoridad de protección de datos competente (pendiente de confirmación final por el área legal)."
-        },
-        {
-          "heading": "5. Procedimientos de privacidad",
-          "body": "Solvia recolecta los datos de forma transparente y mediante consentimiento u otra base legal prevista en la normativa aplicable; registra y almacena todos los consentimientos obtenidos con fines de auditoría; mantiene los datos en servidores seguros en la nube (AWS EC2 y S3), con cifrado, respaldos diarios y control de acceso restringido; limita el intercambio a socios necesarios, mediante contratos con cláusulas de protección de datos; retiene y elimina los datos solo por el periodo necesario para cumplir obligaciones legales, regulatorias o contractuales; mantiene un registro actualizado de las operaciones de tratamiento; protege los datos con firewall, cifrado, autenticación multifactor y antivirus corporativo; y responde a incidentes de seguridad comunicando de inmediato al responsable de protección de datos, quien evalúa la gravedad y, si es necesario, notifica a la autoridad competente y a los titulares afectados. Las solicitudes relacionadas con datos personales pueden enviarse al canal oficial gestion@solviagroup.com."
-        },
-        {
-          "heading": "6. Responsabilidades",
-          "body": "El responsable de protección de datos actúa como punto de contacto oficial con los titulares y con la autoridad competente, atiende solicitudes relacionadas con datos personales, supervisa la aplicación de esta política y reporta periódicamente a la Dirección. Colaboradores y prestadores deben cumplir integralmente esta política, resguardar la confidencialidad de los datos a los que tengan acceso y reportar de inmediato cualquier incidente de seguridad o uso indebido de datos. El Administrador de TI implementa y monitorea los controles técnicos de protección de datos personales, incluyendo gestión de accesos, cifrado, respaldos, gestión de vulnerabilidades y plan de continuidad operativa. El Auditor Interno revisa periódicamente el cumplimiento de la normativa aplicable, emite informes de auditoría y recomendaciones a la Dirección y da seguimiento a la implementación de mejoras. La Dirección de Solvia provee los recursos necesarios y promueve la cultura organizacional de protección de datos."
-        },
-        {
-          "heading": "7. Cumplimiento y revisión",
-          "body": "El cumplimiento de esta política es obligatorio para todos los colaboradores, prestadores y socios con acceso a datos personales. El incumplimiento podrá derivar en medidas disciplinarias, contractuales, administrativas y legales. Esta política será revisada anualmente o siempre que existan cambios significativos en la legislación o en los procesos internos de Solvia, siendo objeto de auditorías internas periódicas realizadas por el área de Cumplimiento en conjunto con el Auditor Interno. Se dará a conocer a todos los colaboradores y estará disponible en medio electrónico corporativo, garantizando amplio acceso y conocimiento, pudiendo ser actualizada en cualquier momento por la Dirección o por el responsable de protección de datos en función de nuevos riesgos, tecnologías o exigencias legales."
+          "heading": "Aviso legal",
+          "body": "Al utilizar los servicios de Nova Investments S.A. de C.V., aceptas los siguientes términos. Para solicitar un crédito, debes ser mayor de 18 años y proporcionar información verídica. Revisaremos tu solicitud basándonos en tu capacidad de pago y otros factores relevantes. La aprobación del crédito depende exclusivamente de nuestro análisis.\n\nSi se aprueba tu crédito, te informaremos sobre el monto, las tasas de interés, y el plazo de pago. Es tu responsabilidad realizar los pagos en tiempo y forma. Si te atrasas en los pagos, podríamos aplicar cargos adicionales o intereses por mora. El crédito debe ser utilizado para el propósito indicado en la solicitud.\n\nToda la información que nos proporcionas es confidencial y la manejamos de acuerdo con las leyes de protección de datos aplicables. Solo compartiremos tus datos con terceros cuando sea necesario para evaluar tu capacidad crediticia o cumplir con la ley.\n\nNos reservamos el derecho de modificar estos términos en cualquier momento, informándote previamente. Si continúas utilizando nuestros servicios después de una modificación, significa que aceptas los nuevos términos.\n\nEn caso de que no cumplas con tus obligaciones, podríamos tomar acciones legales para recuperar el crédito. Cualquier controversia será resuelta conforme a las leyes de El Salvador y los tribunales de San Salvador tendrán la competencia para resolver el asunto.\n\nSi tienes alguna duda, puedes contactarnos al correo"
         }
       ]
     },
     {
       "id": "pldft",
-      "title": "Política de Prevención de Lavado de Dinero y Financiamiento al Terrorismo (PLD/FT)",
-      "shortTitle": "PLD/FT",
-      "updatedAt": "4 de septiembre de 2025",
+      "title": "Términos y Condiciones",
+      "shortTitle": "Aviso legal",
+      "updatedAt": "",
       "sections": [
         {
-          "heading": "1. Objetivo",
-          "body": "Esta política establece principios, lineamientos y procedimientos para prevenir, detectar, mitigar y reportar operaciones relacionadas con el lavado de dinero y el financiamiento al terrorismo (PLD/FT), garantizando la integridad de las operaciones de Solvia, la protección de su reputación institucional y la confianza de clientes, socios y autoridades reguladoras. Aplica también a las operaciones de intermediación financiera y servicios fintech, y está alineada con la normativa de prevención de lavado de dinero y financiamiento al terrorismo aplicable en El Salvador (pendiente de confirmación final por el área legal) y con las recomendaciones del GAFI/FATF."
-        },
-        {
-          "heading": "2. Alcance",
-          "body": "Esta política aplica a todos los colaboradores, directivos, prestadores de servicios, socios de negocio, corresponsales, asesores y terceros involucrados en las actividades de Solvia; a todas las operaciones financieras realizadas por la empresa, incluyendo el otorgamiento e intermediación de crédito, el análisis de expedientes, la incorporación digital de clientes, los cobros, pagos, transferencias electrónicas y liquidaciones; a todos los sistemas, plataformas e instituciones financieras socias utilizadas en el tratamiento de datos y el monitoreo de transacciones; y a todos los expedientes, registros y documentos relacionados con PLD/FT —independientemente de la ubicación o el medio utilizado, incluyendo socios internacionales."
-        },
-        {
-          "heading": "3. Lineamientos de PLD/FT",
-          "body": "Solvia adopta identificación y verificación de clientes (conocimiento del cliente), con recolección y validación de documentos oficiales de identidad (DUI/NIT en El Salvador), comprobantes de domicilio y datos bancarios; identificación y verificación de socios, con debida diligencia sobre proveedores y corresponsales; debida diligencia reforzada para clientes y socios de mayor riesgo, incluyendo Personas Expuestas Políticamente (PEP); actualización periódica de expedientes; verificación en listas restrictivas nacionales e internacionales (organismos de prevención de lavado de dinero, ONU, OFAC, Unión Europea); monitoreo continuo de transacciones con alertas automáticas de movimientos sospechosos y conciliación contra registros bancarios; registro y resguardo de información por un mínimo de 5 años, pudiendo extenderse a 10 años conforme a la normativa aplicable; y comunicación inmediata y confidencial a la autoridad competente sobre operaciones sospechosas, dentro de los plazos legales."
-        },
-        {
-          "heading": "4. Responsabilidades",
-          "body": "El Oficial de Cumplimiento / PLD-FT supervisa la implementación de esta política, coordina los procedimientos de conocimiento del cliente, debida diligencia reforzada y monitoreo, revisa alertas de transacciones sospechosas, conduce investigaciones internas cuando sea necesario y actúa como punto de contacto ante las autoridades competentes. El Administrador de TI implementa y monitorea los controles tecnológicos de seguridad y trazabilidad. Colaboradores y prestadores deben cumplir integralmente esta política, participar en las capacitaciones obligatorias, mantener la confidencialidad de la información y reportar de inmediato cualquier indicio de operación sospechosa. El Auditor Interno revisa periódicamente el cumplimiento y la eficacia de los controles de PLD/FT, emite informes independientes y presenta recomendaciones de mejora a la Dirección, y la Dirección de Solvia provee los recursos necesarios y promueve la cultura de integridad en toda la organización."
-        },
-        {
-          "heading": "5. Cumplimiento y revisión",
-          "body": "El cumplimiento de esta política es obligatorio para todos los colaboradores, prestadores, socios y áreas de Solvia involucrados en el otorgamiento de crédito, operaciones financieras o soporte tecnológico relacionado con PLD/FT. El incumplimiento podrá derivar en medidas disciplinarias, contractuales, administrativas y legales. Esta política será revisada anualmente o siempre que existan cambios relevantes en la legislación, en las regulaciones aplicables o en las recomendaciones del GAFI/FATF, siendo sometida a auditorías internas periódicas y dada a conocer a todos los colaboradores y prestadores en medio electrónico corporativo. Podrá ser actualizada en cualquier momento por la Dirección o por el Oficial de Cumplimiento/PLD-FT, en función de nuevos riesgos, cambios regulatorios o recomendaciones de autoridades competentes."
+          "heading": "Aviso legal",
+          "body": "Al utilizar los servicios de Nova Investments S.A. de C.V., aceptas los siguientes términos. Para solicitar un crédito, debes ser mayor de 18 años y proporcionar información verídica. Revisaremos tu solicitud basándonos en tu capacidad de pago y otros factores relevantes. La aprobación del crédito depende exclusivamente de nuestro análisis.\n\nSi se aprueba tu crédito, te informaremos sobre el monto, las tasas de interés, y el plazo de pago. Es tu responsabilidad realizar los pagos en tiempo y forma. Si te atrasas en los pagos, podríamos aplicar cargos adicionales o intereses por mora. El crédito debe ser utilizado para el propósito indicado en la solicitud.\n\nToda la información que nos proporcionas es confidencial y la manejamos de acuerdo con las leyes de protección de datos aplicables. Solo compartiremos tus datos con terceros cuando sea necesario para evaluar tu capacidad crediticia o cumplir con la ley.\n\nNos reservamos el derecho de modificar estos términos en cualquier momento, informándote previamente. Si continúas utilizando nuestros servicios después de una modificación, significa que aceptas los nuevos términos.\n\nEn caso de que no cumplas con tus obligaciones, podríamos tomar acciones legales para recuperar el crédito. Cualquier controversia será resuelta conforme a las leyes de El Salvador y los tribunales de San Salvador tendrán la competencia para resolver el asunto.\n\nSi tienes alguna duda, puedes contactarnos al correo"
         }
       ]
     }

@@ -2,49 +2,25 @@
   {
     "n": "01",
     "ic": "dollar-sign",
-    "t": "Sin pagos por adelantado",
-    "d": "Nunca te pedimos dinero para iniciar tu solicitud o para analizar tu crédito. Si alguien te pide un pago para liberar tu préstamo, desconfiá: esa práctica es ilegal y no forma parte de nuestro proceso."
+    "t": "Créditos en menos de 1 hora",
+    "d": ""
   },
   {
     "n": "02",
     "ic": "briefcase",
-    "t": "Proceso sin complicaciones",
-    "d": "Solo necesitás tener un negocio en funcionamiento, un documento de identidad y una cuenta bancaria."
+    "t": "Pagos de acuerdo a tu necesidad",
+    "d": ""
   },
   {
     "n": "03",
     "ic": "handshake",
-    "t": "Atención personalizada",
-    "d": "Asesores reales por WhatsApp para acompañarte durante toda tu solicitud."
+    "t": "Atención 100% humana",
+    "d": ""
   },
   {
     "n": "04",
     "ic": "users",
-    "t": "No necesitás fiador",
-    "d": "No exigimos codeudores."
-  },
-  {
-    "n": "05",
-    "ic": "wallet",
-    "t": "Modalidad de pago",
-    "d": "Cuotas fijas, adaptadas al flujo de caja de tu negocio."
-  },
-  {
-    "n": "06",
-    "ic": "clock",
-    "t": "Desembolso rápido",
-    "d": "El dinero llega a tu cuenta en menos de 24 horas."
-  },
-  {
-    "n": "07",
-    "ic": "badge",
-    "t": "Análisis ágil",
-    "d": "Evaluamos tu negocio de forma sencilla, sin pedirte garantías complicadas."
-  },
-  {
-    "n": "08",
-    "ic": "shield",
-    "t": "Tus datos están protegidos",
-    "d": "Tu información se usa exclusivamente para evaluar tu solicitud y se maneja con seguridad, conforme a la normativa de protección de datos vigente."
+    "t": "Pagas de lunes a viernes",
+    "d": ""
   }
 ]

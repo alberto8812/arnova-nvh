@@ -1,22 +1,17 @@
 [
   {
     "ic": "money",
-    "t": "Crédito personal",
-    "d": "Para cubrir gastos urgentes o inesperados. Montos desde $500 hasta $10,000, con plazos flexibles según tu necesidad."
+    "t": "Abastecer tu negocio",
+    "d": "Compra de mercancía, con el objetivo de mantener surtido tu negocio y aumentar las ventas."
   },
   {
     "ic": "briefcase",
-    "t": "Crédito para tu negocio",
-    "d": "Capital de trabajo para hacer crecer tu emprendimiento. Aprobación ágil y condiciones justas."
+    "t": "Pagar facturas",
+    "d": "Te facilitamos el dinero para que estés al día con tus obligaciones, incluso si tienes cuentas atrasadas."
   },
   {
     "ic": "home",
-    "t": "Crédito para el hogar",
-    "d": "Mejoras, electrodomésticos o reparaciones en tu casa. Sin complicaciones ni fiadores."
-  },
-  {
-    "ic": "education",
-    "t": "Crédito educativo",
-    "d": "Invertí en tu futuro. Financiá cursos, certificaciones o estudios con cuotas accesibles."
+    "t": "Mejora de infraestructura",
+    "d": "Con el fin de ampliar o mejorar el espacio físico de tu negocio, ofreciendo un ambiente más agradable para tus clientes."
   }
 ]
