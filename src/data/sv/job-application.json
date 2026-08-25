@@ -2,7 +2,7 @@
   "greeting": "¡Hola! 👋 Te ayudo a postularte. Te voy a hacer unas preguntas rápidas y te paso directo con un asesor por WhatsApp.",
   "teaser": "¿Querés postularte a una vacante? 📝",
   "waIntroTemplate": "Hola, quiero postularme a la vacante de {jobTitle}. Mis datos:",
-  "waIntroGeneric": "Hola, quiero postularme a una vacante en Solvia. Mis datos:",
+  "waIntroGeneric": "Hola, quiero postularme a una vacante en Arnova. Mis datos:",
   "questions": [
     { "id": "nombre", "label": "Nombre completo", "type": "text" },
     { "id": "telefono", "label": "Número de teléfono", "type": "text" },

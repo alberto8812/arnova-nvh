@@ -6,7 +6,7 @@ interface CardStyleOptions {
 }
 
 export function cardClassName({ interactive = false }: CardStyleOptions = {}): string {
-  return ['solvia-card', interactive ? 'cursor-pointer' : '', 'bg-neutral-50 border border-neutral-200']
+  return ['arnova-card', interactive ? 'cursor-pointer' : '', 'bg-neutral-50 border border-neutral-200']
     .filter(Boolean)
     .join(' ')
 }

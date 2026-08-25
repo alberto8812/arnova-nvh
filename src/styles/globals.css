@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — Solvia corporate navy, anchored on PANTONE P 108-16 C (#00365f) */
-  --color-brand-50: #f5f7f9;
-  --color-brand-100: #e6ebef;
-  --color-brand-200: #ccd7df;
-  --color-brand-300: #a6b9c7;
-  --color-brand-400: #8ca5b7;
-  --color-brand-500: #597c97;
-  --color-brand-600: #386282;
-  --color-brand-700: #1f4e72;
-  --color-brand-800: #0d4067;
-  --color-brand-900: #00365f;
+  /* Arnova navy foundation — visual structure and primary interaction. */
+  --color-brand-50: #f4f6fa;
+  --color-brand-100: #e4e8f0;
+  --color-brand-200: #cbd3e1;
+  --color-brand-300: #aebbd1;
+  --color-brand-400: #8495b5;
+  --color-brand-500: #60759b;
+  --color-brand-600: #445d86;
+  --color-brand-700: #344a71;
+  --color-brand-800: #2b3d66;
+  --color-brand-900: #233159;
 
   /* Neutral palette — cool gray, anchored on brand manual light gray */
   --color-neutral-50: #f9fafb;
@@ -24,11 +24,16 @@
   --color-neutral-700: #353b46;
   --color-neutral-800: #1d222a;
 
-  /* Accent — Solvia teal, anchored on PANTONE P 133-6 C (#17af95), for sparing highlight use only */
-  --color-accent-100: #dcf3ef;
-  --color-accent-300: #aee3da;
-  --color-accent-500: #68cbba;
-  --color-accent-700: #17af95;
+  /* Arrow accents — reserved for affirmative action and identity moments. */
+  --color-accent-100: #fff0e5;
+  --color-accent-300: #ffd3bc;
+  --color-accent-500: #f37021;
+  --color-accent-700: #ed1c24;
+  --color-action-red-start: #ba141a;
+  --color-action-red-end: #ed1c24;
+  --color-action-orange-start: #f04e23;
+  --color-action-orange-end: #f37021;
+  --color-action-yellow: #ffd400;
 
   /* Status */
   --color-status-green: #4e7c55;
@@ -43,22 +48,22 @@
   --color-on-brand: #ffffff;
 
   /* Typography */
-  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Comfortaa", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-sans: "Source Sans 3 Variable", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Easing */
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Shadows — reuse brand/whatsapp colors instead of hardcoding rgba per component */
-  --shadow-brand-sm: 0 1px 4px rgba(0, 54, 95, 0.25);
-  --shadow-brand-md: 0 2px 8px rgba(0, 54, 95, 0.15);
-  --shadow-brand-md-strong: 0 2px 8px rgba(0, 54, 95, 0.2);
+  --shadow-brand-sm: 0 1px 4px rgba(35, 49, 89, 0.25);
+  --shadow-brand-md: 0 2px 8px rgba(35, 49, 89, 0.15);
+  --shadow-brand-md-strong: 0 2px 8px rgba(35, 49, 89, 0.2);
   --shadow-brand-lg:
-    0 20px 40px -12px rgba(0, 54, 95, 0.12), 0 2px 6px rgba(0, 54, 95, 0.05);
+    0 20px 40px -12px rgba(35, 49, 89, 0.12), 0 2px 6px rgba(35, 49, 89, 0.05);
   --shadow-brand-xl:
-    0 30px 60px -18px rgba(0, 54, 95, 0.35),
-    0 8px 24px rgba(0, 54, 95, 0.12);
+    0 30px 60px -18px rgba(35, 49, 89, 0.35),
+    0 8px 24px rgba(35, 49, 89, 0.12);
   --shadow-whatsapp:
     0 12px 28px -8px rgba(29, 168, 81, 0.5), 0 4px 10px rgba(29, 168, 81, 0.25);
 }
@@ -121,20 +126,20 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Form input focus */
-.solvia-input {
+.arnova-input {
   transition:
     border-color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.solvia-input:focus {
+.arnova-input:focus {
   border-color: var(--color-brand-600);
-  box-shadow: 0 0 0 3px rgba(56, 98, 130, 0.16);
+  box-shadow: 0 0 0 3px rgba(68, 93, 134, 0.16);
   outline: none;
 }
-.solvia-input[aria-invalid="true"] {
+.arnova-input[aria-invalid="true"] {
   border-color: var(--color-status-red);
 }
-.solvia-input[aria-invalid="true"]:focus {
+.arnova-input[aria-invalid="true"]:focus {
   border-color: var(--color-status-red);
   box-shadow: 0 0 0 3px rgba(184, 73, 61, 0.16);
 }
@@ -188,14 +193,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* Card hover lift */
-.solvia-card {
+.arnova-card {
   transition:
     transform 0.28s var(--ease-out),
     box-shadow 0.28s var(--ease-out),
     border-color 0.28s var(--ease-out);
 }
 
-.solvia-card:hover {
+.arnova-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-brand-lg);
   border-color: var(--color-brand-300);
@@ -232,7 +237,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .video-modal::backdrop {
-  background: rgba(0, 54, 95, 0);
+  background: rgba(35, 49, 89, 0);
   transition:
     background 0.28s var(--ease-out),
     overlay 0.28s var(--ease-out) allow-discrete,
@@ -240,12 +245,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .video-modal[open]::backdrop {
-  background: rgba(0, 54, 95, 0.55);
+  background: rgba(35, 49, 89, 0.55);
 }
 
 @starting-style {
   .video-modal[open]::backdrop {
-    background: rgba(0, 54, 95, 0);
+    background: rgba(35, 49, 89, 0);
   }
 }
 
@@ -280,7 +285,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .job-modal::backdrop {
-  background: rgba(0, 54, 95, 0);
+  background: rgba(35, 49, 89, 0);
   transition:
     background 0.28s var(--ease-out),
     overlay 0.28s var(--ease-out) allow-discrete,
@@ -288,12 +293,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .job-modal[open]::backdrop {
-  background: rgba(0, 54, 95, 0.55);
+  background: rgba(35, 49, 89, 0.55);
 }
 
 @starting-style {
   .job-modal[open]::backdrop {
-    background: rgba(0, 54, 95, 0);
+    background: rgba(35, 49, 89, 0);
   }
 }
 
@@ -328,7 +333,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .testimonial-modal::backdrop {
-  background: rgba(0, 54, 95, 0);
+  background: rgba(35, 49, 89, 0);
   transition:
     background 0.28s var(--ease-out),
     overlay 0.28s var(--ease-out) allow-discrete,
@@ -336,12 +341,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .testimonial-modal[open]::backdrop {
-  background: rgba(0, 54, 95, 0.55);
+  background: rgba(35, 49, 89, 0.55);
 }
 
 @starting-style {
   .testimonial-modal[open]::backdrop {
-    background: rgba(0, 54, 95, 0);
+    background: rgba(35, 49, 89, 0);
   }
 }
 
@@ -376,7 +381,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .compliance-modal::backdrop {
-  background: rgba(11, 63, 124, 0);
+  background: rgba(35, 49, 89, 0);
   transition:
     background 0.28s var(--ease-out),
     overlay 0.28s var(--ease-out) allow-discrete,
@@ -384,12 +389,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .compliance-modal[open]::backdrop {
-  background: rgba(11, 63, 124, 0.55);
+  background: rgba(35, 49, 89, 0.55);
 }
 
 @starting-style {
   .compliance-modal[open]::backdrop {
-    background: rgba(11, 63, 124, 0);
+    background: rgba(35, 49, 89, 0);
   }
 }
 
@@ -423,7 +428,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .country-modal::backdrop {
-  background: rgba(11, 63, 124, 0);
+  background: rgba(35, 49, 89, 0);
   transition:
     background 0.28s var(--ease-out),
     overlay 0.28s var(--ease-out) allow-discrete,
@@ -431,11 +436,11 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .country-modal[open]::backdrop {
-  background: rgba(11, 63, 124, 0.55);
+  background: rgba(35, 49, 89, 0.55);
 }
 
 @starting-style {
   .country-modal[open]::backdrop {
-    background: rgba(11, 63, 124, 0);
+    background: rgba(35, 49, 89, 0);
   }
 }

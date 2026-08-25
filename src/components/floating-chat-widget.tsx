@@ -465,7 +465,7 @@ export function FloatingChatWidget() {
                           value={chat.inputValue}
                           onChange={(e) => setChat((prev) => ({ ...prev, inputValue: e.target.value }))}
                           placeholder={contact.answerPlaceholder}
-                          className="solvia-input flex-1 rounded-md text-[14px] font-sans border border-neutral-300 bg-neutral-50 text-brand-900"
+                          className="arnova-input flex-1 rounded-md text-[14px] font-sans border border-neutral-300 bg-neutral-50 text-brand-900"
                           style={{ padding: '9px 12px' }}
                         />
                         <button

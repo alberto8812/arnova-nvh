@@ -18,7 +18,7 @@ export function BenefitsSection() {
           viewport={VP}
         >
           <div className="font-mono text-xs tracking-[.14em] uppercase text-neutral-400">
-            ¿Por qué elegir a Solvia?
+            ¿Por qué elegir a Arnova?
           </div>
           <h2
             className="font-sans font-semibold mt-[14px] text-brand-900"
@@ -32,7 +32,7 @@ export function BenefitsSection() {
           >
             Beneficios de solicitar{" "}
             <span className="font-serif italic font-medium">tu crédito </span>{" "}
-            en Solvia.
+            en Arnova.
           </h2>
         </motion.div>
 
@@ -48,7 +48,7 @@ export function BenefitsSection() {
             <motion.div
               key={b.n}
               variants={staggerItem}
-              className="solvia-card border border-neutral-200 bg-neutral-50"
+              className="arnova-card border border-neutral-200 bg-neutral-50"
               style={{
                 padding: "32px 28px",
                 borderRadius: "10px",

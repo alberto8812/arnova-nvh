@@ -1,5 +1,5 @@
 {
-  "name": "solvia-landing",
+  "name": "arnova-landing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fontsource-variable/comfortaa": "^5.3.0",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/poppins": "^5.3.0",
+    "@fontsource-variable/source-sans-3": "^5.3.0",
+    "@fontsource/roboto": "^5.3.0",
     "motion": "^12.42.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

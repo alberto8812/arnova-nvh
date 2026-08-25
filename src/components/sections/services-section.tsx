@@ -46,7 +46,7 @@ export function ServicesSection() {
           <motion.div
             key={i}
             variants={staggerItem}
-            className="solvia-card flex gap-5 items-start bg-neutral-50 border border-neutral-200 p-6 md:p-[30px]"
+            className="arnova-card flex gap-5 items-start bg-neutral-50 border border-neutral-200 p-6 md:p-[30px]"
             style={{
               borderRadius: '10px',
             }}

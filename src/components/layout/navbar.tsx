@@ -89,10 +89,10 @@ export function Navbar() {
         {/* Logo — larger over the transparent hero, settles smaller once the solid bar takes over */}
         <Link to="/#hero" className="flex items-center no-underline">
           <img
-            src="/images/balck-logo.png"
-            alt="Solvia"
+            src="/images/arnova-wordmark-reverse.png"
+            alt="Arnova Financial Group"
             className={`w-auto object-contain transition-[height] duration-300 ${
-              transparent ? "h-15" : "h-10"
+              transparent ? "h-12" : "h-9"
             }`}
           />
         </Link>
@@ -135,7 +135,7 @@ export function Navbar() {
           {/* CTA — always visible so it's reachable even if the mobile menu's JS fails to mount */}
           <Link
             to="/#contacto"
-            className="inline-flex text-sm font-semibold px-3 sm:px-[18px] py-2.5 rounded-md no-underline transition-colors duration-300 bg-brand-300 text-brand-900 hover:bg-brand-400"
+            className="inline-flex text-sm font-semibold px-3 sm:px-[18px] py-2.5 rounded-md no-underline transition-colors duration-300 bg-action-yellow text-brand-900 hover:bg-accent-300"
           >
             <span className="sm:hidden">Solicitar</span>
             <span className="hidden sm:inline">Solicitar crédito →</span>

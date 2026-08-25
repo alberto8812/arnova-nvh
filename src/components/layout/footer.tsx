@@ -33,9 +33,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="/images/balck-logo.png"
-              alt="Solvia"
-              className="h-15 w-auto object-contain"
+                src="/images/arnova-wordmark-reverse.png"
+                alt="Arnova Financial Group"
+                className="h-12 w-auto object-contain"
             />
             <p className="font-serif italic text-[19px] mt-[18px] max-w-[340px] leading-[1.45] text-brand-200">
               Estamos disponibles para apoyarte cuando más lo necesites. Te
@@ -46,7 +46,7 @@ export function Footer() {
                 href={contact.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram de Solvia"
+                aria-label="Instagram de Arnova"
                 className="flex items-center justify-center w-11 h-11 rounded-full border border-brand-300/30 text-brand-200 transition-colors hover:bg-on-brand hover:border-on-brand hover:text-brand-900"
               >
                 <Icon name="instagram" size={22} />
@@ -55,7 +55,7 @@ export function Footer() {
                 href={contact.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook de Solvia"
+                aria-label="Facebook de Arnova"
                 className="flex items-center justify-center w-11 h-11 rounded-full border border-brand-300/30 text-brand-200 transition-colors hover:bg-on-brand hover:border-on-brand hover:text-brand-900"
               >
                 <Icon name="facebook" size={22} />
@@ -165,7 +165,7 @@ export function Footer() {
 
       {/* Bottom line */}
       <Container className="py-6 flex justify-between flex-wrap gap-3 text-[12.5px] text-brand-500">
-        <span>© {year} Solvia · Todos los derechos reservados</span>
+        <span>© {year} Arnova · Todos los derechos reservados</span>
         <span>Créditos sujetos a evaluación</span>
       </Container>
 

@@ -77,7 +77,7 @@ export function TestimonialsSection() {
               marginBottom: '44px',
             }}
           >
-            <span className="font-serif italic font-medium">Ya confiaron</span> en Solvia para crecer.
+            <span className="font-serif italic font-medium">Ya confiaron</span> en Arnova para crecer.
           </h2>
         </div>
       </motion.div>
@@ -102,7 +102,7 @@ export function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
-              className="solvia-card flex flex-col bg-neutral-50 border border-neutral-200 p-6 md:p-[30px] snap-start shrink-0"
+              className="arnova-card flex flex-col bg-neutral-50 border border-neutral-200 p-6 md:p-[30px] snap-start shrink-0"
               style={{
                 borderRadius: '10px',
                 width: CARD_WIDTH,
@@ -224,7 +224,7 @@ function NavButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={direction === 'prev' ? 'Testimonio anterior' : 'Siguiente testimonio'}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-brand-900 shadow-[0_2px_10px_rgba(11,63,124,0.12)] transition-all duration-150 hover:border-brand-300 hover:bg-brand-50 active:scale-95 disabled:opacity-30 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-brand-900 shadow-brand-sm transition-all duration-150 hover:border-brand-300 hover:bg-brand-50 active:scale-95 disabled:opacity-30 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         {direction === 'prev' ? <path d="M15 6l-6 6 6 6" /> : <path d="M9 6l6 6-6 6" />}

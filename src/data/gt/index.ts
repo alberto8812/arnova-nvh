@@ -73,7 +73,7 @@ const ADVISOR_ROLE = {
   title: 'Asesor Comercial',
   modality: 'Presencial',
   description:
-    'Busque nuevos clientes en la región. Visite a los comerciantes y presénteles las soluciones de Solvia. Brinde atención consultiva durante todo el proceso. Recolecte la documentación necesaria para el análisis de crédito. Acompañe a los clientes hasta el cierre de la contratación.',
+    'Busque nuevos clientes en la región. Visite a los comerciantes y presénteles las soluciones de Arnova. Brinde atención consultiva durante todo el proceso. Recolecte la documentación necesaria para el análisis de crédito. Acompañe a los clientes hasta el cierre de la contratación.',
   salary: 'Salario fijo más comisiones por desempeño.',
   active: true,
 } as const

@@ -1,6 +1,6 @@
-# Solvia Landing
+# Arnova Landing
 
-Landing page de Solvia — plataforma de crédito para pequeños comercios en **El Salvador** y **Guatemala**. Explica el producto, muestra los montos disponibles vía el simulador de crédito y dirige al usuario a WhatsApp para iniciar el proceso (sin formularios tradicionales).
+Landing page de Arnova — plataforma de crédito para pequeños comercios en **El Salvador** y **Guatemala**. Explica el producto, muestra los montos disponibles vía el simulador de crédito y dirige al usuario a WhatsApp para iniciar el proceso (sin formularios tradicionales).
 
 Al ingresar por primera vez, el visitante elige su país en un modal obligatorio; esa elección queda guardada localmente y determina el copy, el dialecto, la moneda y los datos del simulador que se muestran en el resto del sitio (ver [Selector de país](#selector-de-país-y-contenido-por-país) más abajo).
 
@@ -50,7 +50,7 @@ El sitio soporta dos países, **SV** (El Salvador) y **GT** (Guatemala), como ú
 - Valores reales del simulador por país (tasa de interés, montos mínimo/máximo, número de WhatsApp) — hoy son placeholders clonados del contenido original, pendientes de confirmación del negocio.
 - `src/data/{sv,gt}/legal.json` tiene marcadores explícitos de "pendiente de confirmación final por el área legal" — el contenido regulatorio real de cada país debe revisarse antes de publicar.
 - Ciudades usadas en `coverage.json` y `jobs.json` (San Salvador, Ciudad de Guatemala) son placeholders razonables, pendientes de confirmación real de cobertura/oficinas.
-- `src/data/{sv,gt}/contact.json` → `social.instagram`/`social.facebook` quedaron con un handle genérico ("Instagram de Solvia"/"Facebook de Solvia", sin país) tras remover una referencia incorrecta a "Brasil" — confirmar handles reales si aplica.
+- `src/data/{sv,gt}/contact.json` → `social.instagram`/`social.facebook` quedaron con un handle genérico ("Instagram de Arnova"/"Facebook de Arnova", sin país) tras remover una referencia incorrecta a "Brasil" — confirmar handles reales si aplica.
 - `VITE_TURNSTILE_SITE_KEY` no está configurada (no existe `.env` ni `.env.example` en el repositorio). Sin esa env var el widget de Turnstile nunca se renderiza y el botón de WhatsApp del chat queda deshabilitado en todos los ambientes (fail-closed, intencional). Ver `docs/proteccion-anti-bots.md` para el paso a paso de Cloudflare + Vercel.
 - Activar manualmente **Vercel Bot Protection / Attack Challenge Mode** en el dashboard de Vercel (no es configuración de código).
 
@@ -80,7 +80,7 @@ src/
 └── types/content.types.ts # ContentBundle y tipos de todo el contenido
 ```
 
-El flujo de conversión es: el usuario elige su país → ve el producto → pasa por el `SimulatorSection` (simulador de crédito, con tasa/montos/moneda del país activo) → es dirigido a WhatsApp. El `AmountSelectorSection` queda comentado en `home-page.tsx` hasta que el producto tenga condiciones reales definidas, y no hay formulario de contacto tradicional. La página `/careers` (`JobsPage`) muestra las vacantes abiertas de Solvia (dato estático en `src/data/{sv,gt}/jobs.json`), sin postulación online.
+El flujo de conversión es: el usuario elige su país → ve el producto → pasa por el `SimulatorSection` (simulador de crédito, con tasa/montos/moneda del país activo) → es dirigido a WhatsApp. El `AmountSelectorSection` queda comentado en `home-page.tsx` hasta que el producto tenga condiciones reales definidas, y no hay formulario de contacto tradicional. La página `/careers` (`JobsPage`) muestra las vacantes abiertas de Arnova (dato estático en `src/data/{sv,gt}/jobs.json`), sin postulación online.
 
 La sección de Preguntas Frecuentes (`FaqSection`, contenido en `src/data/{sv,gt}/faq.json`) queda al final de la landing, antes del footer.
 

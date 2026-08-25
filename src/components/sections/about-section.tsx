@@ -61,7 +61,7 @@ export function AboutSection() {
       >
         <img
           src={about.image}
-          alt="Equipe Solvia"
+          alt="Equipo Arnova"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'saturate(0.88) contrast(1.02)' }}
           loading="lazy"

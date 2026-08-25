@@ -89,7 +89,7 @@ export function FaqSection() {
               <motion.div
                 key={i}
                 variants={staggerItem}
-                className="solvia-card bg-white border border-neutral-200 overflow-hidden"
+                className="arnova-card bg-white border border-neutral-200 overflow-hidden"
                 style={{ borderRadius: "10px" }}
               >
                 <button
