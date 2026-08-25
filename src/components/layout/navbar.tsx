@@ -19,6 +19,7 @@ const NAV_LINKS = [
 ] as const;
 
 const COUNTRY_FLAGS = { SV: "🇸🇻", GT: "🇬🇹" } as const;
+const COUNTRY_NAMES = { SV: "El Salvador", GT: "Guatemala" } as const;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -87,12 +88,12 @@ export function Navbar() {
     >
       <Container className="h-[70px] flex items-center justify-between">
         {/* Logo — larger over the transparent hero, settles smaller once the solid bar takes over */}
-        <Link to="/#hero" className="flex items-center no-underline">
+        <Link to="/#hero" className="flex shrink-0 items-center no-underline">
           <img
             src="/images/arnova-wordmark-reverse.png"
             alt="Arnova Financial Group"
-            className={`w-auto object-contain transition-[height] duration-300 ${
-              transparent ? "h-12" : "h-9"
+            className={`h-6 w-auto object-contain transition-[height] duration-300 ${
+              transparent ? "sm:h-12" : "sm:h-9"
             }`}
           />
         </Link>
@@ -113,7 +114,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           {/* Country indicator — hidden while no country is chosen yet; the
               blocking (non-dismissable) modal covers that gap, so there's
               nothing valid to reopen here until a country is set. Rendered
@@ -124,18 +125,18 @@ export function Navbar() {
             <button
               type="button"
               onClick={openCountryModal}
-              aria-label="Cambiar país"
-              className="inline-flex items-center gap-1.5 h-9 px-3 rounded-full border border-on-brand/20 bg-on-brand/10 text-[13px] font-semibold text-on-brand backdrop-blur-sm transition-colors duration-300 hover:border-on-brand/35 hover:bg-on-brand/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 whitespace-nowrap"
+              aria-label={`Cambiar país: ${COUNTRY_NAMES[country]}`}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-on-brand/20 bg-on-brand/10 text-on-brand backdrop-blur-sm transition-colors duration-300 hover:border-on-brand/35 hover:bg-on-brand/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 sm:h-9 sm:w-auto sm:gap-1.5 sm:px-3 sm:text-[13px] sm:font-semibold whitespace-nowrap"
             >
               <span aria-hidden="true" className="text-[15px] leading-none">{COUNTRY_FLAGS[country]}</span>
-              {country}
+              <span className="hidden sm:inline">{country}</span>
             </button>
           )}
 
           {/* CTA — always visible so it's reachable even if the mobile menu's JS fails to mount */}
           <Link
             to="/#contacto"
-            className="inline-flex text-sm font-semibold px-3 sm:px-[18px] py-2.5 rounded-md no-underline transition-colors duration-300 bg-action-yellow text-brand-900 hover:bg-accent-300"
+            className="inline-flex min-h-10 items-center text-sm font-semibold px-3 sm:px-[18px] py-2.5 rounded-md no-underline transition-colors duration-300 bg-action-yellow text-brand-900 hover:bg-accent-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
             <span className="sm:hidden">Solicitar</span>
             <span className="hidden sm:inline">Solicitar crédito →</span>
@@ -148,7 +149,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="xl:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300"
+            className="xl:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
             <svg
               width="22"
