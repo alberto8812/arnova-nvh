@@ -1,22 +1,22 @@
 [
   {
     "t": "El testimonio de un cliente",
-    "poster": "/videos/historia-cliente-poster.jpg",
-    "url": "/videos/historia-cliente.mp4"
+    "poster": "/images/arnova-wordmark-reverse.png",
+    "url": ""
   },
   {
     "t": "Así es Arnova en acción",
-    "poster": "/videos/solvia-reel-2-poster.jpg",
-    "url": "/videos/solvia-reel-2.mp4"
+    "poster": "/images/arnova-wordmark-reverse.png",
+    "url": ""
   },
   {
     "t": "Cómo trabajamos en Arnova",
-    "poster": "/videos/solvia-reel-4-poster.jpg",
-    "url": "/videos/solvia-reel-4.mp4"
+    "poster": "/images/arnova-wordmark-reverse.png",
+    "url": ""
   },
   {
     "t": "Tu crédito, explicado paso a paso",
-    "poster": "/videos/solvia-reel-5-poster.jpg",
-    "url": "/videos/solvia-reel-5.mp4"
+    "poster": "/images/arnova-wordmark-reverse.png",
+    "url": ""
   }
 ]

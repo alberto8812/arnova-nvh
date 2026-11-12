@@ -64,7 +64,10 @@ export function VideosSection() {
               isActive={activeIdx === i}
               onEnter={() => setActiveIdx(i)}
               onLeave={() => setActiveIdx(null)}
-              onOpen={() => setOpenVideo(v)}
+              onOpen={() => {
+                // Placeholder cards (no real video yet) have no url: nothing to play.
+                if (v.url) setOpenVideo(v);
+              }}
             />
           </motion.div>
         ))}
@@ -92,6 +95,7 @@ function VideoCard({
   onOpen,
 }: VideoCardProps) {
   const { videosSection } = useContent();
+  const hasVideo = Boolean(video.url);
   return (
     <button
       type="button"
@@ -100,8 +104,9 @@ function VideoCard({
       onMouseLeave={onLeave}
       onFocus={onEnter}
       onBlur={onLeave}
-      aria-label={videosSection.watchFullLabelTemplate.replace("{title}", video.t)}
-      className="group relative block w-full cursor-pointer overflow-hidden border border-neutral-200 bg-brand-900 p-0 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2"
+      aria-label={hasVideo ? videosSection.watchFullLabelTemplate.replace("{title}", video.t) : video.t}
+      aria-disabled={!hasVideo || undefined}
+      className={`${hasVideo ? "cursor-pointer" : "cursor-default"} group relative block w-full overflow-hidden border border-neutral-200 bg-brand-900 p-0 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2`}
       style={{
         aspectRatio: "16/10",
         borderRadius: "10px",
@@ -112,13 +117,13 @@ function VideoCard({
       <img
         src={video.poster}
         alt={video.t}
-        className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
-        style={{
+        className={`absolute inset-0 w-full h-full transition-all duration-700 ${hasVideo ? "object-cover" : "object-contain p-10"}`}
+        style={hasVideo ? {
           opacity: isActive ? 0.7 : 0.85,
           filter: isActive
             ? "saturate(1) brightness(0.85)"
             : "saturate(0.8) brightness(0.75)",
-        }}
+        } : undefined}
         loading="lazy"
       />
 
@@ -129,7 +134,7 @@ function VideoCard({
           transform: isActive ? "scale(1.05)" : "scale(1)",
         }}
       >
-        <svg
+        {hasVideo && <svg
           width="13"
           height="13"
           viewBox="0 0 24 24"
@@ -137,7 +142,7 @@ function VideoCard({
           style={{ marginLeft: "1px" }}
         >
           <path d="M7 4.5v15l13-7.5z" />
-        </svg>
+        </svg>}
         <span className="font-mono text-xs font-medium text-brand-900">
           {video.t}
         </span>
