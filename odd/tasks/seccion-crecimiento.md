@@ -5,7 +5,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 ## Specs
 
 - S1: "me piden retirar el simulador pero lo podemos comentar por si a futuro lo exigen" — `<SimulatorSection />` queda comentado, el componente no se borra; no quedan enlaces rotos al simulador.
-- S2: "En lugar del simulador se va a agregar el siguiente contenido. Tus ventas mantienen el negocio, con un crédito bien manejado creces, pero con Arnova aceleras tu crecimiento de forma cómoda. Hablar con Mafe para la popuesta de imagen y acompañar texto." — texto exacto en SV y GT.
+- S2: (L9) "Tus ventas mantienen tu negocio, un crédito bien manejado te permite crecer, pero con Arnova aceleras ese crecimiento de forma cómoda y segura." — texto exacto en SV y GT (reemplaza el de L1).
 - S3: "me gusta la segunda" — layout de `design/crecimiento-arnova/02-split-imagen.html`.
 - S4: "tambien podemos retirar el boton de contactenos" — la sección no tiene botón.
 - S5: "agregar un video de este estilo C:\Users\soporteqa\Videos\fondius-videos ... se puede diseñar uno con los colores de arnova y que haga referencia" — paleta Arnova en el proyecto Remotion.
@@ -26,3 +26,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L6: Commit 7049a3e (T2 + diseño + videos, 498 líneas, mayormente artboards HTML de design/). Assess RDD: riesgo medio, review no requerida. Pendiente: revisión visual en navegador.
 - L7: "YA FUNCIONA ... a que hace referencia el tercer video" -> reemplazado loop 3 (pasos) por arnova-loop-asesor (visita del asesor), 772 KB; public/videos/crecimiento-03.*
 - L8: "LA CAR 4.9/5 PODEMOS CAMBIARLA POR OTRO DATA MAS RELABANTE ... OCUPA MUCHO ESPACIO" -> tarjetas reemplazadas por una píldora translúcida que cambia con cada video (caption por video).
+- L9: "AHORA QUIEREN CAMBIAR EL MENSAJE NUEVAMENTE POR ESTE Tus ventas mantienen tu negocio, un crédito bien manejado te permite crecer, pero con Arnova aceleras ese crecimiento de forma cómoda y segura. REALIZA EL CAMBIO DE LA MISMA SECCION" -> S2 actualizado (SV y GT).
