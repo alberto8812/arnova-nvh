@@ -1,5 +1,6 @@
 import type {
   HeroContent,
+  GrowthSectionContent,
   Stat,
   Benefit,
   SimulatorConfig,
@@ -23,6 +24,7 @@ import type {
 } from '@/types/content.types'
 
 import heroRaw from './hero.json'
+import growthSectionRaw from './growth-section.json'
 import statsRaw from './stats.json'
 import benefitsRaw from './benefits.json'
 import simulatorRaw from './simulator.json'
@@ -43,6 +45,7 @@ import navRaw from './nav.json'
 import testimonialsSectionRaw from './testimonials-section.json'
 
 export const hero = heroRaw satisfies HeroContent
+export const growthSection = growthSectionRaw satisfies GrowthSectionContent
 export const stats = statsRaw satisfies Stat[]
 export const benefits = benefitsRaw satisfies Benefit[]
 // JSON imports widen string literals to `string`, so `currency`/`locale`
@@ -93,6 +96,7 @@ export const testimonialsSection = testimonialsSectionRaw satisfies Testimonials
 
 export const gtContent = {
   hero,
+  growthSection,
   stats,
   benefits,
   simulator,

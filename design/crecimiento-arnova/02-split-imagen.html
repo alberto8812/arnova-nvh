@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02 · Split con imagen y datos flotantes</title>
+<style>
+:root{--b9:#233159;--b6:#445d86;--b3:#aebbd1;--b1:#e4e8f0;--n50:#f9fafb;--n200:#e6eaef;--n500:#7b838e;--n600:#535a65;--a5:#f37021;--ease:cubic-bezier(.2,.8,.2,1);--sans:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sans);background:var(--n50);color:#353b46}
+section{padding:76px 48px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--a5);font-weight:700;display:flex;align-items:center;gap:8px}.eyebrow::before{content:"";width:22px;height:2px;background:linear-gradient(90deg,#ed1c24,#f37021)}
+.lines{margin:18px 0 0;padding:0;list-style:none}
+.lines li{font-size:clamp(22px,3vw,32px);line-height:1.25;letter-spacing:-.02em;font-weight:600;color:var(--b3);opacity:0;transform:translateX(-12px);animation:in .7s var(--ease) forwards}
+.lines li:nth-child(2){animation-delay:.5s;color:var(--b6)}.lines li:nth-child(3){animation-delay:1s;color:var(--b9)}
+.lines li strong{background:linear-gradient(90deg,#ed1c24,#f37021);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--n600);font-size:16px;margin:22px 0 28px;max-width:440px}
+.btn{display:inline-block;background:var(--b9);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:8px}.btn:focus-visible{outline:3px solid var(--b6);outline-offset:3px}
+.media{position:relative;aspect-ratio:5/4}
+.photo{position:absolute;inset:0 0 0 40px;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#445d86,#233159);display:flex;align-items:center;justify-content:center;color:#cbd3e1;font-size:14px;text-align:center}
+.photo svg{position:absolute;inset:0;width:100%;height:100%;opacity:.25}
+.photo span{position:relative;border:1px dashed rgba(255,255,255,.4);padding:10px 16px;border-radius:8px}
+.chip{position:absolute;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 30px 60px -18px rgba(35,49,89,.35),0 8px 24px rgba(35,49,89,.12);display:flex;gap:12px;align-items:center;animation:float 5s ease-in-out infinite}
+.chip b{display:block;color:var(--b9);font-size:20px}.chip small{color:var(--n500);font-size:13px}
+.ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--b1);color:var(--b9)}
+.c1{left:0;top:12%}.c2{right:-12px;top:44%;animation-delay:-1.6s}.c3{left:16%;bottom:-18px;animation-delay:-3.2s}
+.c2 .ic{background:#fff0e5;color:var(--a5)}
+.spark{width:90px;height:32px}.spark path{fill:none;stroke:#f37021;stroke-width:2.5;stroke-dasharray:200;stroke-dashoffset:200;animation:draw 2s var(--ease) 1s forwards}
+@keyframes in{to{opacity:1;transform:none}}@keyframes float{50%{transform:translateY(-8px)}}@keyframes draw{to{stroke-dashoffset:0}}
+@media (max-width:860px){section{grid-template-columns:1fr;padding:56px 20px;gap:48px}.photo{inset:0}.c2{right:8px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+</style></head><body><main>
+<section aria-labelledby="t">
+  <div>
+    <div class="eyebrow">Crece con Arnova</div>
+    <h2 id="t" style="position:absolute;left:-9999px">Tus ventas, tu crédito y tu crecimiento con Arnova</h2>
+    <ul class="lines">
+      <li>Tus ventas mantienen el negocio,</li>
+      <li>con un crédito bien manejado creces,</li>
+      <li>pero con Arnova <strong>aceleras tu crecimiento</strong> de forma cómoda.</li>
+    </ul>
+    <p class="sub">Créditos inmediatos y a la medida, con un asesor que te acompaña en cada etapa de tu negocio.</p>
+    <a class="btn" href="#contacto">Contáctanos</a>
+  </div>
+  <div class="media">
+    <div class="photo" role="img" aria-label="Espacio para la foto de comerciante que define Mafe">
+      <svg viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300 L120 220 L200 250 L400 40" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      <span>Foto propuesta por Mafe<br>(comerciante en su negocio)</span>
+    </div>
+    <div class="chip c1"><div class="ic" aria-hidden="true">⏱</div><div><b>En minutos</b><small>Desembolso</small></div></div>
+    <div class="chip c2"><div class="ic" aria-hidden="true">↗</div><div><b>Crecimiento</b><svg class="spark" viewBox="0 0 90 32" aria-hidden="true"><path d="M2 28 L25 22 L45 24 L65 12 L88 4"/></svg></div></div>
+    <div class="chip c3"><div class="ic" aria-hidden="true">★</div><div><b>4.9/5</b><small>Clientes satisfechos</small></div></div>
+  </div>
+</section>
+</main></body></html>

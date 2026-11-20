@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01 · Escalera de crecimiento</title>
+<style>
+:root{--b9:#233159;--b6:#445d86;--b3:#aebbd1;--b1:#e4e8f0;--n50:#f9fafb;--n200:#e6eaef;--n500:#7b838e;--n600:#535a65;--a1:#fff0e5;--a5:#f37021;--a7:#ed1c24;--ease:cubic-bezier(.2,.8,.2,1);--sans:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sans);background:var(--n50);color:#353b46}
+section{padding:76px 48px;max-width:1280px;margin:0 auto}
+h2{color:var(--b9);font-weight:600;font-size:clamp(26px,6vw,34px);letter-spacing:-.02em;line-height:1.12;margin:0;max-width:640px;text-wrap:balance}
+h2 em{font-style:normal;background:linear-gradient(90deg,#ed1c24,#f37021);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--n600);font-size:17px;margin:14px 0 0;max-width:560px}
+.stage{position:relative;margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:end}
+.chart{position:absolute;inset:0 0 auto 0;height:100%;pointer-events:none}
+.chart path{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s var(--ease) .3s forwards}
+.step{position:relative;background:#fff;border:1px solid var(--n200);border-radius:10px;padding:28px;opacity:0;transform:translateY(16px);animation:rise .7s var(--ease) forwards}
+.step:nth-child(2){animation-delay:.2s;min-height:220px}.step:nth-child(3){animation-delay:.6s;min-height:270px}.step:nth-child(4){animation-delay:1s;min-height:330px;background:var(--b9);border-color:var(--b9);color:#fff;box-shadow:0 30px 60px -18px rgba(35,49,89,.35),0 8px 24px rgba(35,49,89,.12)}
+.step .n{font-family:Roboto,-apple-system,"Segoe UI",sans-serif;font-style:italic;font-size:36px;color:var(--b3);line-height:.8}
+.step h3{font-size:22px;font-weight:600;color:var(--b9);margin:22px 0 8px;letter-spacing:-.01em}
+.step:nth-child(4) h3{color:#fff}.step p{margin:0;font-size:15px;line-height:1.55;color:var(--n600)}.step:nth-child(4) p{color:#cbd3e1}
+.tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:6px 10px;border-radius:999px;background:var(--b1);color:var(--b9)}
+.step:nth-child(4) .tag{background:linear-gradient(90deg,#f04e23,#f37021);color:#fff}
+.bar{height:6px;border-radius:3px;background:var(--b1);margin-top:22px;overflow:hidden}.bar i{display:block;height:100%;width:0;border-radius:3px;background:var(--b6);animation:fill 1.6s var(--ease) forwards}
+.step:nth-child(2) .bar i{--w:35%;animation-delay:.6s}.step:nth-child(3) .bar i{--w:62%;animation-delay:1s}.step:nth-child(4) .bar{background:rgba(255,255,255,.15)}.step:nth-child(4) .bar i{--w:100%;background:linear-gradient(90deg,#ed1c24,#f37021,#ffd400);animation-delay:1.4s}
+.cta{margin-top:36px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn{background:var(--b9);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:8px}.btn:focus-visible{outline:3px solid var(--b6);outline-offset:3px}
+.note{font-size:13px;color:var(--n500)}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes rise{to{opacity:1;transform:none}}@keyframes fill{to{width:var(--w)}}
+@media (max-width:760px){section{padding:56px 20px}.stage{grid-template-columns:1fr}.step{min-height:0!important}.chart{display:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important}}
+</style></head><body><main>
+<section aria-labelledby="t">
+  <h2 id="t">Con Arnova <em>aceleras tu crecimiento</em> de forma cómoda</h2>
+  <p class="lead">Tus ventas mantienen el negocio, con un crédito bien manejado creces, pero con Arnova aceleras tu crecimiento de forma cómoda.</p>
+  <div class="stage">
+    <svg class="chart" viewBox="0 0 1184 400" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#aebbd1"/><stop offset=".6" stop-color="#445d86"/><stop offset="1" stop-color="#f37021"/></linearGradient></defs>
+      <path d="M20 330 C 250 320, 330 290, 420 250 S 700 200, 800 150 S 1050 40, 1170 20" stroke="url(#g)"/>
+    </svg>
+    <article class="step"><div class="n">01</div><span class="tag">Mantienes</span><h3>Tus ventas mantienen el negocio</h3><p>El día a día que sostiene tu comercio.</p><div class="bar"><i></i></div></article>
+    <article class="step"><div class="n">02</div><span class="tag">Creces</span><h3>Con un crédito bien manejado creces</h3><p>Inviertes en inventario y más ventas.</p><div class="bar"><i></i></div></article>
+    <article class="step"><div class="n">03</div><span class="tag">Aceleras</span><h3>Con Arnova aceleras tu crecimiento</h3><p>De forma cómoda, con pagos a tu medida y tu asesor de siempre.</p><div class="bar"><i></i></div></article>
+  </div>
+  <div class="cta"><a class="btn" href="#contacto">Contáctanos</a><span class="note">Las cards suben en escalera y la línea de crecimiento se dibuja al entrar en pantalla.</span></div>
+</section>
+</main></body></html>
