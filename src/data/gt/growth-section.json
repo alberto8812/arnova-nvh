@@ -6,22 +6,19 @@
     "pero con Arnova aceleras ese crecimiento de forma cómoda y segura."
   ],
   "highlight": "aceleras ese crecimiento",
-  "mediaLabel": "Animación: un negocio que se mantiene con sus ventas, crece con un crédito y acelera con Arnova",
+  "mediaLabel": "Animación: un negocio que crece, se llena de mercadería y recibe la visita de su asesor Arnova",
   "videos": [
     {
       "src": "/videos/crecimiento-01.mp4",
-      "poster": "/videos/crecimiento-01.jpg",
-      "caption": "+5.000 créditos entregados"
+      "poster": "/videos/crecimiento-01.jpg"
     },
     {
       "src": "/videos/crecimiento-02.mp4",
-      "poster": "/videos/crecimiento-02.jpg",
-      "caption": "Pagos de acuerdo a tu capacidad"
+      "poster": "/videos/crecimiento-02.jpg"
     },
     {
       "src": "/videos/crecimiento-03.mp4",
-      "poster": "/videos/crecimiento-03.jpg",
-      "caption": "Tu asesor, siempre a la misma hora"
+      "poster": "/videos/crecimiento-03.jpg"
     }
   ]
 }

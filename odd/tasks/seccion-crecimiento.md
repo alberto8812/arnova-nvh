@@ -18,6 +18,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T2 (S1-S4, S6) Web: comentar simulador, sección nueva con rotación de videos, datos en SV/GT, reduced-motion y carga diferida. Ruta: inline. Commit: pendiente.
 - T3 (S6) Loop 3 reemplazado por visita del asesor. HECHO 0ecc342.
 - T4 (S7) Propuestas de diseño v2 sin información redundante: design/crecimiento-v2/ (3 artboards). Ruta: worker (context backstop). Commit: pendiente.
+- T6 (S2, S7) Implementar artboard elegido design/crecimiento-v2/03-banda-inmersiva.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L13.
 
 ## Log
 
@@ -33,3 +34,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L10: Rebalanceo pedido ("LA ANIMACION O VIDEO ABSORVE EL TEXTO"): texto 1.25fr 26-40px legible (AA), video 4:5 sin recorte max 440px, pasos sincronizados con los videos (clicables) en lugar de la píldora.
 - L11: "SE CAMBIO EL DISENO ... Y VEO QUE HAY INFORMACION REDUNDANTE ESTABA MEJOR ANALIZA BIEN EVALUAR Y CREAR UN DISENO APROPIADA PARA ESTE TIPO DE PUBLICIDAD COMO EXPERTO DE UI Y MARKETING DA DIVERSAS OPCIONES DE DISENO QUE TENGA BUENA EXPERIENCIA DE USUARIO Y NO REDUNDE EN INFORMACION QUE YA ESTA EN LA PAGINA" -> T4 (propuestas en design/crecimiento-v2/).
 - L12: "TAMBIEN PODEMOS CAMBIAR EL VIDEO 1 POR OTRO CON MEJOR EXPERIENCIA DE USUARIO EN VEZ DE MOSTRAR GRAFICOS" -> T5: crecimiento-01 = arnova-loop-expansion (el negocio se agranda), 683 KB.
+- L13: Handoff del canvas: implementar design/crecimiento-v2/03-banda-inmersiva.html (elegido; 01-editorial-equilibrado y 02-la-frase-es-el-indicador quedan como alternativas). Implementado en growth-section.tsx: banda navy a sangre, video 4:5 fundido sin caja, 3 segmentos sin texto; se eliminaron los captions redundantes. Verificado con capturas headless 1440 y 414 (rotación OK).

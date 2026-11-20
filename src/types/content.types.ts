@@ -279,8 +279,7 @@ export interface GrowthSectionContent {
   lines: string[]
   highlight: string
   mediaLabel: string
-  // `caption` is the short fact shown over its clip, swapped with it.
-  videos: { src: string; poster: string; caption: string }[]
+  videos: { src: string; poster: string }[]
 }
 
 export interface ContentBundle {
