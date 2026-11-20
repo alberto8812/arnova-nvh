@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Crece con Arnova",
+  "lines": [
+    "Tus ventas mantienen el negocio,",
+    "con un crédito bien manejado creces,",
+    "pero con Arnova aceleras tu crecimiento de forma cómoda."
+  ],
+  "highlight": "aceleras tu crecimiento",
+  "mediaLabel": "Animación: un negocio que se mantiene con sus ventas, crece con un crédito y acelera con Arnova",
+  "videos": [
+    {
+      "src": "/videos/crecimiento-01.mp4",
+      "poster": "/videos/crecimiento-01.jpg",
+      "caption": "+70.000 créditos entregados"
+    },
+    {
+      "src": "/videos/crecimiento-02.mp4",
+      "poster": "/videos/crecimiento-02.jpg",
+      "caption": "Pagos de acuerdo a tu capacidad"
+    },
+    {
+      "src": "/videos/crecimiento-03.mp4",
+      "poster": "/videos/crecimiento-03.jpg",
+      "caption": "Tu asesor, siempre a la misma hora"
+    }
+  ]
+}

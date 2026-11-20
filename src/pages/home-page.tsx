@@ -2,7 +2,8 @@ import {
   HeroSection,
   TrustBarSection,
   BenefitsSection,
-  SimulatorSection,
+  // SimulatorSection, — retired by client request; kept for future reuse
+  GrowthSection,
   //AmountSelectorSection,
   StepsSection,
   // ServicesSection, — section commented out in the JSX below
@@ -20,7 +21,8 @@ export function HomePage() {
       <HeroSection />
       <TrustBarSection />
       <BenefitsSection />
-      <SimulatorSection />
+      {/* <SimulatorSection /> */}
+      <GrowthSection />
       {/* <AmountSelectorSection /> */}
       <StepsSection />
       {/* <ServicesSection /> */}

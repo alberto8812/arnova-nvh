@@ -1,26 +1,26 @@
 [
   {
     "n": "01",
-    "ic": "dollar-sign",
-    "t": "Créditos en menos de 1 hora",
+    "ic": "clock",
+    "t": "Atención inmediata",
     "d": ""
   },
   {
     "n": "02",
     "ic": "briefcase",
-    "t": "Pagos de acuerdo a tu necesidad",
+    "t": "Asesoría profesional y personalizada en tu negocio",
     "d": ""
   },
   {
     "n": "03",
-    "ic": "handshake",
-    "t": "Atención 100% humana",
+    "ic": "wallet",
+    "t": "Pagos de acuerdo a tu capacidad financiera",
     "d": ""
   },
   {
     "n": "04",
-    "ic": "users",
-    "t": "Pagas de lunes a viernes",
+    "ic": "handshake",
+    "t": "Cuenta con la visita de tu asesor siempre a la misma hora",
     "d": ""
   }
 ]

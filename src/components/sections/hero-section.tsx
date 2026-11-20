@@ -62,20 +62,23 @@ export function HeroSection() {
           inside the sitewide 1280px column like every other section. */}
       <div className="relative w-full flex flex-col px-5 sm:px-8 md:px-12 pt-24 pb-8 md:pt-24 md:pb-[104px] max-w-[640px]">
         {/* Beat 1 — eyebrow (reserves its space now, reveals at 4s) */}
+        {hero.eyebrow && (
         <motion.div {...beat(0.7)}>
           <div className="pl-1.5 sm:pl-0 font-sans font-bold text-xs font-medium tracking-[.14em] uppercase flex items-center gap-2 text-on-brand">
             <span className="w-[22px] h-px bg-white" />
             {hero.eyebrow}
           </div>
         </motion.div>
+        )}
 
-        {/* Beat 1 — headline (immediate) */}
+        {/* Beat 1 — headline (immediate); skipped when the country has none */}
+        {(hero.headline || hero.headlineItalic) && (
         <motion.h1
           {...beat(0)}
           className="pl-1.5 sm:pl-0 font-sans font-bold text-on-brand"
           style={{
-            fontSize: "clamp(30px, 8vw, 56px)",
-            lineHeight: 1.04,
+            fontSize: "clamp(26px, 6vw, 38px)",
+            lineHeight: 1.1,
             letterSpacing: "-0.03em",
             textWrap: "balance",
             margin: "22px 0 0",
@@ -86,6 +89,7 @@ export function HeroSection() {
             {hero.headlineItalic}
           </span>
         </motion.h1>
+        )}
 
         {/* Beat 3 — subline + CTA group: pinned to the bottom of the hero on
             mobile (mt-auto), where it sat naturally in the flow before */}
@@ -97,7 +101,8 @@ export function HeroSection() {
               fontSize: "clamp(15px, 4vw, 21px)",
               lineHeight: 1.5,
               maxWidth: "480px",
-              margin: "24px 0 0",
+              // Tight gap: the subline continues the headline's sentence.
+              margin: "8px 0 0",
               textWrap: "pretty",
             }}
           >

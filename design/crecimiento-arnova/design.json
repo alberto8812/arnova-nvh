@@ -1,0 +1,9 @@
+{
+  "title": "Sección de crecimiento (reemplazo del simulador)",
+  "brief": "Reemplazar el simulador del home (SV y GT) por el mensaje: 'Tus ventas mantienen el negocio, con un crédito bien manejado creces, pero con Arnova aceleras tu crecimiento de forma cómoda.' con imagen (a definir con Mafe) y algo animado/moderno para que la sección no se vea muerta.",
+  "artboards": [
+    { "file": "01-escalera.html", "title": "Escalera de crecimiento", "tradeoff": "Cuenta la frase como 3 etapas con línea de crecimiento animada; muy clara y sin depender de la foto, pero ocupa más alto y repite el patrón de cards de Beneficios", "width": 1440, "height": 760 },
+    { "file": "02-split-imagen.html", "title": "Split con foto y datos flotantes", "tradeoff": "La más humana y moderna; depende de que Mafe entregue una buena foto y los chips repiten datos del TrustBar", "width": 1440, "height": 720 },
+    { "file": "03-banda-flecha.html", "title": "Banda oscura con la flecha Arnova", "tradeoff": "Máximo impacto de marca y corta el ritmo claro de la página; sin foto (o foto de fondo), pero el texto grande en oscuro es menos escaneable", "width": 1440, "height": 640 }
+  ]
+}

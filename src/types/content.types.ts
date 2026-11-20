@@ -269,8 +269,23 @@ export interface ContactContent {
 // and `src/data/gt/index.ts` validate against this with `satisfies
 // ContentBundle`, so structural drift between the two country folders
 // fails `tsc`, not runtime.
+// Growth section — replaces the simulator on the home page. `lines` are the
+// three beats of one sentence (they render as a single h2); `highlight` is the
+// substring of the last line painted with the arrow gradient. `videos` rotate
+// with a crossfade; `poster` is the still shown before play, on reduced
+// motion, or when a video fails to load.
+export interface GrowthSectionContent {
+  eyebrow: string
+  lines: string[]
+  highlight: string
+  mediaLabel: string
+  // `caption` is the short fact shown over its clip, swapped with it.
+  videos: { src: string; poster: string; caption: string }[]
+}
+
 export interface ContentBundle {
   hero: HeroContent
+  growthSection: GrowthSectionContent
   stats: Stat[]
   benefits: Benefit[]
   simulator: SimulatorConfig
