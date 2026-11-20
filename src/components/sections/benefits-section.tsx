@@ -17,11 +17,8 @@ export function BenefitsSection() {
           whileInView="visible"
           viewport={VP}
         >
-          <div className="font-mono text-xs tracking-[.14em] uppercase text-neutral-400">
-            ¿Por qué elegir a Arnova?
-          </div>
           <h2
-            className="font-sans font-semibold mt-[14px] text-brand-900"
+            className="font-sans font-semibold text-brand-900"
             style={{
               fontSize: "clamp(26px, 6vw, 34px)",
               letterSpacing: "-0.02em",
@@ -30,9 +27,7 @@ export function BenefitsSection() {
               textWrap: "balance",
             }}
           >
-            Beneficios de solicitar{" "}
-            <span className="font-serif italic font-medium">tu crédito </span>{" "}
-            en Arnova.
+            Beneficios de solicitar tu crédito en Arnova
           </h2>
         </motion.div>
 
