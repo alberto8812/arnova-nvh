@@ -23,3 +23,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L3: "me parece buen los video veasmo como es un loop create dos o tres lo que creas correspondiente esto para variar y no siempre se vea el mismo y que tenga cambios con transiciones suves y moderna" + autorizó editar fondius-videos.
 - L4: Diseño elegido: design/crecimiento-arnova/02-split-imagen.html (01 y 03 son alternativas).
 - L5: Loops renderizados y revisados por stills; build del sitio OK.
+- L6: Commit 7049a3e (T2 + diseño + videos, 498 líneas, mayormente artboards HTML de design/). Assess RDD: riesgo medio, review no requerida. Pendiente: revisión visual en navegador.
+- L7: "YA FUNCIONA ... a que hace referencia el tercer video" -> reemplazado loop 3 (pasos) por arnova-loop-asesor (visita del asesor), 772 KB; public/videos/crecimiento-03.*
