@@ -27,3 +27,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L7: "YA FUNCIONA ... a que hace referencia el tercer video" -> reemplazado loop 3 (pasos) por arnova-loop-asesor (visita del asesor), 772 KB; public/videos/crecimiento-03.*
 - L8: "LA CAR 4.9/5 PODEMOS CAMBIARLA POR OTRO DATA MAS RELABANTE ... OCUPA MUCHO ESPACIO" -> tarjetas reemplazadas por una píldora translúcida que cambia con cada video (caption por video).
 - L9: "AHORA QUIEREN CAMBIAR EL MENSAJE NUEVAMENTE POR ESTE Tus ventas mantienen tu negocio, un crédito bien manejado te permite crecer, pero con Arnova aceleras ese crecimiento de forma cómoda y segura. REALIZA EL CAMBIO DE LA MISMA SECCION" -> S2 actualizado (SV y GT).
+- L10: Rebalanceo pedido ("LA ANIMACION O VIDEO ABSORVE EL TEXTO"): texto 1.25fr 26-40px legible (AA), video 4:5 sin recorte max 440px, pasos sincronizados con los videos (clicables) en lugar de la píldora.

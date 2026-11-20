@@ -36,11 +36,13 @@ function LoopVideo({
   poster,
   onEnded,
   onFail,
+  onProgress,
 }: {
   src: string;
   poster: string;
   onEnded: () => void;
   onFail: () => void;
+  onProgress: (ratio: number) => void;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -69,86 +71,41 @@ function LoopVideo({
       preload="auto"
       onEnded={onEnded}
       onError={onFail}
+      onTimeUpdate={(e) => {
+        const v = e.currentTarget;
+        if (v.duration) onProgress(v.currentTime / v.duration);
+      }}
       className="w-full h-full object-cover"
     />
   );
 }
 
-// Rotates the loops with a crossfade: each clip plays once, then the next one
-// fades in. Videos only load/play while the section is on screen; with reduced
-// motion (or a failed load) the poster stays still.
-function GrowthMedia() {
+export function GrowthSection() {
   const { growthSection } = useContent();
-  const { videos, mediaLabel } = growthSection;
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.25 });
+  const { eyebrow, lines, highlight, videos, mediaLabel } = growthSection;
+  const last = lines.length - 1;
+
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(mediaRef, { amount: 0.25 });
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [failed, setFailed] = useState(false);
   const current = videos[index];
   const animate = inView && !reduce && !failed;
 
-  return (
-    <div
-      ref={ref}
-      className="absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900"
-    >
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={index}
-          role="img"
-          aria-label={mediaLabel}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          exit={{ opacity: 0, filter: "blur(6px)" }}
-          transition={{ duration: 1.1, ease: EASE }}
-        >
-          {animate ? (
-            <LoopVideo
-              src={current.src}
-              poster={current.poster}
-              onEnded={() => setIndex((i) => (i + 1) % videos.length)}
-              onFail={() => setFailed(true)}
-            />
-          ) : (
-            <img
-              src={current.poster}
-              alt=""
-              loading="lazy"
-              className="w-full h-full object-cover"
-              onError={(e) => (e.currentTarget.style.visibility = "hidden")}
-            />
-          )}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Caption pill — small translucent glass so the animation stays the
-          focus; swaps with its clip. */}
-      <div aria-live="polite" className="absolute left-4 bottom-4 sm:left-5 sm:bottom-5">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={index}
-            className="flex items-center gap-2 rounded-full bg-brand-900/55 backdrop-blur-md border border-white/15 px-3.5 py-2 text-[13px] sm:text-sm font-semibold text-on-brand"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.5, ease: EASE }}
-          >
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-accent-700 to-action-yellow" />
-            {current.caption}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}
-
-export function GrowthSection() {
-  const { growthSection } = useContent();
-  const { eyebrow, lines, highlight } = growthSection;
-  const last = lines.length - 1;
-  const tone = ["text-brand-300", "text-brand-600", "text-brand-900"];
+  // The outgoing clip keeps playing during the crossfade; only the clip that
+  // matches the current index may drive the step progress bar.
+  const indexRef = useRef(index);
+  indexRef.current = index;
+  const goTo = (i: number) => {
+    setProgress(0);
+    setIndex(i);
+  };
+  const next = () => goTo((indexRef.current + 1) % videos.length);
+  const progressFor = (i: number) => (ratio: number) => {
+    if (indexRef.current === i) setProgress(ratio);
+  };
 
   return (
     <section
@@ -156,28 +113,30 @@ export function GrowthSection() {
       className="bg-neutral-50 py-14 md:py-[76px] overflow-hidden"
     >
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.9fr] gap-10 md:gap-16 items-center">
+          {/* Message column — carries the section; the media supports it. */}
           <div>
             <div className="flex items-center gap-2 text-xs font-bold tracking-[.14em] uppercase text-accent-500">
               <span className="w-[22px] h-0.5 bg-gradient-to-r from-accent-700 to-accent-500" />
               {eyebrow}
             </div>
             <h2
-              className="font-sans font-semibold mt-[18px] mb-0"
+              className="font-sans font-semibold mt-[18px] mb-0 text-brand-900"
               style={{
-                fontSize: "clamp(22px, 3vw, 32px)",
-                lineHeight: 1.25,
+                fontSize: "clamp(26px, 3.4vw, 40px)",
+                lineHeight: 1.2,
                 letterSpacing: "-0.02em",
+                textWrap: "balance",
               }}
             >
               {lines.map((line, i) => (
                 <motion.span
                   key={i}
-                  className={`block ${tone[Math.min(i, tone.length - 1)]}`}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className={i === last ? "text-brand-900" : "text-brand-700"}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={VP}
-                  transition={{ duration: 0.7, ease: EASE, delay: i * 0.5 }}
+                  transition={{ duration: 0.7, ease: EASE, delay: i * 0.4 }}
                 >
                   {i === last ? (
                     <Highlighted text={line} highlight={highlight} />
@@ -187,10 +146,81 @@ export function GrowthSection() {
                 </motion.span>
               ))}
             </h2>
+
+            {/* Steps synced with the clips; each one jumps to its clip. */}
+            <div
+              className="mt-9 grid grid-cols-3 gap-3 sm:gap-5 max-w-[560px]"
+              role="tablist"
+              aria-label={mediaLabel}
+            >
+              {videos.map((v, i) => {
+                const active = i === index;
+                const fill = active ? (animate ? progress : 1) : i < index ? 1 : 0;
+                return (
+                  <button
+                    key={v.src}
+                    type="button"
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => goTo(i)}
+                    className="group text-left rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-600 cursor-pointer"
+                  >
+                    <span className="block h-1 rounded-full bg-neutral-200 overflow-hidden">
+                      <span
+                        className="block h-full rounded-full bg-gradient-to-r from-accent-700 to-accent-500 transition-[width] duration-300 ease-linear"
+                        style={{ width: `${fill * 100}%` }}
+                      />
+                    </span>
+                    <span
+                      className={`block mt-3 text-[13px] sm:text-[15px] leading-snug font-semibold transition-colors ${
+                        active
+                          ? "text-brand-900"
+                          : "text-neutral-500 group-hover:text-brand-700"
+                      }`}
+                    >
+                      {v.caption}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="relative aspect-[5/4]">
-            <GrowthMedia />
+          {/* Media column — 4:5 like the clips, so nothing is cropped. */}
+          <div
+            ref={mediaRef}
+            className="relative w-full max-w-[360px] md:max-w-[440px] mx-auto md:mr-0 aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900 shadow-brand-lg"
+          >
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={index}
+                role="img"
+                aria-label={`${mediaLabel}: ${current.caption}`}
+                className="absolute inset-0"
+                initial={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, filter: "blur(6px)" }}
+                transition={{ duration: 1.1, ease: EASE }}
+              >
+                {animate ? (
+                  <LoopVideo
+                    src={current.src}
+                    poster={current.poster}
+                    onEnded={next}
+                    onFail={() => setFailed(true)}
+                    onProgress={progressFor(index)}
+                  />
+                ) : (
+                  <img
+                    src={current.poster}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                    onError={(e) => (e.currentTarget.style.visibility = "hidden")}
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </Container>
