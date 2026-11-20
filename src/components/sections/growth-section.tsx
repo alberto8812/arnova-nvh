@@ -10,6 +10,8 @@ import { Container } from "@/components/ui";
 import { EASE } from "@/components/motion";
 
 const VP = { once: true, amount: 0.3 } as const;
+// Loops are 10 s; advance anyway after this if `ended` never arrives.
+const CLIP_MAX_MS = 12_000;
 
 // Paints `highlight` (when present in `text`) with the Arnova arrow gradient.
 function Highlighted({ text, highlight }: { text: string; highlight: string }) {
@@ -26,6 +28,52 @@ function Highlighted({ text, highlight }: { text: string; highlight: string }) {
   );
 }
 
+// Each clip starts itself on mount through its own ref: during the crossfade
+// the outgoing and incoming <video> coexist, so a shared DOM lookup would
+// pick the outgoing one and leave the new clip frozen on its poster.
+function LoopVideo({
+  src,
+  poster,
+  onEnded,
+  onFail,
+}: {
+  src: string;
+  poster: string;
+  onEnded: () => void;
+  onFail: () => void;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().catch((err: DOMException) => {
+      // AbortError is a normal interruption (crossfade, re-render); only a
+      // real autoplay block falls back to the still poster.
+      if (err?.name === "NotAllowedError") onFail();
+    });
+    // Safety net: if `ended` never fires (stalled decode, background tab),
+    // still advance so the rotation can't freeze on one clip.
+    const guard = window.setTimeout(onEnded, CLIP_MAX_MS);
+    return () => window.clearTimeout(guard);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once per mounted clip
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      muted
+      playsInline
+      autoPlay
+      preload="auto"
+      onEnded={onEnded}
+      onError={onFail}
+      className="w-full h-full object-cover"
+    />
+  );
+}
+
 // Rotates the loops with a crossfade: each clip plays once, then the next one
 // fades in. Videos only load/play while the section is on screen; with reduced
 // motion (or a failed load) the poster stays still.
@@ -39,12 +87,6 @@ function GrowthMedia() {
   const [failed, setFailed] = useState(false);
   const current = videos[index];
   const animate = inView && !reduce && !failed;
-
-  useEffect(() => {
-    if (!animate) return;
-    const video = ref.current?.querySelector("video");
-    video?.play().catch(() => setFailed(true));
-  }, [animate, index]);
 
   return (
     <div
@@ -63,15 +105,11 @@ function GrowthMedia() {
           transition={{ duration: 1.1, ease: EASE }}
         >
           {animate ? (
-            <video
+            <LoopVideo
               src={current.src}
               poster={current.poster}
-              muted
-              playsInline
-              preload="metadata"
               onEnded={() => setIndex((i) => (i + 1) % videos.length)}
-              onError={() => setFailed(true)}
-              className="w-full h-full object-cover"
+              onFail={() => setFailed(true)}
             />
           ) : (
             <img
