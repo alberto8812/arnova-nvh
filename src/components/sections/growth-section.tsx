@@ -91,13 +91,13 @@ function GrowthMedia() {
   return (
     <div
       ref={ref}
-      role="img"
-      aria-label={mediaLabel}
-      className="absolute inset-0 sm:left-10 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900"
+      className="absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900"
     >
       <AnimatePresence initial={false}>
         <motion.div
           key={index}
+          role="img"
+          aria-label={mediaLabel}
           className="absolute inset-0"
           initial={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -122,13 +122,31 @@ function GrowthMedia() {
           )}
         </motion.div>
       </AnimatePresence>
+
+      {/* Caption pill — small translucent glass so the animation stays the
+          focus; swaps with its clip. */}
+      <div aria-live="polite" className="absolute left-4 bottom-4 sm:left-5 sm:bottom-5">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={index}
+            className="flex items-center gap-2 rounded-full bg-brand-900/55 backdrop-blur-md border border-white/15 px-3.5 py-2 text-[13px] sm:text-sm font-semibold text-on-brand"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.5, ease: EASE }}
+          >
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-accent-700 to-action-yellow" />
+            {current.caption}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
 
 export function GrowthSection() {
   const { growthSection } = useContent();
-  const { eyebrow, lines, highlight, chips } = growthSection;
+  const { eyebrow, lines, highlight } = growthSection;
   const last = lines.length - 1;
   const tone = ["text-brand-300", "text-brand-600", "text-brand-900"];
 
@@ -173,21 +191,6 @@ export function GrowthSection() {
 
           <div className="relative aspect-[5/4]">
             <GrowthMedia />
-            {chips.map((c, i) => (
-              <motion.div
-                key={c.l}
-                className={`absolute bg-white rounded-2xl px-[18px] py-[14px] shadow-brand-xl ${
-                  i === 0 ? "left-2 sm:left-0 top-[10%]" : "right-2 sm:-right-3 bottom-[8%]"
-                }`}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={VP}
-                transition={{ duration: 0.7, ease: EASE, delay: 0.8 + i * 0.3 }}
-              >
-                <b className="block text-brand-900 text-xl">{c.v}</b>
-                <small className="text-neutral-500 text-[13px]">{c.l}</small>
-              </motion.div>
-            ))}
           </div>
         </div>
       </Container>

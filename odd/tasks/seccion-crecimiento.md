@@ -25,3 +25,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L5: Loops renderizados y revisados por stills; build del sitio OK.
 - L6: Commit 7049a3e (T2 + diseño + videos, 498 líneas, mayormente artboards HTML de design/). Assess RDD: riesgo medio, review no requerida. Pendiente: revisión visual en navegador.
 - L7: "YA FUNCIONA ... a que hace referencia el tercer video" -> reemplazado loop 3 (pasos) por arnova-loop-asesor (visita del asesor), 772 KB; public/videos/crecimiento-03.*
+- L8: "LA CAR 4.9/5 PODEMOS CAMBIARLA POR OTRO DATA MAS RELABANTE ... OCUPA MUCHO ESPACIO" -> tarjetas reemplazadas por una píldora translúcida que cambia con cada video (caption por video).
