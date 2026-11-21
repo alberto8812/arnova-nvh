@@ -184,7 +184,7 @@ export function GrowthSection() {
               transition={{ duration: 0.7, ease: EASE }}
             >
               <div className="flex items-center gap-2.5 mb-[18px] text-[13px] font-bold tracking-[.14em] uppercase text-brand-300">
-                <span className="w-6 h-[3px] rounded-sm bg-gradient-to-r from-accent-700 to-accent-500" />
+                {/* <span className="w-6 h-[3px] rounded-sm bg-gradient-to-r from-accent-700 to-accent-500" /> */}
                 {eyebrow}
               </div>
               <h2
