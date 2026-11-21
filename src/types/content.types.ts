@@ -61,7 +61,10 @@ export interface Step {
   n: string
   t: string
   d: string
-  // Optional call to action rendered after the description (e.g. WhatsApp).
+  // Small lead-in shown above the title.
+  lead?: string
+  // Help call to action (e.g. WhatsApp). The step that carries it feeds the
+  // section's advice block with its `d` text.
   link?: { label: string; href: string }
 }
 

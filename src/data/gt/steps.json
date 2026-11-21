@@ -10,8 +10,9 @@
   },
   {
     "n": "02",
-    "t": "Ya identificadas tus necesidades…",
-    "d": "Evaluamos juntos tu capacidad financiera."
+    "lead": "Ya identificadas tus necesidades",
+    "t": "Evaluamos juntos tu capacidad financiera",
+    "d": ""
   },
   {
     "n": "03",
