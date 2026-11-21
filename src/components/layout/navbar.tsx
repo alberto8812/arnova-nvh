@@ -95,9 +95,10 @@ export function Navbar() {
 
         {/* Nav links — desktop. Switches at xl (1280px), matching the
             Container's own max-width: below that, the container never has
-            enough room (max 1184px usable) for 6 labels + CTA on one line
+            enough room for the labels + País + CTA on one line (measured: no
+            overlap from 1100px; 14" laptops at 150% scaling report ~1263px)
             without wrapping into the CTA. */}
-        <nav className="hidden xl:flex gap-6 items-center">
+        <nav className="hidden min-[1100px]:flex gap-4 xl:gap-6 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -131,7 +132,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="xl:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
+            className="min-[1100px]:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
             <svg
               width="22"
@@ -161,7 +162,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.24, ease: EASE }}
-            className="xl:hidden absolute left-0 right-0 top-full bg-brand-900 border-b border-brand-800"
+            className="min-[1100px]:hidden absolute left-0 right-0 top-full bg-brand-900 border-b border-brand-800"
           >
             <div className="flex flex-col px-5 py-3">
               {navLinks.map((link) => (
