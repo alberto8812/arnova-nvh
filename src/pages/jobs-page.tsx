@@ -16,7 +16,7 @@ export function JobsPage() {
         <Container>
           <CareersHeroSection />
           {/* <CareersWhySolviaSection /> */}
-          <CareersExpectationsSection />
+          {/* <CareersExpectationsSection /> */}
           <CareersJobsSection />
         </Container>
       </section>
