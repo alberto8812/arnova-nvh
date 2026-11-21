@@ -1,0 +1,28 @@
+{
+  "title": "Selector de país",
+  "brief": "Botón «País» en la navbar de Arnova que muestre las dos opciones (SV El Salvador / GT Guatemala) y modal con el texto exacto «Selecciona el país de tu ubicación para conocer más información.», manteniendo el título «¿Desde qué país nos visitas?» y las tarjetas SV/GT. Escritorio, móvil 414 y estados cerrado/abierto.",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    {
+      "file": "01-menu-desplegable.html",
+      "title": "Menú desplegable",
+      "tradeoff": "Cambia de país en 2 clics sin tapar la página y la barra dice «País · SV» con chevrón; las dos opciones aparecen al abrir, no todo el tiempo. Añade un componente nuevo (panel + teclado/Escape) y el modal queda solo para la primera visita.",
+      "width": 1440,
+      "height": 2560
+    },
+    {
+      "file": "02-selector-segmentado.html",
+      "title": "Selector segmentado",
+      "tradeoff": "Las dos opciones siempre visibles y un solo clic para cambiar: lo más directo en escritorio. Ocupa ~175 px extra en la barra y en móvil se esconde dentro del menú hamburguesa (2 toques); el modal queda solo para la primera visita.",
+      "width": 1440,
+      "height": 2580
+    },
+    {
+      "file": "03-boton-abre-modal.html",
+      "title": "Botón que abre el modal",
+      "tradeoff": "Cambio mínimo y de menor riesgo: el mismo modal, solo con la etiqueta «País» (globo + código) y el texto nuevo. Pero las dos opciones no se ven en la barra y cambiar cuesta 2 interacciones sobre un overlay que tapa la página.",
+      "width": 1440,
+      "height": 2870
+    }
+  ]
+}

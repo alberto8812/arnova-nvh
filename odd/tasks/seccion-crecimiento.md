@@ -24,6 +24,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
     4.1 Mensaje si se elige No: Actualmente sólo contamos con productos financieros para personas que posean un negocio,  en cuanto tengamos un producto adecuado para ti, nos pondremos en contacto. Hasta pronto! 🤩🙏
   5 ¿A qué se dedica tu negocio?
   Las respuestas se van a enviar a los números de contacto de cada país" — números: SV 50370594072, GT 50252993553 (los del CTA del Hero); contact.waNumber del footer no se toca.
+- S13: (L36) "Botón de País, que se llame País y muestre las dos opciones de navegación" + "El texto queda: Selecciona el país de tu ubicación para conocer más información." + "muéstrame diseños de cómo se vería" — solo propuestas.
 
 ## Tasks
 
@@ -41,6 +42,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T13 (S11) Propuestas de rediseño de Misión y Visión respetando el sistema de la página e iconografía existente: design/mision-vision/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T14 (S11) Implementar artboard elegido design/mision-vision/03-editorial-en-lista.html (01 y 02 son alternativas). Ruta: inline. HECHO; commit: ver Log L30.
 - T15 (S12) Chatbot Nova: nuevo flujo de preguntas con rama No, envío por WhatsApp al número de cada país. Ruta: worker. HECHO; commit: ver Log L32.
+- T16 (S13) Propuestas de diseño del botón País y modal de país: design/selector-pais/ (3 artboards, solo propuestas). Ruta: worker. Commit: pendiente.
 
 ## Log
 
@@ -79,3 +81,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L33: "EL CHAT SE BLOQUEA CUANDO DIGO NO ... IMPLEMENTA UN BOTÓN DE EMPEZAR DE NUEVO" -> botón "Empezar de nuevo" (contact.restartLabel) en lugar del input deshabilitado; reinicia al estado inicial. Verificado por CDP: rama No muestra botón; clic reinicia a "Nombre y apellido" con input habilitado y avanza a la pregunta 2.
 - L34: "Se mantiene la información del pie de página y en sección Legal solo se va a mostrar Términos y condiciones. Tomar texto de términos y condiciones del siguiente enlace: https://www.arnovagroup.com/términos-y-condiciones" -> footer: un solo enlace; legal.json SV/GT: un documento terminos-y-condiciones con el texto del sitio. El texto de la web termina en "puedes contactarnos al correo" sin dirección (enlace no extraíble); completado con contacto@arnovagroup.com (email de contact.json) — pendiente confirmación del cliente. Verificado CDP: 1 enlace, modal con texto y correo.
 - L35: "EN TRABAJE CON NOSOTROS ACTUALIZAR [texto] ... SOLO ESTA SECCIÓN Trabaja con Nosotros" -> hero de /careers: título "Trabaja con nosotros", 4 párrafos verbatim y "Envía tu hoja de vida a" + mailto recursoshumanos@arnovagroup.com (jobs-page.json SV/GT: heroParagraphs, heroEmail). Resto de la página sin cambios. Verificado captura 414.
+- L36: [captura del modal de país] "Botón de País, que se llame País y muestre las dos opciones de navegación ... El texto queda: Selecciona el país de tu ubicación para conocer más información." + "PIDEN ESTO PERO MUÉSTRAME DISEÑOS DE CÓMO SE VERÍA"
+- L37: T16 propuestas listas en design/selector-pais/ (01-menu-desplegable, 02-selector-segmentado, 03-boton-abre-modal); pendiente elección. Hallazgo: los emoji de bandera no se ven en Windows (por eso "sv SV").
