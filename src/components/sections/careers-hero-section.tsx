@@ -15,7 +15,7 @@ export function CareersHeroSection() {
         whileInView="visible"
         viewport={VP}
       >
-        <Eyebrow>{jobsPage.heroEyebrow}</Eyebrow>
+        {jobsPage.heroEyebrow && <Eyebrow>{jobsPage.heroEyebrow}</Eyebrow>}
         <h1
           className="font-sans font-semibold mt-[14px] text-brand-900"
           style={{
@@ -26,15 +26,30 @@ export function CareersHeroSection() {
             margin: "14px 0 18px",
           }}
         >
-          {jobsPage.heroHeadline}{" "}
-          <span className="font-serif italic font-medium">{jobsPage.heroHeadlineItalic}</span>
+          {jobsPage.heroHeadline}
+          {jobsPage.heroHeadlineItalic && (
+            <>
+              {" "}
+              <span className="font-serif italic font-medium">{jobsPage.heroHeadlineItalic}</span>
+            </>
+          )}
         </h1>
-        <p
-          className="text-base leading-[1.65] text-neutral-600"
-          style={{ maxWidth: "420px" }}
-        >
-          {jobsPage.heroParagraph}
-        </p>
+        <div className="flex flex-col gap-3 text-base leading-[1.65] text-neutral-600 max-w-[520px]">
+          {jobsPage.heroParagraphs.map((p) => (
+            <p key={p} className="m-0">
+              {p}
+            </p>
+          ))}
+          <p className="m-0 mt-1 text-brand-900 font-semibold">
+            {jobsPage.heroEmail.label}{" "}
+            <a
+              href={`mailto:${jobsPage.heroEmail.address}`}
+              className="text-brand-700 underline underline-offset-4 decoration-accent-500 hover:text-brand-900 break-words focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 rounded-sm"
+            >
+              {jobsPage.heroEmail.address}
+            </a>
+          </p>
+        </div>
       </motion.div>
 
       <motion.div

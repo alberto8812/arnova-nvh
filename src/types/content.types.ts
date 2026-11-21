@@ -152,7 +152,9 @@ export interface JobsPageContent {
   heroEyebrow: string
   heroHeadline: string
   heroHeadlineItalic: string
-  heroParagraph: string
+  heroParagraphs: string[]
+  // Closing line of the hero: `label` followed by a mailto link to `address`.
+  heroEmail: { label: string; address: string }
   heroImageAlt: string
 }
 
