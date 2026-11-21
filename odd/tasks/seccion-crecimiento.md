@@ -14,6 +14,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - S8: (L15) "explorar cual es el mejor diseño para esta sección solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" — solo propuestas (sin tocar src/) para la sección "Pasos para solicitar un crédito" con el texto de L14.
 - S9: (L18) "en la sección de cobertura solo quieren esta información: Nuestra cobertura / Arnova ofrece atención personalizada a nivel nacional." + "implementemos un buen diseño y dame opciones para que no quede tan básico" — SV y GT; se retiran ciudades y requisitos.
 - S10: (L22) "Se retiran las tarjetas y solo se deja el texto: Para solicitar tu asesoría y crédito solo necesitas tener negocio propio" + "implementemos un diseño porque es un solo texto que reemplazará varios componentes" — SV y GT.
+- S11: (L28) "muéstrame diseño sobre este ya que siento que no respeta el diseño de la página ni la iconografía previamente establecida" — Misión y Visión con el texto de L27, usando solo patrones e íconos existentes del sitio.
 
 ## Tasks
 
@@ -28,6 +29,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T10 (S9) Implementar artboard elegido design/cobertura/01-mapa-de-presencia.html (02 y 03 son alternativas): CoverageSection solo título + frase, mapa de puntos por país (SV/GT), se retiran ciudades y requisitos. Ruta: worker (context backstop). HECHO; commit: ver Log L21.
 - T11 (S10) Propuestas de diseño para Requisitos (una sola frase): design/requisitos/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T12 (S10) Implementar artboard elegido design/requisitos/02-franja-de-confianza.html (01 y 03 son alternativas): franja accent-100 después de Cobertura. Ruta: worker. HECHO; commit: ver Log L25.
+- T13 (S11) Propuestas de rediseño de Misión y Visión respetando el sistema de la página e iconografía existente: design/mision-vision/ (3 artboards). Ruta: worker. Commit: pendiente.
 
 ## Log
 
@@ -58,3 +60,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L25: T12 implementado: RequirementStrip (requirement-strip.tsx) tras CoverageSection; coverage.requirementNote SV/GT. Verificado tsc/oxlint y capturas 1440/414.
 - L26: "en esta seccion colocar Nuestro propósito / Transformamos vidas, impulsando el crecimiento económico de nuestros clientes. y estos valores [Honestidad, Confianza, Responsabilidad, Inclusión] sin cambiar el diseño actual de la página simplemente reemplazar el contenido" -> about.json SV/GT. Verificado captura 1440.
 - L27: "incluir una nueva sección de misión y visión después del propósito ... respetar el diseño de la página y cómo se carga el contenido ... evalúa cuál es el mejor componente" -> MissionVisionSection (tarjetas gemelas, sección clara) + mission-vision.json SV/GT en ContentBundle. Verificado tsc/oxlint y capturas 1440/414.
+- L28: "mustrase diseno [captura Misión/Visión actual], sobre este ya que siento que no respeta el diseno de la pagina ni la iconografica previamente establecida"
+- L29: T13 propuestas listas en design/mision-vision/ (01-como-beneficios, 02-continuacion-del-proposito, 03-editorial-en-lista); pendiente elección.

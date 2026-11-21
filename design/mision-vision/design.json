@@ -1,0 +1,28 @@
+{
+  "title": "Misión y Visión",
+  "brief": "Rediseño de Misión y Visión (L27/L28, S11) porque la versión actual no respeta el sistema de diseño de la página ni su iconografía establecida (glifos de diana/ojo inventados en círculos con degradado, tarjetas blancas con línea superior y títulos de 36px que no existen en el sitio). Solo patrones e íconos reales del sitio (benefits-section, about-section, app-icon / illustrative-icon / icon). Copy literal y único: Misión — 'Contribuir al crecimiento económico de nuestros clientes, mediante créditos ágiles y seguros.' Visión — 'Convertirnos en la mejor alternativa financiera para que los comerciantes alcancen sus metas y hagan crecer sus negocios.' Los SVG son los paths reales copiados del código del proyecto; los números y los íconos son decorativos (aria-hidden).",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    {
+      "file": "01-como-beneficios.html",
+      "title": "Como Beneficios",
+      "tradeoff": "Sección clara con dos tarjetas de anatomía idéntica a las de Beneficios: .arnova-card (borde neutral-200, fondo neutral-50, radio 10px, padding 32/28, hover con elevación), ícono ilustrativo de 50px arriba a la izquierda, número 01/02 en serif cursiva brand-300 36px arriba a la derecha, título semibold brand-900 de 24px y texto de 16px neutral-600. Íconos del set ilustrativo del cliente: Misión = wallet (naranja; el crédito es el producto y 'créditos ágiles y seguros' es lo que Misión promete, sin repetir clock/handshake de Beneficios), Visión = clipboard-check (navy; 'alcancen sus metas' = lista de metas cumplidas, y no choca con map-pin de Cobertura ni con briefcase de Beneficios). Es la opción más segura para el sistema: el usuario ya aprendió ese patrón. A cambio, se lee como 'otros dos beneficios' y no marca la identidad corporativa de Misión/Visión; los números 01/02 sugieren orden o ranking que no existe, y brand-300 sobre neutral-50 tiene bajo contraste (es decorativo, igual que en Beneficios). En móvil las tarjetas se apilan (≤860px).",
+      "width": 1440,
+      "height": 470
+    },
+    {
+      "file": "02-continuacion-del-proposito.html",
+      "title": "Continuación del propósito",
+      "tradeoff": "Misión y Visión pasan a ser la fila de cierre de la banda navy 'Nuestro propósito' (se reproduce el tramo existente, marcado como contexto, para ver el encaje): dos tarjetas anchas con las mismas clases de las tarjetas de valores de about-section.tsx (rounded-lg, border on-brand/10, bg on-brand/[0.04], p-5, ícono monocromo brand-200 en caja de 46px con Icon size 32, h3 de 16px blanco, texto de 14px brand-200, grid gap-4) y separadas de los valores por un margen mayor para marcar el cambio de grupo. Íconos del set de línea (icon.tsx): Misión = graph-up (crecimiento económico, el verbo central de la misión), Visión = briefcase (comerciantes y negocios); se evitan shield, handshake, badge y users porque los valores de arriba ya los usan. Es la más coherente semánticamente (propósito → valores → misión/visión: una sola historia, sin sumar una banda más a la página) y la que menos añade al ritmo vertical. A cambio, comparte banda con cuatro valores y compite con ellos por atención, el texto queda a 14px en tarjetas de ~590px (líneas largas pero legibles), y no tiene identidad propia (no hay ancla ni título de sección). En móvil los valores van en 2 columnas y Misión/Visión en 1 columna.",
+      "width": 1440,
+      "height": 842
+    },
+    {
+      "file": "03-editorial-en-lista.html",
+      "title": "Editorial en lista",
+      "tradeoff": "Sección clara tipo lista de definición (dl), sin tarjetas: a la izquierda ícono ilustrativo de 50px + término a la escala de los títulos de sección del sitio (clamp 26–34px, semibold, brand-900, -0.02em) y a la derecha el texto a 18px neutral-600; filas separadas por filetes neutral-200 (arriba, entre filas y abajo). Íconos del set ilustrativo: Misión = shield-lock (navy; 'créditos ágiles y seguros', y es el mismo candado/escudo de la marca para seguridad), Visión = briefcase (navy; comerciantes y sus negocios). Ambos navy para que la lista se lea sobria y no compita con color. Es la más liviana y tipográfica: la misión y la visión se leen como declaraciones, con la mayor legibilidad del texto (18px, 34em) y sin repetir el patrón de tarjeta que ya usan Beneficios y Valores. A cambio, es la que menos 'se parece' a otros bloques del sitio (el sistema no tiene aún una lista editorial) y el título de sección va implícito en los dos términos, sin encabezado 'Misión y Visión' (no se añade copy). El briefcase reaparece con Beneficios y Cobertura. En móvil cada fila se apila (ícono + título, luego texto) con la misma retícula.",
+      "width": 1440,
+      "height": 542
+    }
+  ]
+}

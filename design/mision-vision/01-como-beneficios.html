@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misión y Visión — Como Beneficios</title>
+<!--
+  Dirección 01 · Como Beneficios.
+  Misma anatomía que las tarjetas de benefits-section.tsx: .arnova-card (borde neutral-200, fondo neutral-50, radio 10px, padding 32/28),
+  ícono arriba a la izquierda (50px, set ilustrativo del cliente), número en serif cursiva brand-300 36px arriba a la derecha,
+  título semibold brand-900 y texto neutral-600. Los SVG son los paths reales de illustrative-icon.tsx (viewBox 900, transform potrace).
+  Copy: solo Misión y Visión (L27). Los números 01/02 son decorativos (aria-hidden), igual que en Beneficios.
+  Íconos: Misión = wallet (créditos), Visión = clipboard-check (metas cumplidas).
+-->
+<style>
+:root{
+  --brand-300:#aebbd1;--brand-900:#233159;
+  --n-50:#f9fafb;--n-200:#e6eaef;--n-600:#535a65;
+  --shadow-lg:0 20px 40px -12px rgba(35,49,89,.12),0 2px 6px rgba(35,49,89,.05);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-600);-webkit-font-smoothing:antialiased}
+.ctx{display:grid;place-items:center;min-height:96px;padding:24px;background:var(--brand-900);color:#cbd3e1;font:600 13px/1.4 var(--font);letter-spacing:.04em;text-transform:uppercase;text-align:center}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+section.mv{background:var(--n-50);padding:76px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid var(--n-200);background:var(--n-50);border-radius:10px;padding:32px 28px;transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--brand-300)}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.ico{display:flex;align-items:center;justify-content:center;width:46px;height:46px}
+.ico svg{flex:none}
+.num{font-family:var(--serif);font-style:italic;color:var(--brand-300);font-size:36px;line-height:.8}
+h2{font-weight:600;color:var(--brand-900);font-size:24px;letter-spacing:-.01em;margin:20px 0 8px}
+p{font-size:16px;line-height:1.55;color:var(--n-600);text-wrap:pretty}
+@media (max-width:860px){
+  .container{padding:0 20px}
+  section.mv{padding:56px 0}
+  .grid{grid-template-columns:1fr}
+  h2{font-size:22px}
+  p{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="ctx" aria-hidden="true" data-artboard-only>Banda «Nuestro propósito» · contexto</div>
+
+<section class="mv" id="mision-vision" aria-label="Misión y Visión">
+  <div class="container">
+    <div class="grid">
+      <article class="card">
+        <div class="top">
+          <div class="ico"><svg width="50" height="50" viewBox="0 0 900 900" aria-hidden="true" focusable="false"><g transform="translate(0,900) scale(0.5,-0.5)" fill="#f37021" stroke="none"><path d="M1205 1740 c-8 -5 -342 -252 -678 -502 -39 -29 -61 -44 -66 -45 -3 0 -49 -1 -102 -2 -83 0 -98 -1 -108 -4 -32 -9 -56 -27 -68 -53 -14 -30 -13 3 -13 -513 l1 -466 6 -17 c14 -40 45 -67 85 -77 20 -5 1123 -5 1141 0 42 11 76 44 85 84 7 27 4 24 24 33 21 11 40 29 48 46 12 23 12 28 12 111 0 49 1 79 2 83 1 3 8 10 16 17 16 13 28 31 35 50 4 14 4 15 4 144 l0 130 -5 11 c-6 15 -19 30 -34 38 -19 10 -18 0 -18 158 l0 138 -5 15 c-10 33 -30 52 -72 69 -3 1 -5 3 -4 4 0 1 19 16 42 33 52 40 55 43 45 59 -6 10 -346 446 -352 453 -6 5 -14 7 -21 3z m53 -99 c24 -31 97 -125 163 -210 65 -84 119 -154 119 -155 0 -1 -2 -4 -5 -7 -9 -7 -317 -243 -322 -245 -5 -3 -49 -4 -47 -1 1 1 58 45 127 97 87 67 124 97 126 100 1 5 0 9 -5 22 -13 34 -10 60 10 86 17 22 17 23 13 31 -2 6 -115 152 -158 207 -14 17 -18 18 -37 10 -37 -16 -66 -12 -96 13 -12 10 -18 12 -25 9 -5 -2 -66 -47 -356 -261 -285 -211 -294 -218 -296 -222 -2 -6 -1 -12 4 -23 13 -29 11 -68 -3 -70 -3 -1 -25 -1 -50 0 l-45 1 -10 13 c-17 20 -18 23 -12 29 2 2 53 41 113 85 60 45 212 157 337 250 125 93 266 198 313 232 91 68 91 68 95 67 2 -1 23 -27 47 -58z m-123 -87 c29 -20 65 -27 93 -19 6 2 15 4 19 4 l8 1 36 -46 c20 -26 52 -67 71 -91 36 -47 38 -50 30 -60 -20 -25 -26 -65 -15 -100 3 -8 3 -10 0 -14 -1 -2 -36 -29 -76 -60 -41 -31 -98 -74 -127 -97 -63 -48 -66 -50 -85 -50 l-13 0 6 8 c95 104 45 273 -91 310 -24 7 -75 7 -99 0 -133 -35 -184 -197 -97 -304 5 -7 9 -13 9 -13 -2 -2 -285 -2 -287 0 -2 1 -3 7 -2 23 1 18 1 23 -3 37 -2 8 -4 17 -3 19 1 2 110 85 244 183 133 99 270 201 305 226 35 26 65 47 67 47 2 0 7 -2 10 -4z m-158 -245 c49 -11 88 -45 109 -94 26 -62 8 -134 -44 -177 -20 -16 -16 -16 -101 -16 -84 0 -80 -1 -100 16 -23 19 -42 50 -50 80 -5 18 -5 62 0 80 22 81 103 130 186 111z m-561 -152 c0 -1 -23 -19 -50 -39 -28 -20 -53 -40 -55 -43 -8 -9 -7 -16 7 -34 6 -9 12 -17 12 -18 2 -3 -45 -4 -61 -1 -25 4 -46 18 -57 39 -8 15 -7 41 1 57 10 19 27 32 49 37 12 3 154 4 154 2z m1070 -3 c25 -8 43 -25 49 -49 5 -19 5 -401 0 -407 -4 -4 -25 -9 -36 -8 l-6 1 -1 120 c-1 117 -1 120 -5 133 -11 30 -30 53 -56 65 -23 11 -29 12 -98 13 l-64 1 63 48 c35 26 68 52 75 57 7 5 15 12 20 16 16 14 35 18 59 10z m-1269 -148 c5 -4 15 -9 22 -12 l12 -5 574 -1 574 -1 13 -6 c24 -11 39 -31 44 -56 3 -18 3 -230 -1 -233 -1 -1 -41 -2 -122 -3 -107 0 -121 -1 -132 -4 -55 -16 -97 -65 -105 -125 -9 -60 36 -129 97 -149 l16 -6 121 -1 c108 0 121 -1 124 -3 5 -5 6 -221 1 -243 -7 -35 -29 -57 -63 -64 -18 -4 -1110 -3 -1125 1 -31 8 -50 27 -58 58 -3 10 -3 66 -3 435 0 233 1 424 1 424 1 0 5 -3 10 -6z m1368 -238 c8 -9 10 -19 7 -29 -2 -7 -15 -23 -18 -23 -2 0 -3 52 -1 57 2 5 4 4 12 -5z m9 -179 l-1 -92 -6 -11 c-11 -23 -36 -41 -63 -46 -19 -4 -297 -3 -311 1 -60 15 -97 80 -77 137 9 29 31 55 53 66 24 12 27 12 181 12 86 0 146 1 154 2 18 3 41 11 55 19 7 4 13 6 14 5 0 -1 1 -43 1 -93z m-58 -185 c1 -2 2 -18 2 -60 0 -91 -2 -102 -19 -119 -9 -9 -24 -18 -26 -16 -2 3 -1 190 2 193 1 1 8 2 15 3 7 0 15 0 18 1 3 0 6 -1 8 -2z M869 1259 c-8 -6 -9 -11 -4 -15 6 -5 4 -14 -6 -26 -11 -15 -14 -23 -13 -40 2 -16 7 -26 19 -37 13 -13 25 -15 45 -10 25 7 37 2 50 -20 2 -3 5 -8 6 -9 5 -7 -2 -10 -25 -12 -25 -2 -27 -3 -29 -19 -1 -16 2 -18 28 -17 17 1 23 2 33 7 16 6 16 6 25 -3 8 -8 8 -8 13 -5 13 6 14 10 9 20 l-5 9 10 13 c17 26 19 46 8 67 -12 22 -33 31 -60 26 -31 -6 -29 -6 -43 10 -17 21 -15 26 9 29 7 0 14 1 16 2 4 2 6 13 4 24 -2 8 -2 8 -11 9 -11 0 -29 -3 -41 -8 -10 -5 -16 -3 -22 5 -4 6 -8 6 -16 0z m35 -71 c11 -16 12 -19 2 -21 -17 -3 -29 15 -20 31 4 7 7 5 18 -10z m92 -42 c8 -7 9 -18 3 -27 -5 -8 -8 -6 -19 10 -14 20 -13 23 3 23 6 0 9 -1 13 -6z M1217 617 c-70 -29 -61 -131 14 -145 32 -7 68 12 83 44 7 16 7 44 0 60 -18 37 -62 56 -97 41z m40 -31 c12 -4 24 -17 27 -30 8 -42 -39 -68 -68 -38 -31 31 -1 79 41 68z"/></g></svg></div>
+          <span class="num" aria-hidden="true">01</span>
+        </div>
+        <h2>Misión</h2>
+        <p>Contribuir al crecimiento económico de nuestros clientes, mediante créditos ágiles y seguros.</p>
+      </article>
+      <article class="card">
+        <div class="top">
+          <div class="ico"><svg width="50" height="50" viewBox="0 0 900 900" aria-hidden="true" focusable="false"><g transform="translate(0,900) scale(0.5,-0.5)" fill="#233159" stroke="none"><path d="M871 1752 c-28 -6 -48 -17 -72 -41 -21 -21 -30 -36 -38 -64 -3 -10 -6 -19 -7 -20 -2 -2 -11 -3 -40 -3 -42 0 -53 -2 -71 -10 -26 -12 -45 -43 -45 -74 0 -17 8 -16 -97 -16 -104 0 -109 -1 -137 -14 -29 -14 -51 -42 -61 -75 -4 -12 -4 -36 -4 -651 l0 -639 6 -17 c14 -40 45 -69 84 -79 16 -4 1002 -5 1019 -1 33 8 66 34 81 64 14 29 13 -26 13 680 l-1 637 -5 13 c-15 38 -42 64 -78 76 -13 5 -16 5 -112 6 -66 0 -100 1 -101 2 -2 2 -3 7 -3 15 0 40 -28 73 -68 81 -6 1 -27 2 -47 2 -43 0 -40 -1 -48 25 -15 52 -52 88 -104 101 -16 4 -48 5 -64 2z m66 -63 c32 -15 48 -41 51 -78 3 -43 5 -44 82 -45 82 -1 76 4 76 -75 0 -64 -1 -68 -16 -74 -14 -5 -454 -4 -463 2 -12 7 -12 9 -13 69 -1 82 -6 77 76 78 52 1 60 1 66 5 9 4 14 14 15 27 4 39 9 53 26 72 26 28 66 36 100 19z m-342 -224 c1 -1 3 -11 3 -23 2 -37 18 -62 48 -76 l13 -7 237 -1 c264 0 247 -1 270 14 22 15 34 36 36 69 2 29 -8 26 98 26 79 0 90 0 100 -4 24 -7 40 -26 44 -51 2 -9 2 -177 2 -636 l-1 -623 -5 -10 c-8 -19 -23 -32 -40 -37 -14 -4 -987 -3 -999 1 -19 6 -33 19 -42 39 l-4 11 -1 620 c0 438 1 624 2 633 6 33 25 51 58 56 17 2 179 2 181 -1z M695 1185 c-8 -4 -13 -9 -69 -69 -34 -36 -52 -54 -55 -54 -2 0 -12 9 -27 24 -24 26 -30 30 -41 30 -21 0 -34 -24 -23 -41 5 -8 70 -77 78 -81 7 -6 22 -5 29 1 6 4 99 102 129 135 20 23 22 35 8 49 -9 9 -19 11 -29 6z M824 1112 c-20 -10 -19 -39 1 -50 10 -5 475 -5 485 1 19 10 19 39 0 49 -12 6 -475 6 -486 0z M690 843 c-4 -4 -32 -32 -61 -63 -29 -32 -55 -58 -57 -58 -1 0 -15 12 -29 27 -22 22 -27 27 -33 28 -20 4 -38 -14 -33 -35 1 -3 8 -13 19 -25 25 -27 56 -59 62 -63 7 -6 20 -5 28 1 9 6 139 144 143 152 14 26 -14 52 -39 36z M829 775 c-24 -8 -27 -38 -5 -51 8 -4 8 -4 243 -4 225 0 236 0 243 4 20 10 18 41 -3 50 -8 4 -15 4 -239 4 -194 0 -232 -1 -239 -3z M695 506 c-6 -2 -24 -20 -63 -62 -30 -32 -56 -59 -58 -60 -4 -2 -8 1 -28 23 -14 14 -27 27 -30 28 -18 9 -41 -6 -39 -27 1 -11 6 -18 46 -58 39 -41 44 -44 60 -36 8 4 132 133 145 152 10 13 5 33 -11 41 -8 4 -12 4 -22 -1z M829 436 c-29 -8 -24 -51 5 -55 5 -1 113 -1 240 -1 231 1 232 1 237 5 20 14 15 45 -7 51 -9 3 -466 2 -475 0z"/></g></svg></div>
+          <span class="num" aria-hidden="true">02</span>
+        </div>
+        <h2>Visión</h2>
+        <p>Convertirnos en la mejor alternativa financiera para que los comerciantes alcancen sus metas y hagan crecer sus negocios.</p>
+      </article>
+    </div>
+  </div>
+</section>
+</body>
+</html>

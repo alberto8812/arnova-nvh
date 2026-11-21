@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misión y Visión — Continuación del propósito</title>
+<!--
+  Dirección 02 · Continuación del propósito.
+  Misión y Visión viven DENTRO de la banda navy de about-section.tsx como fila de cierre, con las mismas clases de las tarjetas de valores:
+  rounded-lg (8px), border on-brand/10, bg on-brand/[0.04], p-5, ícono monocromo brand-200 en caja 46px (Icon size 32, trazo 1.5),
+  h3 16px semibold blanco, texto 14px brand-200. Grid gap-4 como los valores; la fila de cierre va a 2 columnas (tarjetas anchas).
+  El tramo "Nuestro propósito" + valores es CONTEXTO ya existente (marcado, copiado de about.json SV); lo nuevo es la fila final.
+  Los SVG son los paths reales de icon.tsx. Íconos: Misión = graph-up (crecimiento), Visión = briefcase (negocios/comerciantes).
+  Se evitan shield, handshake, badge y users porque ya los usan los valores de arriba.
+-->
+<style>
+:root{
+  --brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-900:#233159;
+  --n-50:#f9fafb;--n-600:#535a65;
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-600);-webkit-font-smoothing:antialiased}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+section.about{background:var(--brand-900);padding:76px 0}
+.intro{max-width:calc(50% - 24px)}
+.eyebrow{font-family:var(--serif);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-300)}
+.headline{font-family:var(--serif);font-style:italic;font-weight:400;color:#fff;font-size:38px;line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:14px 0 18px}
+.intro p{font-size:16px;line-height:1.65;color:var(--brand-200)}
+.tag{display:block;margin:28px 0 12px;font:600 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-300)}
+.tag.new{margin-top:36px;color:#fff}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.closing{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vcard{border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:20px}
+.ico{display:flex;align-items:center;justify-content:center;width:46px;height:46px;color:var(--brand-200)}
+.ico svg{flex:none}
+h3{font-weight:600;color:#fff;font-size:16px;letter-spacing:-.01em;margin:16px 0 6px}
+.vcard p{font-size:14px;line-height:1.55;color:var(--brand-200);text-wrap:pretty}
+@media (max-width:860px){
+  .container{padding:0 20px}
+  section.about{padding:56px 0}
+  .intro{max-width:none}
+  .headline{font-size:clamp(28px,7vw,38px)}
+  .values{grid-template-columns:1fr 1fr}
+  .closing{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<section class="about" aria-label="Nuestro propósito">
+  <div class="container">
+    <div class="intro" data-artboard-only>
+      <div class="eyebrow">Conócenos</div>
+      <h2 class="headline">Nuestro propósito</h2>
+      <p>Transformamos vidas, impulsando el crecimiento económico de nuestros clientes.</p>
+    </div>
+    <span class="tag" aria-hidden="true" data-artboard-only>Contexto · valores existentes</span>
+    <div class="values" data-artboard-only>
+      <div class="vcard"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 11.5L11.5 14.5L16.5 9.5"/><path d="M5 18L3.13 4.91C3.06 4.4 3.39 3.91 3.9 3.8L11.57 2.1C11.85 2.03 12.15 2.03 12.43 2.1L20.1 3.8C20.61 3.91 20.94 4.4 20.87 4.91L19 18C18.93 18.5 18.5 21.5 12 21.5C5.5 21.5 5.07 18.5 5 18Z"/></svg></div><h3>Honestidad</h3><p>Mantenemos una comunicación clara y transparente en cada paso del proceso, garantizando que nuestros clientes siempre reciban información precisa y a tiempo.</p></div>
+      <div class="vcard"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 18V17C7 14.24 9.24 12 12 12V12C14.76 12 17 14.24 17 17V18"/><path d="M1 18V17C1 15.34 2.34 14 4 14V14"/><path d="M23 18V17C23 15.34 21.66 14 20 14V14"/><path d="M12 12C13.66 12 15 10.66 15 9C15 7.34 13.66 6 12 6C10.34 6 9 7.34 9 9C9 10.66 10.34 12 12 12Z"/><path d="M4 14C5.1 14 6 13.1 6 12C6 10.9 5.1 10 4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14Z"/><path d="M20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14Z"/></svg></div><h3>Confianza</h3><p>Confiamos en nuestros clientes mediante procesos simples y ágiles, y ellos confían en nosotros porque siempre estamos presentes para acompañarlos y responder con compromiso.</p></div>
+      <div class="vcard"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.52 2.62C11.31 1.75 12.69 1.75 13.48 2.62L14.5 3.74C14.9 4.18 15.48 4.42 16.07 4.4L17.58 4.32C18.76 4.27 19.73 5.24 19.68 6.42L19.6 7.93C19.58 8.52 19.82 9.1 20.26 9.5L21.38 10.52C22.25 11.31 22.25 12.69 21.38 13.48L20.26 14.5C19.82 14.9 19.58 15.48 19.6 16.07L19.68 17.58C19.73 18.76 18.76 19.73 17.58 19.68L16.07 19.6C15.48 19.58 14.9 19.82 14.5 20.26L13.48 21.38C12.69 22.25 11.31 22.25 10.52 21.38L9.5 20.26C9.1 19.82 8.52 19.58 7.93 19.6L6.42 19.68C5.24 19.73 4.27 18.76 4.32 17.58L4.4 16.07C4.42 15.48 4.18 14.9 3.74 14.5L2.62 13.48C1.75 12.69 1.75 11.31 2.62 10.52L3.74 9.5C4.18 9.1 4.42 8.52 4.4 7.93L4.32 6.42C4.27 5.24 5.24 4.27 6.42 4.32L7.93 4.4C8.52 4.42 9.1 4.18 9.5 3.74L10.52 2.62Z"/><path d="M9 12L11 14L15 10"/></svg></div><h3>Responsabilidad</h3><p>Asumimos con seriedad y dedicación todo el proceso de un crédito. Brindando a nuestros clientes la oportunidad de impulsar su negocio de manera responsable.</p></div>
+      <div class="vcard"><div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 20V19C1 15.13 4.13 12 8 12V12C11.87 12 15 15.13 15 19V20"/><path d="M13 14V14C13 11.24 15.24 9 18 9V9C20.76 9 23 11.24 23 14V14.5"/><path d="M8 12C10.21 12 12 10.21 12 8C12 5.79 10.21 4 8 4C5.79 4 4 5.79 4 8C4 10.21 5.79 12 8 12Z"/><path d="M18 9C19.66 9 21 7.66 21 6C21 4.34 19.66 3 18 3C16.34 3 15 4.34 15 6C15 7.66 16.34 9 18 9Z"/></svg></div><h3>Inclusión</h3><p>Ofrecemos productos accesibles y ajustados a la necesidad de cada cliente. Creamos oportunidades financieras para comerciantes.</p></div>
+    </div>
+
+    <span class="tag new" aria-hidden="true" data-artboard-only>Nuevo · fila de cierre de la banda</span>
+    <div class="closing" id="mision-vision">
+      <article class="vcard">
+        <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 20H4V4"/><path d="M4 16.5L12 9L15 12L19.5 7.5"/></svg></div>
+        <h3>Misión</h3>
+        <p>Contribuir al crecimiento económico de nuestros clientes, mediante créditos ágiles y seguros.</p>
+      </article>
+      <article class="vcard">
+        <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 7H4C2.9 7 2 7.9 2 9V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V9C22 7.9 21.1 7 20 7H16M8 7V3.6C8 3.27 8.27 3 8.6 3H15.4C15.73 3 16 3.27 16 3.6V7M8 7H16"/></svg></div>
+        <h3>Visión</h3>
+        <p>Convertirnos en la mejor alternativa financiera para que los comerciantes alcancen sus metas y hagan crecer sus negocios.</p>
+      </article>
+    </div>
+  </div>
+</section>
+</body>
+</html>
