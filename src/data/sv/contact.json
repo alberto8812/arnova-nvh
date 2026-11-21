@@ -59,5 +59,6 @@
   "sendAnswerLabel": "Enviar respuesta",
   "requestedAmountLabel": "Monto solicitado",
   "productLabel": "Producto",
-  "productSummaryTemplate": "Producto: {days} días"
+  "productSummaryTemplate": "Producto: {days} días",
+  "restartLabel": "Empezar de nuevo"
 }

@@ -442,14 +442,24 @@ export function FloatingChatWidget() {
                     {chat.typing ? (
                       <div className="h-10" />
                     ) : chat.declined ? (
-                      <input
-                        type="text"
-                        disabled
-                        placeholder={contact.answerPlaceholder}
-                        aria-label={contact.answerPlaceholder}
-                        className="arnova-input w-full rounded-md text-[14px] font-sans border border-neutral-300 bg-neutral-100 text-neutral-400 cursor-not-allowed"
-                        style={{ padding: '9px 12px' }}
-                      />
+                      // Declined flow ends here: offer a clean restart of the
+                      // same conversation instead of a dead, disabled input.
+                      <button
+                        type="button"
+                        autoFocus
+                        onClick={() =>
+                          setChat((prev) => ({
+                            ...initialState(prev.mode, content, prev.jobTitle),
+                            open: true,
+                            teaser: 'dismissed',
+                            monto: prev.monto,
+                            plazoDias: prev.plazoDias,
+                          }))
+                        }
+                        className="w-full rounded-full bg-brand-900 text-on-brand font-sans font-semibold text-[15px] py-3 cursor-pointer transition-colors duration-200 hover:bg-brand-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                      >
+                        {contact.restartLabel}
+                      </button>
                     ) : currentQuestion?.type === 'boolean' ? (
                       <div className="flex gap-2">
                         {['Sí', NO_OPTION].map((option) => (

@@ -250,6 +250,8 @@ export interface ContactContent {
   questions: ContactQuestion[]
   // Closing message when the visitor answers "No" to having a business.
   noBusinessMessage: string
+  // Button that restarts the chat after the declined (no business) ending.
+  restartLabel: string
   email: string
   social: { instagram: string; facebook: string }
   cnpj?: string
