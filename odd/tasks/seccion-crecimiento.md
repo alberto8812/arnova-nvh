@@ -30,6 +30,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T11 (S10) Propuestas de diseño para Requisitos (una sola frase): design/requisitos/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T12 (S10) Implementar artboard elegido design/requisitos/02-franja-de-confianza.html (01 y 03 son alternativas): franja accent-100 después de Cobertura. Ruta: worker. HECHO; commit: ver Log L25.
 - T13 (S11) Propuestas de rediseño de Misión y Visión respetando el sistema de la página e iconografía existente: design/mision-vision/ (3 artboards). Ruta: worker. Commit: pendiente.
+- T14 (S11) Implementar artboard elegido design/mision-vision/03-editorial-en-lista.html (01 y 02 son alternativas). Ruta: inline. HECHO; commit: ver Log L30.
 
 ## Log
 
@@ -62,3 +63,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L27: "incluir una nueva sección de misión y visión después del propósito ... respetar el diseño de la página y cómo se carga el contenido ... evalúa cuál es el mejor componente" -> MissionVisionSection (tarjetas gemelas, sección clara) + mission-vision.json SV/GT en ContentBundle. Verificado tsc/oxlint y capturas 1440/414.
 - L28: "mustrase diseno [captura Misión/Visión actual], sobre este ya que siento que no respeta el diseno de la pagina ni la iconografica previamente establecida"
 - L29: T13 propuestas listas en design/mision-vision/ (01-como-beneficios, 02-continuacion-del-proposito, 03-editorial-en-lista); pendiente elección.
+- L30: Handoff del canvas: implementar design/mision-vision/03-editorial-en-lista.html (elegido; 01-como-beneficios y 02-continuacion-del-proposito quedan como alternativas). MissionVisionSection reescrita como lista de definición con AppIcon shield-lock/briefcase; icon pasa a nombre de AppIcon. Verificado tsc/oxlint y capturas 1440/414.

@@ -61,9 +61,7 @@ export const simulator = {
 export const steps = stepsRaw satisfies Step[]
 export const services = servicesRaw satisfies Service[]
 export const about = aboutRaw satisfies AboutContent
-export const missionVision = {
-  items: missionVisionRaw.items.map((i) => ({ ...i, icon: i.icon as MissionVisionContent["items"][number]["icon"] })),
-} satisfies MissionVisionContent
+export const missionVision = missionVisionRaw satisfies MissionVisionContent
 export const coverage = coverageRaw satisfies CoverageContent
 export const testimonials = testimonialsRaw satisfies Testimonial[]
 export const videos = videosRaw satisfies VideoItem[]

@@ -288,10 +288,10 @@ export interface GrowthSectionContent {
   videos: { src: string; poster: string }[]
 }
 
-// Mission & vision — two parallel statements rendered as twin cards after
-// the purpose section. `icon` selects the card's glyph.
+// Mission & vision — two statements after the purpose section, rendered as
+// an editorial definition list. `icon` is an AppIcon name from the site set.
 export interface MissionVisionContent {
-  items: { icon: "mission" | "vision"; title: string; text: string }[]
+  items: { icon: string; title: string; text: string }[]
 }
 
 export interface ContentBundle {
