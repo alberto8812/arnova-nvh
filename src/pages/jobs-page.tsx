@@ -1,7 +1,7 @@
 import {
   CareersHeroSection,
   // CareersWhySolviaSection,
-  CareersExpectationsSection,
+  // CareersExpectationsSection, — hidden by client request; kept for future reuse
   CareersJobsSection,
 } from "@/components/sections";
 import { Container } from "@/components/ui";
