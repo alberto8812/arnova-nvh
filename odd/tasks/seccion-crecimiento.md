@@ -43,6 +43,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T14 (S11) Implementar artboard elegido design/mision-vision/03-editorial-en-lista.html (01 y 02 son alternativas). Ruta: inline. HECHO; commit: ver Log L30.
 - T15 (S12) Chatbot Nova: nuevo flujo de preguntas con rama No, envío por WhatsApp al número de cada país. Ruta: worker. HECHO; commit: ver Log L32.
 - T16 (S13) Propuestas de diseño del botón País y modal de país: design/selector-pais/ (3 artboards, solo propuestas). Ruta: worker. Commit: pendiente.
+- T17 (S13) Implementar artboard elegido design/selector-pais/01-menu-desplegable.html (02 y 03 son alternativas): botón "País · SV" con menú desplegable, banderas SVG, texto nuevo del modal. Ruta: worker. HECHO; commit: ver Log L39.
 
 ## Log
 
@@ -83,3 +84,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L35: "EN TRABAJE CON NOSOTROS ACTUALIZAR [texto] ... SOLO ESTA SECCIÓN Trabaja con Nosotros" -> hero de /careers: título "Trabaja con nosotros", 4 párrafos verbatim y "Envía tu hoja de vida a" + mailto recursoshumanos@arnovagroup.com (jobs-page.json SV/GT: heroParagraphs, heroEmail). Resto de la página sin cambios. Verificado captura 414.
 - L36: [captura del modal de país] "Botón de País, que se llame País y muestre las dos opciones de navegación ... El texto queda: Selecciona el país de tu ubicación para conocer más información." + "PIDEN ESTO PERO MUÉSTRAME DISEÑOS DE CÓMO SE VERÍA"
 - L37: T16 propuestas listas en design/selector-pais/ (01-menu-desplegable, 02-selector-segmentado, 03-boton-abre-modal); pendiente elección. Hallazgo: los emoji de bandera no se ven en Windows (por eso "sv SV").
+- L38: Handoff del canvas: implementar design/selector-pais/01-menu-desplegable.html (elegido; 02-selector-segmentado y 03-boton-abre-modal quedan como alternativas).
+- L39: T17 implementado: country-selector.tsx (menú role=menu, teclado, Escape/clic fuera), country-flag.tsx (SVG), navbar.tsx, country-modal.tsx (subtítulo nuevo, neutral-600). Evidencia worker CDP 30/30; verificación propia: subtítulo exacto en primera visita, botón "País·SV", 2 opciones, capturas 1440/414.
