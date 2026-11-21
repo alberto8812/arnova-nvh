@@ -7,6 +7,7 @@ import type {
   Step,
   Service,
   AboutContent,
+  MissionVisionContent,
   CoverageContent,
   Testimonial,
   VideoItem,
@@ -31,6 +32,7 @@ import simulatorRaw from './simulator.json'
 import stepsRaw from './steps.json'
 import servicesRaw from './services.json'
 import aboutRaw from './about.json'
+import missionVisionRaw from './mission-vision.json'
 import coverageRaw from './coverage.json'
 import testimonialsRaw from './testimonials.json'
 import videosRaw from './videos.json'
@@ -59,6 +61,7 @@ export const simulator = {
 export const steps = stepsRaw satisfies Step[]
 export const services = servicesRaw satisfies Service[]
 export const about = aboutRaw satisfies AboutContent
+export const missionVision = missionVisionRaw satisfies MissionVisionContent
 export const coverage = coverageRaw satisfies CoverageContent
 export const testimonials = testimonialsRaw satisfies Testimonial[]
 export const videos = videosRaw satisfies VideoItem[]
@@ -103,6 +106,7 @@ export const gtContent = {
   steps,
   services,
   about,
+  missionVision,
   coverage,
   testimonials,
   videos,

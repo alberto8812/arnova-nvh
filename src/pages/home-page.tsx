@@ -8,10 +8,12 @@ import {
   StepsSection,
   // ServicesSection, — section commented out in the JSX below
   AboutSection,
+  MissionVisionSection,
   CoverageSection,
+  RequirementStrip,
   TestimonialsSection,
   VideosSection,
-  FaqSection,
+  // FaqSection, — hidden by client request; kept for future reuse
   ContactSection,
 } from "@/components/sections";
 
@@ -27,10 +29,12 @@ export function HomePage() {
       <StepsSection />
       {/* <ServicesSection /> */}
       <CoverageSection />
+      <RequirementStrip />
       <AboutSection />
+      <MissionVisionSection />
       <TestimonialsSection />
       <VideosSection />
-      <FaqSection />
+      {/* <FaqSection /> */}
       <ContactSection />
     </main>
   );

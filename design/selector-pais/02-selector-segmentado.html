@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Selector de país — Selector segmentado</title>
+<!--
+  Dirección 02 · Selector segmentado.
+  Navbar reproducida del sitio (src/components/layout/navbar.tsx): fondo brand-900 #233159, borde brand-800, 70 px, CTA amarillo.
+  Las banderas son SVG inline (aria-hidden): el emoji de bandera NO se dibuja en Windows/Chrome y aparece como letras ("sv").
+  Banners "Contenido de la página" y marcos de pantalla son contexto del artboard, no producto.
+  Texto del modal (S13, L36): "Selecciona el país de tu ubicación para conocer más información." — título y tarjetas SV/GT sin cambios.
+  Sin país elegido (primera visita) el control de la navbar sigue oculto: el modal bloqueante lo cubre, igual que hoy.
+-->
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-600:#445d86;--brand-700:#344a71;--brand-800:#2b3d66;--brand-900:#233159;
+  --n-50:#f9fafb;--n-100:#f0f2f5;--n-200:#e6eaef;--n-300:#d3d8de;--n-500:#7b838e;--n-600:#535a65;--n-700:#353b46;
+  --red:#ed1c24;--yellow:#ffd400;--accent-300:#ffd3bc;
+  --shadow-lg:0 20px 40px -12px rgba(35,49,89,.12),0 2px 6px rgba(35,49,89,.05);
+  --shadow-xl:0 30px 60px -18px rgba(35,49,89,.35),0 8px 24px rgba(35,49,89,.12);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;font-family:var(--font);background:#e9ecf2;color:var(--n-700);-webkit-font-smoothing:antialiased}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+/* ---- artboard chrome (no es parte del producto) ---- */
+.ab-head{padding:32px 40px 8px}
+.ab-head .eyebrow{font:700 12px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--n-600)}
+.ab-head h1{margin-top:8px;font:600 30px/1.15 var(--font);letter-spacing:-.02em;color:var(--brand-900)}
+.ab-head p{margin-top:8px;max-width:78ch;font-size:15px;line-height:1.5;color:var(--n-600)}
+.row{padding:22px 0 6px}
+.row>h2{padding:0 40px 12px;font:700 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-700)}
+.lbl{padding:0 40px 8px;font:600 14px/1.3 var(--font);color:var(--n-700)}
+.lbl small{display:block;margin-top:2px;font:400 13px/1.4 var(--font);color:var(--n-600)}
+.mob-row{display:flex;gap:24px;padding:0 40px 8px}
+.mob-row .lbl{padding:0 0 8px}
+.fig.m{flex:none;width:414px}
+.frame{position:relative;overflow:hidden;background:var(--brand-900)}
+.frame.d{width:1440px}
+.frame.m{width:414px;border-radius:14px;box-shadow:var(--shadow-lg);outline:1px solid rgba(35,49,89,.15)}
+.hero{background:linear-gradient(135deg,#233159 0%,#2b3d66 60%,#344a71 100%);display:grid;place-items:center}
+.hero span{font:600 12px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-300)}
+.notes{margin:20px 40px 40px;padding:20px 24px;background:#fff;border:1px solid var(--n-200);border-radius:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
+.notes h2{grid-column:1/-1;font:700 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-700);margin-bottom:6px}
+.notes li{margin-left:18px;font-size:14px;line-height:1.5;color:var(--n-700)}
+.notes code{font:600 12.5px/1 ui-monospace,Consolas,monospace;background:var(--n-100);padding:1px 5px;border-radius:4px}
+
+/* ---- navbar fiel al sitio (bg brand-900, borde brand-800, 70 px) ---- */
+.nav{position:relative;z-index:10;height:70px;background:var(--brand-900);border-bottom:1px solid var(--brand-800)}
+.nav-in{height:100%;max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.nav.m .nav-in{padding:0 16px}
+.logo{display:inline-flex;align-items:center;gap:8px;font:700 24px/1 var(--font);letter-spacing:-.02em;color:#fff}
+.logo .mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#ba141a,#f04e23 55%,#ffd400)}
+.nav.m .logo{font-size:21px;gap:6px}.nav.m .logo .mark{width:18px;height:18px}
+.links{display:flex;gap:24px;align-items:center}
+.links a{font:500 15px/1 var(--font);color:#fff;white-space:nowrap;padding:8px 0}
+.links a:hover{color:var(--brand-300)}
+.right{display:flex;align-items:center;gap:12px}
+.nav.m .right{gap:8px}
+.cta{display:inline-flex;align-items:center;min-height:40px;padding:10px 18px;border-radius:6px;background:var(--yellow);color:var(--brand-900);font:600 14px/1 var(--font);white-space:nowrap}
+.cta:hover{background:var(--accent-300)}
+.m-only{display:none}.nav.m .m-only{display:inline}.nav.m .d-only{display:none}
+.nav.m .cta{padding:10px 12px}
+.burger{display:inline-grid;place-items:center;width:44px;height:44px;margin-right:-8px;border:0;border-radius:6px;background:none;color:var(--brand-300)}
+.burger:hover{color:#fff}
+.mmenu{position:absolute;left:0;right:0;top:70px;z-index:9;padding:6px 20px 14px;background:var(--brand-900);border-bottom:1px solid var(--brand-800);box-shadow:0 18px 30px -12px rgba(0,0,0,.35)}
+.mmenu>a{display:block;padding:13px 0;border-bottom:1px solid var(--brand-800);font:500 15px/1.2 var(--font);color:var(--brand-300)}
+.mmenu>a:last-child{border-bottom:0}
+
+/* ---- estados de foco (visibles y distintos de la selección) ---- */
+.a:focus-visible,a:focus-visible,.burger:focus-visible,.pill:focus-visible,.seg button:focus-visible,.fx{outline:2px solid var(--brand-300);outline-offset:2px}
+.panel .opt:focus-visible,.panel .opt.fx{outline:2px solid var(--brand-600);outline-offset:-2px}
+.card:focus-visible,.card.fx,.x:focus-visible{outline:2px solid var(--brand-600);outline-offset:2px}
+.cta:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* ---- botón País (pill) ---- */
+.pill{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:999px;border:1px solid #868ea4;background:rgba(255,255,255,.1);color:#fff;font:600 14px/1 var(--font);white-space:nowrap;transition:background .2s var(--ease)}
+.pill:hover{background:rgba(255,255,255,.18)}
+.pill .code{font-weight:700}
+.pill .dot{opacity:.8}
+.pill .chev{transition:transform .2s var(--ease)}
+.pill[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.pill[aria-expanded="true"]{background:rgba(255,255,255,.2)}
+.nav.m .pill{padding:0 10px;gap:6px;font-size:14px}
+.chip{display:inline-block;padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.2);font:700 12px/1 var(--font);letter-spacing:.04em}
+.flag{border-radius:3px;box-shadow:0 0 0 1px rgba(35,49,89,.18);flex:none}
+.dd{position:relative}
+
+/* ---- panel desplegable (01) ---- */
+.panel{position:absolute;right:0;top:calc(100% + 10px);z-index:20;width:300px;padding:6px;background:#fff;border:1px solid var(--n-200);border-radius:12px;box-shadow:var(--shadow-xl)}
+.panel[hidden]{display:none}
+.panel::before{content:"";position:absolute;right:26px;top:-6px;width:10px;height:10px;background:#fff;border-left:1px solid var(--n-200);border-top:1px solid var(--n-200);transform:rotate(45deg)}
+.panel ul{list-style:none;position:relative}
+.panel .opt{width:100%;display:flex;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:8px;background:none;text-align:left}
+.panel .opt:hover{background:var(--n-100)}
+.panel .opt.sel{background:var(--brand-50)}
+.panel .opt .txt{flex:1;display:flex;flex-direction:column;gap:2px}
+.panel .o-name{font:600 15px/1.2 var(--font);color:var(--brand-900)}
+.panel .o-meta{font:500 13px/1.2 var(--font);color:var(--n-600)}
+.panel .o-meta b{font-weight:700;color:var(--brand-900)}
+.tick{display:none;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;flex:none}
+.opt.sel .tick{display:grid}
+.panel .opt .tick{order:3}
+.nav.m .dd{position:static}
+.nav.m .panel{right:12px;top:calc(100% + 8px);width:300px}
+.nav.m .panel::before{display:none}
+
+/* ---- selector segmentado (02) ---- */
+.seg-wrap{display:flex;align-items:center;gap:10px}
+.seg-lbl{font:600 14px/1 var(--font);color:var(--brand-200)}
+.seg{display:inline-flex;gap:2px;height:40px;padding:3px;border-radius:999px;border:1px solid #868ea4;background:rgba(255,255,255,.08)}
+.seg button{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border:0;border-radius:999px;background:none;color:#fff;font:700 13px/1 var(--font);letter-spacing:.03em;transition:background .2s var(--ease),color .2s var(--ease)}
+.seg button:hover{background:rgba(255,255,255,.16)}
+.seg button.sel{background:#fff;color:var(--brand-900)}
+.seg button .ck{display:none;color:var(--red)}
+.seg button.sel .ck{display:inline-flex}
+.mseg-box{padding:12px 0 14px;border-bottom:1px solid var(--brand-800)}
+.mseg-box .seg-lbl{display:block;margin-bottom:8px;font:700 12px/1 var(--font);letter-spacing:.1em;text-transform:uppercase}
+.mseg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:14px;border:1px solid #868ea4;background:rgba(255,255,255,.08)}
+.mseg button{display:flex;align-items:center;gap:10px;min-height:52px;padding:0 12px;border:0;border-radius:10px;background:none;color:#fff;text-align:left}
+.mseg button:focus-visible{outline:2px solid var(--brand-300);outline-offset:2px}
+.mseg button:hover{background:rgba(255,255,255,.16)}
+.mseg button.sel{background:#fff;color:var(--brand-900)}
+.mseg .txt{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.mseg .s-code{font:700 14px/1 var(--font);letter-spacing:.03em}
+.mseg .s-name{font:500 12.5px/1.1 var(--font);opacity:.9}
+.mseg .ck{display:none;color:var(--red)}
+.mseg button.sel .ck{display:inline-flex}
+.mseg button.sel .s-name{opacity:1;color:var(--n-600)}
+
+/* ---- modal (idéntico al actual; solo cambia el texto) ---- */
+.ov{position:absolute;inset:0;z-index:30;display:grid;place-items:center;background:rgba(35,49,89,.55)}
+.modal{position:relative;width:480px;background:#fff;border-radius:20px;box-shadow:var(--shadow-xl);overflow:hidden}
+.modal.mm{width:calc(100% - 32px)}
+.m-head{padding:36px 32px 24px;text-align:center}
+.m-ico{display:inline-grid;place-items:center;width:44px;height:44px;margin-bottom:16px;border-radius:50%;background:var(--brand-50);color:var(--brand-700)}
+.m-head h2{font:600 22px/1.25 var(--font);letter-spacing:-.01em;color:var(--brand-900)}
+.m-head p{margin-top:8px;font:400 14.5px/1.45 var(--font);color:var(--n-600);text-wrap:balance}
+.cards{display:flex;gap:12px;padding:0 32px 32px}
+.cards.col{flex-direction:column}
+.card{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 16px;border:1px solid var(--n-200);border-radius:16px;background:var(--n-50);text-align:center;transition:transform .2s var(--ease),background .2s var(--ease)}
+.card:hover{transform:translateY(-2px);background:#fff;border-color:var(--brand-300)}
+.card.sel{background:#fff;border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.card .tick{position:absolute;right:10px;top:10px}
+.card .flag{border-radius:4px}
+.c-name{font:600 15px/1.2 var(--font);color:var(--brand-900)}
+.c-cur{font:500 13px/1.2 var(--font);letter-spacing:.02em;color:var(--n-600)}
+.x{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:none;color:var(--n-600)}
+.x:hover{background:var(--n-100);color:var(--brand-900)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="sr" id="live" role="status" aria-live="polite"></div>
+<header class="ab-head">
+  <p class="eyebrow">Selector de país · Dirección 02</p>
+  <h1>Selector segmentado</h1>
+  <p>La barra muestra la etiqueta «País» y un control de dos segmentos [SV | GT] siempre visible: un clic cambia. En móvil el mismo selector va al inicio del menú hamburguesa, con nombre completo.</p>
+</header>
+
+<section class="row"><h2>Escritorio</h2>
+  <figure class="fig d">
+  <figcaption class="lbl">El Salvador activo<small>Siempre visible: sin abrir nada se ven las dos opciones y cuál está activa.</small></figcaption>
+  <div class="frame d" style="height:250px"><header class="nav"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <nav class="links" aria-label="Principal"><a href="#" onclick="return false">Servicios</a><a href="#" onclick="return false">Cómo funciona</a><a href="#" onclick="return false">Montos</a><a href="#" onclick="return false">Nosotros</a><a href="#" onclick="return false">Trabaja con nosotros</a></nav>
+    <div class="right"><div class="seg-wrap">
+    <span class="seg-lbl" id="sl-SV">País</span>
+    <!-- role="group" + dos <button aria-pressed>; evita radiogroup (flechas obligatorias). Nombre accesible = nombre del país, no solo el código. -->
+    <div class="seg" role="group" aria-labelledby="sl-SV">
+      <button type="button" data-pick="SV" data-seg class="sel" aria-pressed="true" aria-label="El Salvador (USD · Dólar)" title="El Salvador · USD · Dólar">
+        <svg class="flag" width="18" height="13" viewBox="0 0 18 13" aria-hidden="true" focusable="false"><g><rect width="18" height="4.333333333333333" fill="#0f47af"/><rect y="4.333333333333333" width="18" height="4.333333333333333" fill="#fff"/><rect y="8.666666666666666" width="18" height="4.333333333333333" fill="#0f47af"/><circle cx="9" cy="6.5" r="1.8200000000000003" fill="#f2b705"/></g></svg><span>SV</span><span class="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button><button type="button" data-pick="GT" data-seg class="" aria-pressed="false" aria-label="Guatemala (GTQ · Quetzal)" title="Guatemala · GTQ · Quetzal">
+        <svg class="flag" width="18" height="13" viewBox="0 0 18 13" aria-hidden="true" focusable="false"><g><rect width="6" height="13" fill="#4997d0"/><rect x="6" width="6" height="13" fill="#fff"/><rect x="12" width="6" height="13" fill="#4997d0"/><circle cx="9" cy="6.5" r="1.8200000000000003" fill="#5a9a3b"/></g></svg><span>GT</span><span class="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button>
+    </div>
+  </div><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a></div>
+  </div></header><div class="hero" style="height:180px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div></div>
+</figure>
+  <div style="height:18px"></div>
+  <figure class="fig d">
+  <figcaption class="lbl">Tras un clic: Guatemala activo<small>Un solo clic cambia; foco de teclado visible en el segmento (anillo brand-300, separado del relleno blanco de «activo»).</small></figcaption>
+  <div class="frame d" style="height:250px"><header class="nav"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <nav class="links" aria-label="Principal"><a href="#" onclick="return false">Servicios</a><a href="#" onclick="return false">Cómo funciona</a><a href="#" onclick="return false">Montos</a><a href="#" onclick="return false">Nosotros</a><a href="#" onclick="return false">Trabaja con nosotros</a></nav>
+    <div class="right"><div class="seg-wrap">
+    <span class="seg-lbl" id="sl-GTf">País</span>
+    <!-- role="group" + dos <button aria-pressed>; evita radiogroup (flechas obligatorias). Nombre accesible = nombre del país, no solo el código. -->
+    <div class="seg" role="group" aria-labelledby="sl-GTf">
+      <button type="button" data-pick="SV" data-seg class="" aria-pressed="false" aria-label="El Salvador (USD · Dólar)" title="El Salvador · USD · Dólar">
+        <svg class="flag" width="18" height="13" viewBox="0 0 18 13" aria-hidden="true" focusable="false"><g><rect width="18" height="4.333333333333333" fill="#0f47af"/><rect y="4.333333333333333" width="18" height="4.333333333333333" fill="#fff"/><rect y="8.666666666666666" width="18" height="4.333333333333333" fill="#0f47af"/><circle cx="9" cy="6.5" r="1.8200000000000003" fill="#f2b705"/></g></svg><span>SV</span><span class="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button><button type="button" data-pick="GT" data-seg class="sel fx" aria-pressed="true" aria-label="Guatemala (GTQ · Quetzal)" title="Guatemala · GTQ · Quetzal">
+        <svg class="flag" width="18" height="13" viewBox="0 0 18 13" aria-hidden="true" focusable="false"><g><rect width="6" height="13" fill="#4997d0"/><rect x="6" width="6" height="13" fill="#fff"/><rect x="12" width="6" height="13" fill="#4997d0"/><circle cx="9" cy="6.5" r="1.8200000000000003" fill="#5a9a3b"/></g></svg><span>GT</span><span class="ck" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button>
+    </div>
+  </div><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a></div>
+  </div></header><div class="hero" style="height:180px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div></div>
+</figure>
+</section>
+<section class="row"><h2>Móvil · 414 px</h2>
+  <div class="mob-row">
+    <figure class="fig m">
+  <figcaption class="lbl">Menú cerrado<small>La barra no cambia: el selector vive dentro del menú</small></figcaption>
+  <div class="frame m" style="height:640px"><header class="nav m"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <div class="right"><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a>
+      <button type="button" class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header><div class="hero" style="height:300px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div></div>
+</figure>
+    <figure class="fig m">
+  <figcaption class="lbl">Menú abierto<small>Selector al inicio del menú; 52 px de alto, nombre del país visible</small></figcaption>
+  <div class="frame m" style="height:640px"><header class="nav m"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <div class="right"><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a>
+      <button type="button" class="burger" aria-label="Cerrar menú" aria-expanded="true" aria-controls="mobile-menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+  </div></header><div class="hero" style="height:300px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div><nav class="mmenu" id="mobile-menu" aria-label="Principal">
+  <div class="mseg-box">
+    <span class="seg-lbl" id="msl">País</span>
+    <div class="mseg" role="group" aria-labelledby="msl">
+      <button type="button" data-pick="SV" data-seg class="sel" aria-pressed="true">
+        <svg class="flag" width="26" height="18" viewBox="0 0 26 18" aria-hidden="true" focusable="false"><g><rect width="26" height="6" fill="#0f47af"/><rect y="6" width="26" height="6" fill="#fff"/><rect y="12" width="26" height="6" fill="#0f47af"/><circle cx="13" cy="9" r="2.5200000000000005" fill="#f2b705"/></g></svg><span class="txt"><span class="s-code">SV</span><span class="s-name">El Salvador</span></span><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button><button type="button" data-pick="GT" data-seg class="" aria-pressed="false">
+        <svg class="flag" width="26" height="18" viewBox="0 0 26 18" aria-hidden="true" focusable="false"><g><rect width="8.666666666666666" height="18" fill="#4997d0"/><rect x="8.666666666666666" width="8.666666666666666" height="18" fill="#fff"/><rect x="17.333333333333332" width="8.666666666666666" height="18" fill="#4997d0"/><circle cx="13" cy="9" r="2.5200000000000005" fill="#5a9a3b"/></g></svg><span class="txt"><span class="s-code">GT</span><span class="s-name">Guatemala</span></span><span class="ck" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+      </button>
+    </div>
+  </div>
+  <a href="#" onclick="return false">Servicios</a><a href="#" onclick="return false">Cómo funciona</a><a href="#" onclick="return false">Montos</a><a href="#" onclick="return false">Nosotros</a><a href="#" onclick="return false">Trabaja con nosotros</a>
+</nav></div>
+</figure>
+    <figure class="fig m">
+  <figcaption class="lbl">Modal · primera visita<small>Sin país: modal bloqueante</small></figcaption>
+  <div class="frame m" style="height:640px"><header class="nav m"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <div class="right"><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a>
+      <button type="button" class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div></header><div class="hero" style="height:300px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div><div class="ov" >
+  <!-- <dialog aria-labelledby>: foco inicial en la primera tarjeta; Escape/× solo si ya había país elegido (dismissable) -->
+  <div class="modal mm" role="dialog" aria-modal="true" aria-labelledby="a2m-t" aria-describedby="a2m-d">
+    
+    <div class="m-head">
+      <span class="m-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9Z"/></svg></span>
+      <h2 id="a2m-t">¿Desde qué país nos visitas?</h2>
+      <p id="a2m-d">Selecciona el país de tu ubicación para conocer más información.</p>
+    </div>
+    <div class="cards col"><button type="button" class="card opt" data-pick="SV">
+      <span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+      <svg class="flag" width="48" height="34" viewBox="0 0 48 34" aria-hidden="true" focusable="false"><g><rect width="48" height="11.333333333333334" fill="#0f47af"/><rect y="11.333333333333334" width="48" height="11.333333333333334" fill="#fff"/><rect y="22.666666666666668" width="48" height="11.333333333333334" fill="#0f47af"/><circle cx="24" cy="17" r="4.760000000000001" fill="#f2b705"/></g></svg>
+      <span class="c-name">El Salvador</span>
+      <span class="c-cur">USD · Dólar</span>
+      
+    </button><button type="button" class="card opt" data-pick="GT">
+      <span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+      <svg class="flag" width="48" height="34" viewBox="0 0 48 34" aria-hidden="true" focusable="false"><g><rect width="16" height="34" fill="#4997d0"/><rect x="16" width="16" height="34" fill="#fff"/><rect x="32" width="16" height="34" fill="#4997d0"/><circle cx="24" cy="17" r="4.760000000000001" fill="#5a9a3b"/></g></svg>
+      <span class="c-name">Guatemala</span>
+      <span class="c-cur">GTQ · Quetzal</span>
+      
+    </button></div>
+  </div>
+</div></div>
+</figure>
+  </div>
+</section>
+<section class="row"><h2>Modal · primera visita (escritorio)</h2>
+  <figure class="fig d">
+  <figcaption class="lbl">Sin país elegido — texto nuevo</figcaption>
+  <div class="frame d" style="height:540px"><header class="nav"><div class="nav-in">
+    <a class="logo" href="#" onclick="return false"><span class="mark" aria-hidden="true"></span>Arnova</a>
+    <nav class="links" aria-label="Principal"><a href="#" onclick="return false">Servicios</a><a href="#" onclick="return false">Cómo funciona</a><a href="#" onclick="return false">Montos</a><a href="#" onclick="return false">Nosotros</a><a href="#" onclick="return false">Trabaja con nosotros</a></nav>
+    <div class="right"><a class="cta" href="#" onclick="return false"><span class="m-only">Solicitar</span><span class="d-only">Solicitar crédito →</span></a></div>
+  </div></header><div class="hero" style="height:430px" aria-hidden="true"><span>Contenido de la página (contexto)</span></div><div class="ov" >
+  <!-- <dialog aria-labelledby>: foco inicial en la primera tarjeta; Escape/× solo si ya había país elegido (dismissable) -->
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="a2d-t" aria-describedby="a2d-d">
+    
+    <div class="m-head">
+      <span class="m-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9s1.3-6.4 3.8-9Z"/></svg></span>
+      <h2 id="a2d-t">¿Desde qué país nos visitas?</h2>
+      <p id="a2d-d">Selecciona el país de tu ubicación para conocer más información.</p>
+    </div>
+    <div class="cards"><button type="button" class="card opt" data-pick="SV">
+      <span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+      <svg class="flag" width="48" height="34" viewBox="0 0 48 34" aria-hidden="true" focusable="false"><g><rect width="48" height="11.333333333333334" fill="#0f47af"/><rect y="11.333333333333334" width="48" height="11.333333333333334" fill="#fff"/><rect y="22.666666666666668" width="48" height="11.333333333333334" fill="#0f47af"/><circle cx="24" cy="17" r="4.760000000000001" fill="#f2b705"/></g></svg>
+      <span class="c-name">El Salvador</span>
+      <span class="c-cur">USD · Dólar</span>
+      
+    </button><button type="button" class="card opt" data-pick="GT">
+      <span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>
+      <svg class="flag" width="48" height="34" viewBox="0 0 48 34" aria-hidden="true" focusable="false"><g><rect width="16" height="34" fill="#4997d0"/><rect x="16" width="16" height="34" fill="#fff"/><rect x="32" width="16" height="34" fill="#4997d0"/><circle cx="24" cy="17" r="4.760000000000001" fill="#5a9a3b"/></g></svg>
+      <span class="c-name">Guatemala</span>
+      <span class="c-cur">GTQ · Quetzal</span>
+      
+    </button></div>
+  </div>
+</div></div>
+</figure>
+</section>
+<section class="notes" aria-label="Notas de implementación">
+  <h2>Accesibilidad e implementación</h2>
+  <ul><li><strong>Roles:</strong> <code>role="group"</code> con la etiqueta visible «País» (<code>aria-labelledby</code>) y dos <code>&lt;button aria-pressed&gt;</code>. Nombre accesible = «El Salvador (USD · Dólar)», no solo «SV».</li><li><strong>Teclado:</strong> Tab llega a cada segmento, Enter/Espacio selecciona; el anuncio «País cambiado a Guatemala» sale por <code>role="status"</code>. Activo = relleno blanco + palomita roja (no solo color).</li><li>Ancho extra en escritorio: etiqueta + 2 segmentos ≈ 175 px, caben en la barra de 1280 px a partir de <code>xl</code>. En 1024–1279 px la barra ya colapsa al menú: allí el selector también va dentro del menú.</li><li>Móvil: el selector pasa al menú hamburguesa (2 toques para cambiar). El modal queda solo para la primera visita.</li><li>Texto del modal exacto (S13/L36): «Selecciona el país de tu ubicación para conocer más información.». Cambia <code>aria-label="Selecciona tu país"</code> por <code>aria-labelledby</code> al título (arriba, por su <code>id</code>).</li></ul>
+  <ul><li>Contraste sobre navy #233159: blanco 12.7:1, brand-200 8.4:1, brand-300 6.5:1; borde del control (blanco 45 %) 3.9:1 (≥3:1).</li><li>Texto secundario del modal pasa a neutral-600 (6.7:1 sobre n-50); el actual neutral-500 da 3.7:1 y no llega a AA a 12 px.</li><li>Seleccionado = badge rojo con palomita (forma) + borde/fondo; foco = anillo brand-300 sobre navy / brand-600 sobre blanco. No se confunden. Insignia blanco/rojo 4.4:1 (icono, ≥3:1).</li><li>Banderas SVG inline en lugar del emoji (en Windows/Chrome el emoji se ve como «sv»/«gt»); el nombre accesible nunca depende de la bandera.</li><li>Movimiento ≤200 ms y apagado con <code>prefers-reduced-motion</code>.</li></ul>
+</section>
+<script>
+(function(){
+  var NAMES={SV:'El Salvador',GT:'Guatemala'};
+  var live=document.getElementById('live');
+  function closeAll(except){document.querySelectorAll('[data-dd]').forEach(function(btn){if(btn===except)return;btn.setAttribute('aria-expanded','false');var p=document.getElementById(btn.getAttribute('aria-controls'));if(p)p.hidden=true;});}
+  document.addEventListener('click',function(e){
+    var dd=e.target.closest('[data-dd]');
+    if(dd){var open=dd.getAttribute('aria-expanded')!=='true';closeAll(dd);dd.setAttribute('aria-expanded',open);document.getElementById(dd.getAttribute('aria-controls')).hidden=!open;return;}
+    var pick=e.target.closest('[data-pick]');
+    if(pick){
+      var c=pick.dataset.pick,f=pick.closest('.frame');
+      f.querySelectorAll('[data-pick]').forEach(function(b){var on=b.dataset.pick===c;b.classList.toggle('sel',on);if(b.hasAttribute('data-seg'))b.setAttribute('aria-pressed',on);else if(on)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');});
+      f.querySelectorAll('[data-code]').forEach(function(s){s.textContent=c;});
+      var d=f.querySelector('[data-dd]');if(d){d.setAttribute('aria-expanded','false');document.getElementById(d.getAttribute('aria-controls')).hidden=true;d.focus();}
+      if(live)live.textContent='País cambiado a '+NAMES[c];
+      return;
+    }
+    if(!e.target.closest('.panel'))closeAll();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    var openBtn=document.querySelector('[data-dd][aria-expanded="true"]');
+    if(openBtn){closeAll();openBtn.focus();}
+  });
+})();
+</script>
+</body>
+</html>

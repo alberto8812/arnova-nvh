@@ -17,10 +17,22 @@
     }
   ],
   "expectations": [
-    { "icon": "graph-up", "label": "Actitud comercial" },
-    { "icon": "headset", "label": "Orientación al servicio" },
-    { "icon": "shirt", "label": "Buena presentación personal" },
-    { "icon": "chat", "label": "Experiencia en ventas o atención al cliente" }
+    {
+      "icon": "graph-up",
+      "label": "Actitud comercial"
+    },
+    {
+      "icon": "headset",
+      "label": "Orientación al servicio"
+    },
+    {
+      "icon": "shirt",
+      "label": "Buena presentación personal"
+    },
+    {
+      "icon": "chat",
+      "label": "Experiencia en ventas o atención al cliente"
+    }
   ],
   "availableJobsHeading": "Vacantes disponibles",
   "noJobsMessage": "Por el momento no tenemos vacantes abiertas, pero nos encantaría conocerlo. Escríbanos y le contactamos cuando surja una oportunidad para usted.",
@@ -31,9 +43,18 @@
   "applyLabel": "Postularme",
   "expectationsHeading": "¿Qué esperamos de usted?",
   "expectationsNote": "Importante: necesita moto propia y residir en la ciudad de la vacante.",
-  "heroEyebrow": "Trabaje con nosotros",
-  "heroHeadline": "Tenemos",
-  "heroHeadlineItalic": "vacante.",
-  "heroParagraph": "Súmese a una empresa que, todos los días, ayuda a más comerciantes a acceder al apoyo financiero que necesitan. Buscamos personas comprometidas, con actitud de servicio y ganas de crecer con nosotros.",
-  "heroImageAlt": "Equipo Arnova trabajando"
+  "heroEyebrow": "",
+  "heroHeadline": "Trabaja con nosotros",
+  "heroHeadlineItalic": "",
+  "heroImageAlt": "Equipo Arnova trabajando",
+  "heroParagraphs": [
+    "En Arnova buscamos personas con talento, determinación y pasión por alcanzar grandes objetivos.",
+    "Ofrecemos oportunidades reales para desarrollar tus habilidades, asumir nuevos retos y crecer profesional y personalmente.",
+    "Valoramos la disciplina, la integridad, el compromiso y la orientación a resultados.",
+    "¡Si quieres superarte y construir un futuro extraordinario, queremos conocerte!"
+  ],
+  "heroEmail": {
+    "label": "Envía tu hoja de vida a",
+    "address": "recursoshumanos@arnovagroup.com"
+  }
 }

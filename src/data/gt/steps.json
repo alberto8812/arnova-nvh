@@ -1,22 +1,22 @@
 [
   {
     "n": "01",
-    "t": "Elegí el monto que querés pedir",
-    "d": "Tu primer crédito puede ir de Q400 a Q5.000. Conforme construís un buen historial de pago, vas teniendo acceso a montos más altos en tus próximas solicitudes."
+    "t": "Identifica qué necesita tu negocio para crecer",
+    "d": "Si no tienes clara la necesidad, llámanos, te visitaremos y te daremos una asesoría profesional en tu propio negocio.",
+    "link": {
+      "label": "Contáctanos",
+      "href": "https://wa.me/50252993553"
+    }
   },
   {
     "n": "02",
-    "t": "Empezá tu solicitud por WhatsApp",
-    "d": "Escribinos y un asesor te va a atender. Primero confirmamos en qué ciudad te encontrás para conectarte con el asesor más cercano."
+    "lead": "Ya identificadas tus necesidades",
+    "t": "Evaluamos juntos tu capacidad financiera",
+    "d": ""
   },
   {
     "n": "03",
-    "t": "Conversá con tu asesor",
-    "d": "El asesor de tu región te llama para explicarte el proceso, resolver dudas y agendar la firma de los documentos necesarios."
-  },
-  {
-    "n": "04",
-    "t": "Recibí el dinero en la cuenta de tu negocio",
-    "d": "Después de la aprobación, el monto se deposita en tu cuenta bancaria en menos de 24 horas."
+    "t": "¡Y listo! Te desembolsamos en minutos",
+    "d": ""
   }
 ]

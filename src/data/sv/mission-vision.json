@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "icon": "shield-lock",
+      "title": "Misión",
+      "text": "Contribuir al crecimiento económico de nuestros clientes, mediante créditos ágiles y seguros."
+    },
+    {
+      "icon": "briefcase",
+      "title": "Visión",
+      "text": "Convertirnos en la mejor alternativa financiera para que los comerciantes alcancen sus metas y hagan crecer sus negocios."
+    }
+  ]
+}

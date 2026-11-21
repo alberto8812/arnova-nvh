@@ -12,6 +12,11 @@ import { EASE } from "@/components/motion";
 const VP = { once: true, amount: 0.3 } as const;
 // Loops are 10 s; advance anyway after this if `ended` never arrives.
 const CLIP_MAX_MS = 12_000;
+// Fades the clip's left edge into the band so it reads as part of it, not a box.
+const FADE_X = "linear-gradient(90deg, transparent 0%, #000 42%)";
+// On mobile the clip sits under the text: fade every edge so no box shows.
+const FADE_Y =
+  "radial-gradient(ellipse 62% 60% at 50% 55%, #000 55%, transparent 100%)";
 
 // Paints `highlight` (when present in `text`) with the Arnova arrow gradient.
 function Highlighted({ text, highlight }: { text: string; highlight: string }) {
@@ -20,7 +25,7 @@ function Highlighted({ text, highlight }: { text: string; highlight: string }) {
   return (
     <>
       {text.slice(0, at)}
-      <span className="bg-gradient-to-r from-accent-700 to-accent-500 bg-clip-text text-transparent">
+      <span className="font-bold bg-gradient-to-r from-accent-700 to-accent-500 bg-clip-text text-transparent">
         {highlight}
       </span>
       {text.slice(at + highlight.length)}
@@ -36,11 +41,13 @@ function LoopVideo({
   poster,
   onEnded,
   onFail,
+  onProgress,
 }: {
   src: string;
   poster: string;
   onEnded: () => void;
   onFail: () => void;
+  onProgress: (ratio: number) => void;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -69,131 +76,157 @@ function LoopVideo({
       preload="auto"
       onEnded={onEnded}
       onError={onFail}
+      onTimeUpdate={(e) => {
+        const v = e.currentTarget;
+        if (v.duration) onProgress(v.currentTime / v.duration);
+      }}
       className="w-full h-full object-cover"
     />
   );
 }
 
-// Rotates the loops with a crossfade: each clip plays once, then the next one
-// fades in. Videos only load/play while the section is on screen; with reduced
-// motion (or a failed load) the poster stays still.
-function GrowthMedia() {
+export function GrowthSection() {
   const { growthSection } = useContent();
-  const { videos, mediaLabel } = growthSection;
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.25 });
+  const { eyebrow, lines, highlight, videos, mediaLabel } = growthSection;
+  const sentence = lines.join(" ");
+
+  const bandRef = useRef<HTMLElement>(null);
+  const inView = useInView(bandRef, { amount: 0.25 });
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [failed, setFailed] = useState(false);
   const current = videos[index];
   const animate = inView && !reduce && !failed;
 
-  return (
-    <div
-      ref={ref}
-      className="absolute inset-0 overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900"
-    >
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={index}
-          role="img"
-          aria-label={mediaLabel}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          exit={{ opacity: 0, filter: "blur(6px)" }}
-          transition={{ duration: 1.1, ease: EASE }}
-        >
-          {animate ? (
-            <LoopVideo
-              src={current.src}
-              poster={current.poster}
-              onEnded={() => setIndex((i) => (i + 1) % videos.length)}
-              onFail={() => setFailed(true)}
-            />
-          ) : (
-            <img
-              src={current.poster}
-              alt=""
-              loading="lazy"
-              className="w-full h-full object-cover"
-              onError={(e) => (e.currentTarget.style.visibility = "hidden")}
-            />
-          )}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Caption pill — small translucent glass so the animation stays the
-          focus; swaps with its clip. */}
-      <div aria-live="polite" className="absolute left-4 bottom-4 sm:left-5 sm:bottom-5">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={index}
-            className="flex items-center gap-2 rounded-full bg-brand-900/55 backdrop-blur-md border border-white/15 px-3.5 py-2 text-[13px] sm:text-sm font-semibold text-on-brand"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.5, ease: EASE }}
-          >
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-accent-700 to-action-yellow" />
-            {current.caption}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}
-
-export function GrowthSection() {
-  const { growthSection } = useContent();
-  const { eyebrow, lines, highlight } = growthSection;
-  const last = lines.length - 1;
-  const tone = ["text-brand-300", "text-brand-600", "text-brand-900"];
+  // The outgoing clip keeps playing during the crossfade; only the clip that
+  // matches the current index may drive the progress segments.
+  const indexRef = useRef(index);
+  indexRef.current = index;
+  const goTo = (i: number) => {
+    setProgress(0);
+    setIndex(i);
+  };
+  const next = () => goTo((indexRef.current + 1) % videos.length);
+  const progressFor = (i: number) => (ratio: number) => {
+    if (indexRef.current === i) setProgress(ratio);
+  };
 
   return (
     <section
+      ref={bandRef}
       id="crecimiento"
-      className="bg-neutral-50 py-14 md:py-[76px] overflow-hidden"
+      className="relative overflow-hidden bg-brand-900 text-on-brand flex flex-col md:block"
+      style={{
+        backgroundImage:
+          "radial-gradient(60% 90% at 82% 50%, var(--color-brand-800), var(--color-brand-900) 70%)",
+      }}
     >
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-bold tracking-[.14em] uppercase text-accent-500">
-              <span className="w-[22px] h-0.5 bg-gradient-to-r from-accent-700 to-accent-500" />
-              {eyebrow}
-            </div>
-            <h2
-              className="font-sans font-semibold mt-[18px] mb-0"
-              style={{
-                fontSize: "clamp(22px, 3vw, 32px)",
-                lineHeight: 1.25,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              {lines.map((line, i) => (
-                <motion.span
-                  key={i}
-                  className={`block ${tone[Math.min(i, tone.length - 1)]}`}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={VP}
-                  transition={{ duration: 0.7, ease: EASE, delay: i * 0.5 }}
-                >
-                  {i === last ? (
-                    <Highlighted text={line} highlight={highlight} />
-                  ) : (
-                    line
-                  )}{" "}
-                </motion.span>
-              ))}
-            </h2>
-          </div>
+      {/* Arrow-gradient hairline that marks the band's start */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-[3px] z-10"
+        style={{
+          background:
+            "linear-gradient(90deg, var(--color-accent-700), var(--color-accent-500) 45%, transparent)",
+        }}
+      />
 
-          <div className="relative aspect-[5/4]">
-            <GrowthMedia />
+      {/* Media — integrated in the band (no box): 4:5 like the clips so
+          nothing is cropped, faded into the navy on its leading edge. */}
+      <div
+        className="order-2 relative mx-auto mt-2 h-[340px] aspect-[4/5] md:absolute md:mt-0 md:inset-y-0 md:right-0 md:h-full [mask-image:var(--fade-y)] [-webkit-mask-image:var(--fade-y)] md:[mask-image:var(--fade-x)] md:[-webkit-mask-image:var(--fade-x)]"
+        style={{
+          ["--fade-x" as string]: FADE_X,
+          ["--fade-y" as string]: FADE_Y,
+        }}
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={index}
+            role="img"
+            aria-label={mediaLabel}
+            className="absolute inset-0"
+            initial={{ opacity: 0, scale: 1.04, filter: "blur(6px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, filter: "blur(6px)" }}
+            transition={{ duration: 1.1, ease: EASE }}
+          >
+            {animate ? (
+              <LoopVideo
+                src={current.src}
+                poster={current.poster}
+                onEnded={next}
+                onFail={() => setFailed(true)}
+                onProgress={progressFor(index)}
+              />
+            ) : (
+              <img
+                src={current.poster}
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-cover"
+                onError={(e) => (e.currentTarget.style.visibility = "hidden")}
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="order-1 relative z-10">
+        <Container>
+          <div className="pt-12 md:py-[96px] md:min-h-[520px] flex items-center">
+            <motion.div
+              className="max-w-[640px]"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={VP}
+              transition={{ duration: 0.7, ease: EASE }}
+            >
+              <div className="flex items-center gap-2.5 mb-[18px] text-[13px] font-bold tracking-[.14em] uppercase text-brand-300">
+                {/* <span className="w-6 h-[3px] rounded-sm bg-gradient-to-r from-accent-700 to-accent-500" /> */}
+                {eyebrow}
+              </div>
+              <h2
+                className="m-0 font-sans font-semibold text-on-brand"
+                style={{
+                  fontSize: "clamp(26px, 3.2vw, 44px)",
+                  lineHeight: 1.2,
+                  letterSpacing: "-0.02em",
+                  textWrap: "balance",
+                }}
+              >
+                <Highlighted text={sentence} highlight={highlight} />
+              </h2>
+            </motion.div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
+
+      {/* Minimal progress: one unlabeled segment per clip (jumps on click) */}
+      <div className="order-3 relative z-10 flex justify-center md:justify-end gap-1.5 pb-6 pt-3 md:absolute md:bottom-7 md:right-12 md:p-0">
+        {videos.map((v, i) => {
+          const active = i === index;
+          const fill = active ? (animate ? progress : 1) : 0;
+          return (
+            <button
+              key={v.src}
+              type="button"
+              aria-label={`Animación ${i + 1} de ${videos.length}`}
+              aria-current={active}
+              onClick={() => goTo(i)}
+              className="py-2 cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-on-brand"
+            >
+              <span className="block w-10 h-[3px] rounded-sm bg-brand-500 overflow-hidden">
+                <span
+                  className="block h-full bg-gradient-to-r from-accent-700 to-accent-500 transition-[width] duration-300 ease-linear"
+                  style={{ width: `${fill * 100}%` }}
+                />
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </section>
   );
 }

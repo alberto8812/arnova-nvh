@@ -1,0 +1,28 @@
+{
+  "title": "Pasos para solicitar un crédito",
+  "brief": "Sección 'Pasos para solicitar un crédito' del home de Arnova (SV y GT) para pequeños comerciantes, con el copy exacto del cliente (L14). Resuelve: celdas iguales con contenido muy desigual (paso 1 pesado, paso 3 vacío), sensación de tabla sin progresión, el paso final (desembolso) como el más débil, título del paso 2 terminado en '…' y la acción Contáctanos escondida. Sin datos que ya están en la página.",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    {
+      "file": "01-linea-de-tiempo.html",
+      "title": "Línea de tiempo",
+      "tradeoff": "Stepper horizontal con círculos numerados unidos por una línea que se llena con el degradado de la flecha de izquierda a derecha al entrar en pantalla: la progresión es evidente y el contenido fluye sin cajas ni huecos (altura automática). El paso 3 destaca con nodo degradado y título más grande. A cambio, el paso 1 sigue siendo más pesado que los otros y Contáctanos queda dentro del flujo, menos protagonista que en la opción 03. En móvil pasa a línea de tiempo vertical.",
+      "width": 1440,
+      "height": 560
+    },
+    {
+      "file": "02-tarjetas-con-flujo.html",
+      "title": "Tarjetas con flujo",
+      "tradeoff": "Tres tarjetas iguales con chevrons entre ellas y un icono arriba que llena el espacio; el paso 3 va en tarjeta navy con texto blanco como remate claro. Es lo más cercano al diseño actual (menor riesgo de implementación) y de lectura inmediata, pero conserva la sensación de bloques y el paso 1 sigue más cargado; Contáctanos es un botón secundario (contorno), no el CTA principal. En móvil las tarjetas se apilan con chevrons hacia abajo.",
+      "width": 1440,
+      "height": 610
+    },
+    {
+      "file": "03-asesoria-y-pasos.html",
+      "title": "Asesoría + pasos",
+      "tradeoff": "Layout dividido: a la izquierda título y un bloque navy destacado con la asesoría y Contáctanos como botón principal, que pasa a ser la acción protagonista de la sección; a la derecha un stepper vertical compacto donde el paso 1 conserva solo su título y el paso 3 es una tarjeta con borde degradado. Resuelve el desequilibrio entre pasos y favorece la conversión hacia WhatsApp; a cambio el texto de ayuda queda separado del paso 1 (el vínculo es más sutil) y la sección es más alta en móvil.",
+      "width": 1440,
+      "height": 540
+    }
+  ]
+}

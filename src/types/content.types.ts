@@ -61,6 +61,11 @@ export interface Step {
   n: string
   t: string
   d: string
+  // Small lead-in shown above the title.
+  lead?: string
+  // Help call to action (e.g. WhatsApp). The step that carries it feeds the
+  // section's advice block with its `d` text.
+  link?: { label: string; href: string }
 }
 
 export interface Service {
@@ -73,6 +78,7 @@ export interface CoverageContent {
   eyebrow: string
   headline: string
   intro: string
+  requirementNote: { text: string; highlights: string[] }
   locations: { city: string; region: string }[]
   requirements: { icon: string; label: string }[]
 }
@@ -101,6 +107,8 @@ export interface VideoItem {
 export interface ContactQuestion {
   id: string
   label: string
+  // Short label used in the WhatsApp message (falls back to `label`).
+  waLabel?: string
   type: 'text' | 'boolean'
 }
 
@@ -144,7 +152,9 @@ export interface JobsPageContent {
   heroEyebrow: string
   heroHeadline: string
   heroHeadlineItalic: string
-  heroParagraph: string
+  heroParagraphs: string[]
+  // Closing line of the hero: `label` followed by a mailto link to `address`.
+  heroEmail: { label: string; address: string }
   heroImageAlt: string
 }
 
@@ -232,12 +242,18 @@ export interface ContactContent {
   phone: string
   telHref: string
   waNumber: string
+  // Number that receives the chatbot (Nova) answers; `waNumber` stays for the footer.
+  chatWaNumber: string
   waIntro: string
   assistantName: string
   assistantRole: string
   greeting: string
   teaser: string
   questions: ContactQuestion[]
+  // Closing message when the visitor answers "No" to having a business.
+  noBusinessMessage: string
+  // Button that restarts the chat after the declined (no business) ending.
+  restartLabel: string
   email: string
   social: { instagram: string; facebook: string }
   cnpj?: string
@@ -279,8 +295,13 @@ export interface GrowthSectionContent {
   lines: string[]
   highlight: string
   mediaLabel: string
-  // `caption` is the short fact shown over its clip, swapped with it.
-  videos: { src: string; poster: string; caption: string }[]
+  videos: { src: string; poster: string }[]
+}
+
+// Mission & vision — two statements after the purpose section, rendered as
+// an editorial definition list. `icon` is an AppIcon name from the site set.
+export interface MissionVisionContent {
+  items: { icon: string; title: string; text: string }[]
 }
 
 export interface ContentBundle {
@@ -292,6 +313,7 @@ export interface ContentBundle {
   steps: Step[]
   services: Service[]
   about: AboutContent
+  missionVision: MissionVisionContent
   coverage: CoverageContent
   testimonials: Testimonial[]
   videos: VideoItem[]

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuestra cobertura — Ruta del asesor</title>
+<!--
+  Dirección 02 · Ruta del asesor. Sin geografía: ilustración abstracta (decorativa, aria-hidden).
+  Un pin (el asesor) recorre una ruta punteada y se detiene en 5 negocios; cada parada "se enciende".
+  El movimiento lo hace JS (getPointAtLength) para poder hacer pausas en cada negocio;
+  con prefers-reduced-motion el script no anima: pin quieto y negocios ya visitados.
+-->
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-400:#8495b5;--brand-500:#60759b;--brand-600:#445d86;--brand-800:#2b3d66;--brand-900:#233159;
+  --n-50:#f9fafb;--n-100:#f0f2f5;--n-200:#e6eaef;--n-600:#535a65;
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --shadow-lg:0 20px 40px -12px rgba(35,49,89,.12),0 2px 6px rgba(35,49,89,.05);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-600);-webkit-font-smoothing:antialiased}
+.section{max-width:1280px;margin:0 auto;padding:76px 32px;display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.eyebar{display:block;width:40px;height:4px;border-radius:2px;background:var(--arrow);margin-bottom:22px}
+h2{font-size:44px;font-weight:600;letter-spacing:-.02em;line-height:1.12;color:var(--brand-900)}
+.lead{margin-top:18px;max-width:22em;font-size:23px;line-height:1.5;color:var(--n-600);text-wrap:balance}
+.scene{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--n-200);box-shadow:var(--shadow-lg);background:linear-gradient(180deg,var(--brand-50),var(--n-50) 70%)}
+.scene svg{display:block;width:100%;height:auto}
+.road{fill:none;stroke:var(--brand-200);stroke-width:16;stroke-linecap:round;stroke-linejoin:round}
+.route{fill:none;stroke:url(#g);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 11;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-13}}
+.cloud{fill:#fff;opacity:.85;animation:drift 26s ease-in-out infinite alternate}
+.cloud.c2{animation-duration:34s;animation-direction:alternate-reverse}
+@keyframes drift{to{transform:translateX(34px)}}
+.stop .awn1{fill:var(--brand-400)}.stop .awn2{fill:#fff}.stop .roof{fill:var(--brand-400)}
+.stop.on .awn1{fill:#f37021}.stop.on .roof{fill:#f37021}
+.stop .body{fill:var(--brand-800)}
+.stop{transform-box:fill-box;transform-origin:50% 100%}
+.stop.pop{animation:pop .6s var(--ease)}
+@keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.14)}100%{transform:scale(1)}}
+.ping{fill:none;stroke:url(#g);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.ping.go{animation:ping 1.1s var(--ease)}
+@keyframes ping{0%{transform:scale(.4);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+#adv{opacity:1;transition:opacity .35s}
+#adv.hide{opacity:0}
+@media (max-width:860px){
+  .section{grid-template-columns:1fr;gap:28px;padding:56px 20px}
+  h2{font-size:clamp(28px,7vw,34px)}
+  .lead{font-size:19px;margin-top:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .route,.cloud{animation:none}
+  .stop.pop,.ping.go{animation:none}
+  #adv{transition:none}
+}
+</style>
+</head>
+<body>
+<section class="section" aria-labelledby="cobertura-titulo" id="cobertura">
+  <div class="copy">
+    <span class="eyebar" aria-hidden="true"></span>
+    <h2 id="cobertura-titulo">Nuestra cobertura</h2>
+    <p class="lead">Arnova ofrece atención personalizada a nivel nacional.</p>
+  </div>
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 560 350" focusable="false">
+      <defs>
+        <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="50" y1="0" x2="520" y2="0"><stop offset="0" stop-color="#ed1c24"/><stop offset="1" stop-color="#f37021"/></linearGradient>
+        <linearGradient id="pg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f37021"/><stop offset="1" stop-color="#ed1c24"/></linearGradient>
+        <!-- segmentos entre paradas (misma ruta, usados para medir) -->
+        <path id="s1" d="M60 150 C110 150 140 100 190 100"/>
+        <path id="s2" d="M190 100 C250 100 260 170 320 170"/>
+        <path id="s3" d="M320 170 C380 170 380 80 430 80"/>
+        <path id="s4" d="M430 80 C470 80 480 40 510 40"/>
+      </defs>
+      <!-- paisaje suave -->
+      <g class="cloud"><ellipse cx="120" cy="40" rx="42" ry="11"/><ellipse cx="148" cy="33" rx="26" ry="10"/></g>
+      <g class="cloud c2"><ellipse cx="330" cy="46" rx="34" ry="9"/><ellipse cx="352" cy="40" rx="20" ry="8"/></g>
+      <path d="M0 250 C90 200 170 210 250 240 C340 275 430 200 560 230 L560 420 L0 420Z" fill="#e4e8f0"/>
+      <path d="M0 300 C110 262 210 290 300 300 C390 310 470 270 560 290 L560 420 L0 420Z" fill="#cbd3e1" opacity=".55"/>
+      <path d="M0 350 C120 330 220 360 320 355 C420 350 490 335 560 345 L560 420 L0 420Z" fill="#f0f2f5"/>
+      <!-- ruta -->
+      <path class="road" d="M60 150 C110 150 140 100 190 100 C250 100 260 170 320 170 C380 170 380 80 430 80 C470 80 480 40 510 40" transform="translate(0 0)"/>
+      <path class="route" d="M60 150 C110 150 140 100 190 100 C250 100 260 170 320 170 C380 170 380 80 430 80 C470 80 480 40 510 40"/>
+      <!-- paradas: icono bajo el punto de la ruta -->
+      <g id="stops">
+        <g class="stop" data-x="60" data-y="150">
+          <circle class="ping" cx="60" cy="150" r="8"/><circle cx="60" cy="150" r="7" fill="#fff" stroke="#233159" stroke-width="3"/>
+          <g transform="translate(60 150)"><rect class="body" x="-18" y="26" width="36" height="26" rx="2"/><path class="awn1" d="M-22 26 L-18 14 H18 L22 26Z"/><path class="awn2" d="M-7 14 H0 L-1 26 H-9Z M11 14 H18 L22 26 H13Z"/><rect x="-5" y="36" width="10" height="16" fill="#233159"/></g>
+        </g>
+        <g class="stop" data-x="190" data-y="100">
+          <circle class="ping" cx="190" cy="100" r="8"/><circle cx="190" cy="100" r="7" fill="#fff" stroke="#233159" stroke-width="3"/>
+          <g transform="translate(190 100)"><rect class="body" x="-16" y="26" width="32" height="24" rx="2"/><path class="roof" d="M-22 28 L0 10 L22 28Z"/><rect x="-5" y="34" width="10" height="16" fill="#233159"/><rect x="7" y="32" width="6" height="6" fill="#aebbd1"/></g>
+        </g>
+        <g class="stop" data-x="320" data-y="170">
+          <circle class="ping" cx="320" cy="170" r="8"/><circle cx="320" cy="170" r="7" fill="#fff" stroke="#233159" stroke-width="3"/>
+          <g transform="translate(320 170)"><rect class="body" x="-20" y="26" width="40" height="28" rx="2"/><path class="awn1" d="M-24 26 L-20 14 H20 L24 26Z"/><path class="awn2" d="M-8 14 H0 L-1 26 H-10Z M12 14 H20 L24 26 H14Z"/><rect x="-14" y="34" width="14" height="12" fill="#aebbd1"/><rect x="6" y="34" width="8" height="20" fill="#233159"/></g>
+        </g>
+        <g class="stop" data-x="430" data-y="80">
+          <circle class="ping" cx="430" cy="80" r="8"/><circle cx="430" cy="80" r="7" fill="#fff" stroke="#233159" stroke-width="3"/>
+          <g transform="translate(430 80)"><rect class="body" x="-16" y="26" width="32" height="24" rx="2"/><path class="roof" d="M-22 28 L0 10 L22 28Z"/><rect x="-12" y="34" width="8" height="8" fill="#aebbd1"/><rect x="2" y="34" width="10" height="16" fill="#233159"/></g>
+        </g>
+        <g class="stop" data-x="510" data-y="40">
+          <circle class="ping" cx="510" cy="40" r="8"/><circle cx="510" cy="40" r="7" fill="#fff" stroke="#233159" stroke-width="3"/>
+          <g transform="translate(510 40)"><rect class="body" x="-16" y="26" width="32" height="24" rx="2"/><path class="awn1" d="M-20 26 L-16 14 H16 L20 26Z"/><path class="awn2" d="M-6 14 H1 L0 26 H-8Z M10 14 H16 L20 26 H12Z"/><rect x="-5" y="34" width="10" height="16" fill="#233159"/></g>
+        </g>
+      </g>
+      <!-- asesor: pin con la punta en (0,0) -->
+      <g id="adv" transform="translate(60 150)">
+        <ellipse cx="0" cy="0" rx="9" ry="3" fill="#233159" opacity=".25"/>
+        <path d="M0 0 C-5 -9 -16 -17 -16 -29 A16 16 0 0 1 16 -29 C16 -17 5 -9 0 0Z" fill="url(#pg)"/>
+        <circle cx="0" cy="-29" r="6.5" fill="#fff"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<script>
+(function(){
+  var svg=document.querySelector('.scene svg');
+  var segs=['s1','s2','s3','s4'].map(function(id){var p=document.getElementById(id);return {p:p,len:p.getTotalLength()}});
+  var stops=[].slice.call(document.querySelectorAll('.stop'));
+  var adv=document.getElementById('adv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function at(i,f){var s=segs[i];var q=s.p.getPointAtLength(s.len*f);return q}
+  function place(x,y){adv.setAttribute('transform','translate('+x+' '+y+')')}
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  var DW=700,TR=1700,END=1500,FADE=400;            /* ms: pausa en negocio, trayecto, pausa final, fundido */
+  var CYCLE=DW*5+TR*4+END+FADE;
+  var arrived=[],lastCyc=-1;
+  function reset(){arrived=[];stops.forEach(function(s){s.classList.remove('on')})}
+  function arrive(i){
+    if(arrived[i])return;arrived[i]=1;var s=stops[i];s.classList.add('on');
+    s.classList.remove('pop');var pg=s.querySelector('.ping');pg.classList.remove('go');
+    void s.getBoundingClientRect();s.classList.add('pop');pg.classList.add('go');
+  }
+  function frame(now){
+    var t=now%CYCLE,cyc=Math.floor(now/CYCLE);
+    if(cyc!==lastCyc){lastCyc=cyc;reset()}
+    var acc=0,i;
+    for(i=0;i<5;i++){
+      if(t<acc+DW){var p=i===0?at(0,0):at(i-1,1);arrive(i);place(p.x,p.y);adv.classList.remove('hide');break}
+      acc+=DW;
+      if(i<4){
+        if(t<acc+TR){var q=at(i,ease((t-acc)/TR));place(q.x,q.y);break}
+        acc+=TR;
+      }
+    }
+    if(i===5){ /* pausa final y fundido, luego reinicia */
+      var e=at(3,1);place(e.x,e.y);
+      adv.classList.toggle('hide',t>acc+END);
+    }
+  }
+  function staticState(){
+    stops.forEach(function(s){s.classList.add('on')});
+    var p=at(1,1);place(p.x,p.y);adv.classList.remove('hide');
+  }
+  function loop(n){ if(reduce.matches){staticState();return} frame(n); requestAnimationFrame(loop) }
+  if(reduce.matches){staticState()} else {reset();requestAnimationFrame(loop)}
+})();
+</script>
+</body>
+</html>

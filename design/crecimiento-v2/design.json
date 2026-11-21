@@ -1,0 +1,10 @@
+{
+  "title": "Sección de crecimiento v2",
+  "brief": "Sección de crecimiento del home de Arnova (SV y GT) para pequeños comerciantes: frase exacta 'Tus ventas mantienen tu negocio, un crédito bien manejado te permite crecer, pero con Arnova aceleras ese crecimiento de forma cómoda y segura.' + loop de video (tienda, barras de crecimiento, asesor). Sin botón y sin datos que ya están en la página (TrustBar/Beneficios). El video ya no debe absorber el texto.",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    { "file": "01-editorial-equilibrado.html", "title": "Editorial equilibrado", "tradeoff": "Lo más parecido a la versión que les gustó: texto 60 % / video 40 % con la altura del video igualada al bloque de texto y solo 3 puntos como indicador. Calma y sin repetir nada; el video queda como acompañante, no como protagonista, y sus clips pasan a formato horizontal (~16:10) en vez de 4:5.", "width": 1440, "height": 640 },
+    { "file": "02-la-frase-es-el-indicador.html", "title": "La frase es el indicador", "tradeoff": "Las tres cláusulas de la frase se activan (brand-900 + subrayado degradado) en sincronía con cada clip, así el texto hace de paginador y no hace falta ningún paso ni dato extra. Más narrativo y con cero copy nuevo; a cambio exige sincronizar JS/video y el énfasis cambiante puede distraer a quien lee de corrido.", "width": 1440, "height": 640 },
+    { "file": "03-banda-inmersiva.html", "title": "Banda inmersiva", "tradeoff": "Banda navy a sangre que rompe el ritmo claro entre Beneficios y Pasos: texto blanco a la izquierda y video fundido a la derecha, sin caja ni borde. Máximo impacto de marca y el video ya no compite con el texto; pesa más visualmente, ocupa más alto y el degradado de la flecha sobre navy queda justo de contraste.", "width": 1440, "height": 760 }
+  ]
+}

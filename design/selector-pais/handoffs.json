@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "chosen": "01-menu-desplegable.html",
+  "handoffs": {
+    "01-menu-desplegable.html": {
+      "status": "implemented",
+      "queued": false,
+      "sentAt": "2026-11-21T15:06:15.684Z",
+      "startedAt": "2026-11-21T15:06:22.787Z",
+      "implementedAt": "2026-11-21T15:12:09.410Z",
+      "feature": "odd/tasks/seccion-crecimiento.md",
+      "note": "Implementado: country-selector.tsx + country-flag.tsx en el navbar; modal con el subtítulo nuevo.",
+      "previewUrl": "http://localhost:5179/"
+    }
+  }
+}

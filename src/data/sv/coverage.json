@@ -1,7 +1,11 @@
 {
-  "eyebrow": "Cobertura",
+  "eyebrow": "",
   "headline": "Nuestra cobertura",
-  "intro": "Arnova ofrece atención personalizada en las siguientes zonas de El Salvador (cobertura sujeta a confirmación y ampliación por el negocio):",
+  "intro": "Arnova ofrece atención personalizada a nivel nacional.",
+  "requirementNote": {
+    "text": "Para solicitar tu asesoría y crédito solo necesitas tener negocio propio",
+    "highlights": ["solo", "negocio propio"]
+  },
   "locations": [
     {
       "city": "San Salvador",

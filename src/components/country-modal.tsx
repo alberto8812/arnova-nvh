@@ -1,10 +1,11 @@
 import { useCallback } from 'react'
 import { useCountryStore } from '@/stores/country-store'
 import type { Country } from '@/stores/country-store'
+import { CountryFlag } from '@/components/country-flag'
 
-const COUNTRY_OPTIONS: { code: Country; label: string; flag: string; currency: string }[] = [
-  { code: 'SV', label: 'El Salvador', flag: '🇸🇻', currency: 'USD · Dólar' },
-  { code: 'GT', label: 'Guatemala', flag: '🇬🇹', currency: 'GTQ · Quetzal' },
+const COUNTRY_OPTIONS: { code: Country; label: string; currency: string }[] = [
+  { code: 'SV', label: 'El Salvador', currency: 'USD · Dólar' },
+  { code: 'GT', label: 'Guatemala', currency: 'GTQ · Quetzal' },
 ]
 
 export function CountryModal() {
@@ -60,7 +61,7 @@ export function CountryModal() {
             type="button"
             onClick={closeCountryModal}
             aria-label="Cerrar"
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-neutral-500 transition-colors duration-200 hover:bg-neutral-100 hover:text-brand-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
+            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-neutral-600 transition-colors duration-200 hover:bg-neutral-100 hover:text-brand-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
               <path d="M6 6l12 12M18 6L6 18" />
@@ -82,7 +83,7 @@ export function CountryModal() {
             ¿Desde qué país nos visitas?
           </h2>
           <p className="mt-2 text-[14.5px] text-neutral-600" style={{ textWrap: 'balance' }}>
-            Selecciona tu país para ver montos, moneda y condiciones para ti.
+            Selecciona el país de tu ubicación para conocer más información.
           </p>
         </div>
 
@@ -107,11 +108,11 @@ export function CountryModal() {
                     </svg>
                   </span>
                 )}
-                <span style={{ fontSize: '36px', lineHeight: 1 }}>{option.flag}</span>
+                <CountryFlag country={option.code} width={48} className="rounded" />
                 <span className="font-sans font-semibold text-[15px] text-brand-900 text-center">
                   {option.label}
                 </span>
-                <span className="font-sans text-[12px] font-medium text-neutral-500 tracking-wide text-center">
+                <span className="font-sans text-[13px] font-medium text-neutral-600 tracking-wide text-center">
                   {option.currency}
                 </span>
               </button>

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
 import { EASE } from "@/components/motion";
 import { Container } from "@/components/ui";
-import { useCountryStore } from "@/stores/country-store";
+import { CountrySelector } from "@/components/country-selector";
 import { useContent } from "@/hooks/use-content";
 
 // Navbar lives in the shared Layout and persists across routes, so every
@@ -18,15 +18,10 @@ const NAV_LINKS = [
   { label: "Nosotros", href: "/#nosotros" },
 ] as const;
 
-const COUNTRY_FLAGS = { SV: "🇸🇻", GT: "🇬🇹" } as const;
-const COUNTRY_NAMES = { SV: "El Salvador", GT: "Guatemala" } as const;
-
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [overHero, setOverHero] = useState(true);
   const { pathname } = useLocation();
-  const country = useCountryStore((s) => s.country);
-  const openCountryModal = useCountryStore((s) => s.openCountryModal);
   const { nav } = useContent();
   const navLinks = [...NAV_LINKS, { label: nav.careersLabel, href: "/careers" }];
 
@@ -100,9 +95,10 @@ export function Navbar() {
 
         {/* Nav links — desktop. Switches at xl (1280px), matching the
             Container's own max-width: below that, the container never has
-            enough room (max 1184px usable) for 6 labels + CTA on one line
+            enough room for the labels + País + CTA on one line (measured: no
+            overlap from 1100px; 14" laptops at 150% scaling report ~1263px)
             without wrapping into the CTA. */}
-        <nav className="hidden xl:flex gap-6 items-center">
+        <nav className="hidden min-[1100px]:flex gap-4 xl:gap-6 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -115,23 +111,10 @@ export function Navbar() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* Country indicator — hidden while no country is chosen yet; the
-              blocking (non-dismissable) modal covers that gap, so there's
-              nothing valid to reopen here until a country is set. Rendered
-              as its own bordered chip (not a bare text link) so it reads as
-              a control rather than blending into the CTA next to it, and
-              stays visible at every breakpoint instead of dropping under sm. */}
-          {country && (
-            <button
-              type="button"
-              onClick={openCountryModal}
-              aria-label={`Cambiar país: ${COUNTRY_NAMES[country]}`}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-on-brand/20 bg-on-brand/10 text-on-brand backdrop-blur-sm transition-colors duration-300 hover:border-on-brand/35 hover:bg-on-brand/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 sm:h-9 sm:w-auto sm:gap-1.5 sm:px-3 sm:text-[13px] sm:font-semibold whitespace-nowrap"
-            >
-              <span aria-hidden="true" className="text-[15px] leading-none">{COUNTRY_FLAGS[country]}</span>
-              <span className="hidden sm:inline">{country}</span>
-            </button>
-          )}
+          {/* "País · SV" dropdown — renders nothing while no country is chosen
+              (the blocking first-visit modal covers that gap); visible at
+              every breakpoint. */}
+          <CountrySelector />
 
           {/* CTA — always visible so it's reachable even if the mobile menu's JS fails to mount */}
           <Link
@@ -149,7 +132,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="xl:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
+            className="min-[1100px]:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-md text-brand-300 hover:text-on-brand transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
           >
             <svg
               width="22"
@@ -179,7 +162,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.24, ease: EASE }}
-            className="xl:hidden absolute left-0 right-0 top-full bg-brand-900 border-b border-brand-800"
+            className="min-[1100px]:hidden absolute left-0 right-0 top-full bg-brand-900 border-b border-brand-800"
           >
             <div className="flex flex-col px-5 py-3">
               {navLinks.map((link) => (

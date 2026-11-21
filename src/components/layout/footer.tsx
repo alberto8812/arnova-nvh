@@ -5,11 +5,7 @@ import { Container } from "@/components/ui";
 import { ComplianceModal } from "@/components/compliance-modal";
 
 const FOOTER_LEGAL_LINKS = [
-  { label: "Política de Privacidad", docId: "privacidade-dados" },
-  { label: "Compliance y Regulatorio", docId: "seguranca-informacao" },
-  { label: "Cookies", docId: "cookies" },
-  { label: "Seguridad Cibernética", docId: "seguranca-cibernetica" },
-  { label: "PLDFT", docId: "pldft" },
+  { label: "Términos y Condiciones", docId: "terminos-y-condiciones" },
 ];
 
 export function Footer() {

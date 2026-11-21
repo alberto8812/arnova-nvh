@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requisito único — Dentro de Cobertura</title>
+<!--
+  Dirección 01 · Dentro de Cobertura.
+  CONTEXTO: título, frase y mapa de puntos son la sección Cobertura YA implementada (L21); se reproducen
+  solo para ver el encaje. Lo NUEVO es únicamente .req (la píldora). Sin sección nueva, sin encabezado nuevo.
+  Copy de lo nuevo: solo la frase del cliente (L22), literal. El ícono de tienda es decorativo (aria-hidden).
+  .proto y .tag son solo del artboard. Atajos: #sv (por defecto) y #gt.
+  Contraste: texto brand-900 sobre blanco (>12:1); naranja/degradado solo como borde y subrayado decorativos.
+-->
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-600:#445d86;--brand-900:#233159;
+  --n-50:#f9fafb;--n-100:#f0f2f5;--n-200:#e6eaef;--n-600:#535a65;
+  --accent-100:#fff0e5;
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --node-grad:linear-gradient(135deg,#ba141a,#f04e23);
+  --shadow-lg:0 20px 40px -12px rgba(35,49,89,.12),0 2px 6px rgba(35,49,89,.05);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-600);-webkit-font-smoothing:antialiased}
+.proto{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:8px 32px;background:var(--n-100);border-bottom:1px solid var(--n-200)}
+.proto button{min-height:36px;padding:0 16px;border-radius:10px;border:1px solid var(--brand-200);background:#fff;color:var(--brand-900);font:600 15px/1 var(--font);cursor:pointer}
+.proto button[aria-pressed="true"]{background:var(--brand-900);color:#fff;border-color:var(--brand-900)}
+.proto button:focus-visible{outline:3px solid var(--brand-600);outline-offset:2px}
+.tag{display:inline-block;margin-bottom:14px;padding:3px 10px;border-radius:6px;background:var(--n-200);color:var(--n-600);font:600 13px/1.4 var(--font);letter-spacing:.04em;text-transform:uppercase}
+
+.section{max-width:1280px;margin:0 auto;padding:76px 32px;display:grid;grid-template-columns:6fr 5fr;gap:56px;align-items:center}
+.eyebar{display:block;width:40px;height:4px;border-radius:2px;background:var(--arrow);margin-bottom:22px}
+h2{font-size:44px;font-weight:600;letter-spacing:-.02em;line-height:1.12;color:var(--brand-900)}
+.lead{margin-top:18px;max-width:22em;font-size:23px;line-height:1.5;color:var(--n-600);text-wrap:balance}
+
+/* NUEVO: píldora de requisito */
+.req{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:center;margin-top:36px;padding:20px 28px 20px 20px;border-radius:18px;
+  border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--arrow) border-box;box-shadow:var(--shadow-lg);
+  animation:rise .7s var(--ease) both}
+.req .ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--node-grad);color:#fff;box-shadow:0 8px 18px -6px rgba(186,20,26,.45)}
+.req .ico svg{width:32px;height:32px}
+.req p{font-size:24px;line-height:1.4;font-weight:500;color:var(--brand-900);text-wrap:balance}
+.req strong{font-weight:700;background:linear-gradient(transparent 58%,var(--accent-100) 58%);box-shadow:inset 0 -.12em 0 #f04e23;padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.map{position:relative}
+.map::before{content:"";position:absolute;inset:6% 4%;border-radius:50%;background:radial-gradient(closest-side,var(--brand-100),rgba(228,232,240,0));opacity:.8}
+.map svg{position:relative;display:block;width:100%;height:auto;max-height:400px}
+.ring{transform-box:fill-box;transform-origin:center;animation:ping 3s var(--ease) infinite;animation-delay:calc(var(--i)*.55s)}
+.ring.b{animation-delay:calc(var(--i)*.55s + 1.5s)}
+@keyframes ping{0%{transform:scale(.5);opacity:.75}75%,100%{transform:scale(3.6);opacity:0}}
+.core{transform-box:fill-box;transform-origin:center;animation:breathe 3s ease-in-out infinite;animation-delay:calc(var(--i)*.55s)}
+@keyframes breathe{50%{transform:scale(1.18)}}
+
+@media (max-width:860px){
+  .proto{padding:8px 20px;justify-content:flex-start}
+  .section{grid-template-columns:1fr;gap:28px;padding:48px 20px 44px}
+  h2{font-size:clamp(28px,7vw,34px)}
+  .lead{font-size:19px;margin-top:14px}
+  .req{grid-template-columns:52px 1fr;gap:14px;margin-top:28px;padding:16px 18px 16px 14px}
+  .req .ico{width:52px;height:52px}
+  .req .ico svg{width:26px;height:26px}
+  .req p{font-size:20px}
+  .map svg{max-height:300px}
+}
+@media (prefers-reduced-motion:reduce){
+  .req{animation:none}
+  .ring{animation:none;transform:scale(2.2);opacity:.28}
+  .ring.b{display:none}
+  .core{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="proto" data-artboard-only>
+  <button type="button" id="b-sv" aria-pressed="true">El Salvador</button>
+  <button type="button" id="b-gt" aria-pressed="false">Guatemala</button>
+</div>
+
+<section class="section" aria-labelledby="cobertura-titulo" id="cobertura">
+  <div class="copy">
+    <span class="tag" data-artboard-only>Contexto · Cobertura ya implementada</span>
+    <span class="eyebar" aria-hidden="true"></span>
+    <h2 id="cobertura-titulo">Nuestra cobertura</h2>
+    <p class="lead">Arnova ofrece atención personalizada a nivel nacional.</p>
+
+    <div class="req">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 9.5 4.6 4.5h14.8L21 9.5"/><path d="M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12.5V20h14v-7.5"/><path d="M10 20v-4.5h4V20"/></svg>
+      </span>
+      <p>Para solicitar tu asesoría y crédito <strong>solo</strong> necesitas tener <strong>negocio propio</strong></p>
+    </div>
+  </div>
+  <div class="map" aria-hidden="true">
+    <svg id="svg" viewBox="0 0 460 400" focusable="false">
+      <defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="460" y2="0"><stop offset="0" stop-color="#ed1c24"/><stop offset="1" stop-color="#f37021"/></linearGradient></defs>
+      <polygon id="shape" fill="#e4e8f0" opacity=".7"/>
+      <g id="dots" fill="#aebbd1"></g>
+      <g id="locs"></g>
+    </svg>
+  </div>
+</section>
+
+<script>
+/* Mapa: igual que design/cobertura/01 (geografía aproximada, decorativa) */
+var C={
+  sv:{poly:[[-89.35,14.42],[-88.9,14.35],[-88.5,14.15],[-88.15,13.98],[-87.7,13.88],[-87.8,13.42],[-88.1,13.2],[-88.5,13.18],[-89.0,13.5],[-89.35,13.5],[-89.8,13.52],[-90.1,13.73],[-89.95,13.87],[-89.8,14.05],[-89.55,14.2]],
+      pts:[[-89.19,13.69],[-89.56,14.0],[-88.18,13.48],[-89.72,13.72],[-87.9,13.45],[-88.43,13.4],[-88.94,14.04],[-88.75,13.9]]},
+  gt:{poly:[[-90.99,17.81],[-89.15,17.81],[-89.15,16.1],[-88.6,15.95],[-88.22,15.73],[-88.6,15.45],[-89.15,15.07],[-89.35,14.42],[-89.55,14.2],[-89.85,14.05],[-90.1,13.73],[-91.0,13.92],[-91.7,14.1],[-92.2,14.53],[-92.2,14.95],[-91.73,16.07],[-90.45,16.07],[-90.7,16.5],[-90.98,17.25]],
+      pts:[[-90.51,14.63],[-91.52,14.84],[-90.37,15.47],[-88.9,15.72],[-90.78,14.3],[-89.89,16.93],[-89.53,14.97],[-91.47,15.32]]}
+};
+var W=460,H=400,PAD=22,STEP=9.6;
+var dots=document.getElementById('dots'),locs=document.getElementById('locs'),shape=document.getElementById('shape');
+function inside(P,x,y){var c=false;for(var i=0,j=P.length-1;i<P.length;j=i++){var a=P[i],b=P[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
+function render(k){
+  var d=C[k],poly=d.poly,mid=poly.reduce(function(a,p){return a+p[1]},0)/poly.length,cs=Math.cos(mid*Math.PI/180);
+  var xs=poly.map(function(p){return p[0]*cs}),ys=poly.map(function(p){return -p[1]});
+  var minx=Math.min.apply(0,xs),maxx=Math.max.apply(0,xs),miny=Math.min.apply(0,ys),maxy=Math.max.apply(0,ys);
+  var s=Math.min((W-2*PAD)/(maxx-minx),(H-2*PAD)/(maxy-miny));
+  var ox=(W-(maxx-minx)*s)/2-minx*s,oy=(H-(maxy-miny)*s)/2-miny*s;
+  function proj(p){return [p[0]*cs*s+ox,-p[1]*s+oy]}
+  var P=poly.map(proj);
+  shape.setAttribute('points',P.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1)}).join(' '));
+  var bx0=minx*s+ox,bw=(maxx-minx)*s,by0=miny*s+oy,bh=(maxy-miny)*s,out='',row=0;
+  for(var y=PAD/2;y<H;y+=STEP*.866,row++){for(var x=PAD/2+(row%2?STEP/2:0);x<W;x+=STEP){
+    if(!inside(P,x,y))continue;
+    var t=Math.min(1,Math.max(0,((x-bx0)/bw)*.55+((y-by0)/bh)*.45));
+    out+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(3.2-1.7*t).toFixed(2)+'"/>';}}
+  dots.innerHTML=out;
+  locs.innerHTML=d.pts.map(function(p,i){var q=proj(p),a=q[0].toFixed(1),b=q[1].toFixed(1);
+    return '<g><circle class="ring" style="--i:'+i+'" cx="'+a+'" cy="'+b+'" r="5" fill="none" stroke="url(#g)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle class="ring b" style="--i:'+i+'" cx="'+a+'" cy="'+b+'" r="5" fill="none" stroke="url(#g)" stroke-width="2" vector-effect="non-scaling-stroke"/><circle class="core" style="--i:'+i+'" cx="'+a+'" cy="'+b+'" r="5.5" fill="url(#g)" stroke="#fff" stroke-width="2"/></g>'}).join('');
+  document.getElementById('b-sv').setAttribute('aria-pressed',k==='sv');
+  document.getElementById('b-gt').setAttribute('aria-pressed',k==='gt');
+}
+document.getElementById('b-sv').onclick=function(){render('sv')};
+document.getElementById('b-gt').onclick=function(){render('gt')};
+render(location.hash==='#gt'?'gt':'sv');
+</script>
+</body>
+</html>

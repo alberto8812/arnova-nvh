@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasos para solicitar un crédito — Línea de tiempo</title>
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-600:#445d86;--brand-800:#2b3d66;--brand-900:#233159;
+  --n-50:#f9fafb;--n-200:#e6eaef;--n-300:#d3d8de;--n-600:#535a65;--n-700:#353b46;
+  --red-start:#ba141a;--red:#ed1c24;--orange-start:#f04e23;--orange:#f37021;
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --node-grad:linear-gradient(135deg,#ba141a,#f04e23);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-700);-webkit-font-smoothing:antialiased}
+.section{max-width:1280px;margin:0 auto;padding:76px 32px}
+h2{font-size:34px;font-weight:600;letter-spacing:-.02em;color:var(--brand-900);text-align:center;line-height:1.15}
+.steps{list-style:none;padding:0;margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr)}
+.step{position:relative;padding:0 28px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.node{position:relative;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#fff;border:3px solid var(--brand-900);color:var(--brand-900);flex:none;z-index:1}
+.node svg{width:28px;height:28px}
+.node .num{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;background:var(--brand-900);color:#fff;font-size:14px;font-weight:700;display:grid;place-items:center;border:2px solid var(--n-50)}
+.step.payoff .node{width:76px;height:76px;margin-top:-6px;background:var(--node-grad);border:0;color:#fff;box-shadow:0 12px 28px -8px rgba(237,28,36,.45)}
+.step.payoff .node svg{width:36px;height:36px}
+.step.payoff .node .num{background:#fff;color:var(--brand-900);border-color:var(--n-50);box-shadow:0 0 0 2px var(--brand-900)}
+/* connector segments (desktop: horizontal) */
+.step:not(:last-child)::before,.step:not(:last-child)::after{content:"";position:absolute;top:30px;left:calc(50% + 44px);width:calc(100% - 88px);height:4px;border-radius:2px}
+.step:not(:last-child)::before{background:var(--n-300)}
+.step:not(:last-child)::after{background:var(--arrow);transform-origin:left center}
+.js .step:not(:last-child)::after{transform:scaleX(0)}
+.js.in .step:not(:last-child)::after{transform:scaleX(1);transition:transform .8s var(--ease)}
+.js.in .step:nth-child(2)::after{transition-delay:.8s}
+.body{margin-top:24px;max-width:340px}
+.lead{font-size:15px;line-height:1.4;color:var(--n-600);font-weight:600;letter-spacing:.01em;margin-bottom:4px}
+h3{font-size:22px;line-height:1.25;font-weight:600;color:var(--brand-900);letter-spacing:-.01em}
+.payoff .body{margin-top:18px;max-width:400px}
+.payoff h3{font-size:30px;font-weight:700;line-height:1.15}
+.payoff h3::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--arrow);margin:14px auto 0}
+p{font-size:17px;line-height:1.55;color:var(--n-600);margin-top:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;margin-top:20px;border-radius:10px;background:var(--brand-900);color:#fff;font:600 17px/1 var(--font);text-decoration:none;box-shadow:var(--shadow);transition:background .2s,transform .2s var(--ease)}
+.btn{--shadow:0 2px 8px rgba(35,49,89,.15)}
+.btn:hover{background:var(--brand-800);transform:translateY(-1px)}
+.btn svg{width:20px;height:20px}
+a:focus-visible{outline:3px solid var(--brand-600);outline-offset:3px}
+@media (max-width:860px){
+  .section{padding:56px 20px}
+  h2{font-size:clamp(26px,6vw,34px);text-align:left}
+  .steps{grid-template-columns:1fr;margin-top:36px}
+  .step{flex-direction:row;align-items:flex-start;text-align:left;padding:0 0 36px;gap:18px}
+  .step:last-child{padding-bottom:0}
+  .step .node-wrap{display:contents}
+  .node{width:56px;height:56px}
+  .step.payoff .node{width:64px;height:64px;margin:-4px 0 0 -4px}
+  .step.payoff{gap:14px}
+  .body{margin-top:2px;max-width:none}
+  .payoff .body{margin-top:8px;max-width:none}
+  .payoff h3::after{margin:12px 0 0}
+  .step:not(:last-child)::before,.step:not(:last-child)::after{top:62px;bottom:6px;left:26px;width:4px;height:auto}
+  .step:not(:last-child)::after{transform-origin:center top}
+  .js .step:not(:last-child)::after{transform:scaleY(0)}
+  .js.in .step:not(:last-child)::after{transform:scaleY(1)}
+  .payoff h3{font-size:26px}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .step:not(:last-child)::after{transform:none!important;transition:none!important}
+  .btn{transition:none}.btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<section class="section" aria-labelledby="pasos-titulo" id="pasos">
+  <h2 id="pasos-titulo">Pasos para solicitar un crédito</h2>
+  <ol class="steps" id="steps">
+    <li class="step">
+      <div class="node" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.9-4.9"/></svg>
+        <span class="num">1</span>
+      </div>
+      <div class="body">
+        <h3>Identifica qué necesita tu negocio para crecer</h3>
+        <p>Si no tienes clara la necesidad, llámanos, te visitaremos y te daremos una asesoría profesional en tu propio negocio.</p>
+        <a class="btn" href="#whatsapp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+          Contáctanos
+        </a>
+      </div>
+    </li>
+    <li class="step">
+      <div class="node" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><rect x="8" y="5.5" width="8" height="3.5" rx=".8"/><path d="M8.5 13h.01M12 13h.01M15.5 13h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/></svg>
+        <span class="num">2</span>
+      </div>
+      <div class="body">
+        <p class="lead" style="margin-top:0">Ya identificadas tus necesidades</p>
+        <h3>Evaluamos juntos tu capacidad financiera</h3>
+      </div>
+    </li>
+    <li class="step payoff">
+      <div class="node" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        <span class="num">3</span>
+      </div>
+      <div class="body">
+        <h3>¡Y listo! Te desembolsamos en minutos</h3>
+      </div>
+    </li>
+  </ol>
+</section>
+<script>
+(function(){
+  var root=document.documentElement,el=document.getElementById('steps');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){return}
+  root.classList.add('js');
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){root.classList.add('in');io.disconnect()}},{threshold:.35});
+  io.observe(el);
+})();
+</script>
+</body>
+</html>

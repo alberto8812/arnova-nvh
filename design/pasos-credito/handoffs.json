@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "chosen": "03-asesoria-y-pasos.html",
+  "handoffs": {
+    "03-asesoria-y-pasos.html": {
+      "status": "implemented",
+      "queued": false,
+      "sentAt": "2026-11-21T12:29:31.187Z",
+      "startedAt": "2026-11-21T12:29:35.323Z",
+      "implementedAt": "2026-11-21T12:31:09.721Z",
+      "feature": "odd/tasks/seccion-crecimiento.md",
+      "note": "Implementado en src/components/sections/steps-section.tsx (SV y GT); Contáctanos abre el WhatsApp de cada país.",
+      "previewUrl": "http://localhost:5179/#como-funciona"
+    }
+  }
+}

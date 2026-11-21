@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requisito único — Titular gigante</title>
+<!--
+  Dirección 03 · Titular gigante.
+  Un único <p> con la frase literal del cliente (L22), partida solo visualmente en tres niveles tipográficos
+  (spans de bloque; los lectores de pantalla la leen como una sola frase). Sin encabezados ni copy extra.
+  "negocio propio": peso 800, degradado de la flecha (tramo oscuro #ba141a→#f04e23, ≥3:1 sobre #f9fafb) y tamaño ≥48px,
+  es decir texto grande AA. La tienda ilustrada es decorativa (aria-hidden) y de muy bajo contraste a propósito.
+  Reduced-motion: sin flotación ni entrada.
+-->
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-600:#445d86;--brand-900:#233159;
+  --n-50:#f9fafb;--n-600:#535a65;
+  --accent-100:#fff0e5;--accent-300:#ffd3bc;
+  --arrow-text:linear-gradient(90deg,#ba141a,#f04e23);
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-600);-webkit-font-smoothing:antialiased}
+.sec{position:relative;overflow:hidden;background:var(--n-50)}
+.wrap{max-width:1280px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:center}
+.eyebar{display:block;width:40px;height:4px;border-radius:2px;background:var(--arrow);margin-bottom:26px}
+p.msg{font-weight:600;color:var(--brand-900)}
+.l1{display:block;font-size:28px;line-height:1.3;font-weight:500;color:var(--n-600);margin-bottom:10px}
+.l2{display:block;font-size:72px;line-height:1.02;letter-spacing:-.03em}
+.l3{display:block;white-space:nowrap;font-size:104px;line-height:1.02;letter-spacing:-.035em;font-weight:800;padding-bottom:.08em}
+.l3 span{background:var(--arrow-text);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;box-decoration-break:clone}
+@supports not ((background-clip:text) or (-webkit-background-clip:text)){.l3 span{color:#ba141a;-webkit-text-fill-color:currentColor}}
+.l1,.l2,.l3{animation:in .8s var(--ease) both}
+.l2{animation-delay:.12s}.l3{animation-delay:.24s}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.art{position:relative;display:grid;place-items:center}
+.art::before{content:"";position:absolute;inset:4% 0;border-radius:50%;background:radial-gradient(closest-side,var(--brand-100),rgba(228,232,240,0));opacity:.9}
+.art svg{position:relative;width:100%;max-width:380px;height:auto;animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+@media (max-width:1100px) and (min-width:861px){.l2{font-size:56px}.l3{font-size:78px}}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:12px;padding:56px 20px 44px}
+  .eyebar{margin-bottom:20px}
+  .l1{font-size:20px}
+  .l2{font-size:clamp(38px,10.5vw,46px)}
+  .l3{white-space:normal;font-size:clamp(40px,11.2vw,64px)}
+  .art{order:-1;justify-self:end;margin:-6px 0 -10px;width:46%}
+  .art svg{max-width:190px}
+}
+@media (prefers-reduced-motion:reduce){
+  .l1,.l2,.l3{animation:none}
+  .art svg{animation:none}
+}
+</style>
+</head>
+<body>
+<section class="sec" id="requisito" aria-label="Requisito">
+  <div class="wrap">
+    <div class="copy">
+      <span class="eyebar" aria-hidden="true"></span>
+      <p class="msg">
+        <span class="l1">Para solicitar tu asesoría y crédito</span>
+        <span class="l2">solo necesitas tener</span>
+        <span class="l3"><span>negocio propio</span></span>
+      </p>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 320 300" fill="none" focusable="false">
+        <defs>
+          <linearGradient id="aw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ed1c24"/><stop offset="1" stop-color="#f37021"/></linearGradient>
+        </defs>
+        <ellipse cx="160" cy="276" rx="130" ry="10" fill="#cbd3e1" opacity=".6"/>
+        <!-- cuerpo -->
+        <rect x="46" y="122" width="228" height="152" rx="6" fill="#fff" stroke="#cbd3e1" stroke-width="2"/>
+        <!-- toldo -->
+        <path d="M30 124 50 52h220l20 72z" fill="#e4e8f0"/>
+        <g>
+          <path d="M30 124 50 52h38l-8 72z" fill="url(#aw)" opacity=".9"/>
+          <path d="M96 52h38l-4 72H88z" fill="#fff" opacity=".85"/>
+          <path d="M142 52h38l0 72h-42z" fill="url(#aw)" opacity=".9"/>
+          <path d="M188 52h38l4 72h-42z" fill="#fff" opacity=".85"/>
+          <path d="M234 52h36l20 72h-48z" fill="url(#aw)" opacity=".9"/>
+        </g>
+        <!-- puerta y vitrina -->
+        <rect x="76" y="168" width="68" height="106" rx="4" fill="#233159"/>
+        <circle cx="132" cy="224" r="3.5" fill="#ffd3bc"/>
+        <rect x="170" y="156" width="82" height="62" rx="4" fill="#e4e8f0" stroke="#cbd3e1" stroke-width="2"/>
+        <path d="M180 208 200 176l14 20 10-12 18 24z" fill="#aebbd1" opacity=".7"/>
+        <!-- letrero -->
+        <rect x="110" y="28" width="100" height="20" rx="10" fill="#233159"/>
+        <rect x="126" y="35" width="68" height="6" rx="3" fill="#aebbd1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+</body>
+</html>
