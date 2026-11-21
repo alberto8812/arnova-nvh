@@ -61,6 +61,8 @@ export interface Step {
   n: string
   t: string
   d: string
+  // Optional call to action rendered after the description (e.g. WhatsApp).
+  link?: { label: string; href: string }
 }
 
 export interface Service {

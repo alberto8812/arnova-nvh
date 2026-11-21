@@ -21,7 +21,7 @@ export function StepsSection() {
         viewport={VP}
       >
         <div className="font-mono text-xs tracking-[.14em] uppercase text-neutral-400">
-          Como funciona
+       
         </div>
         <h2
           className="font-sans font-semibold mt-[14px] text-brand-900"
@@ -34,33 +34,26 @@ export function StepsSection() {
             marginBottom: "44px",
           }}
         >
-          Cómo solicitar{" "}
-          <span className="font-serif italic font-medium">tu crédito</span>
+          Pasos para solicitar un crédito
         </h2>
       </motion.div>
 
       {/* Steps — each child gets its own whileInView + delay; the grid container has overflow:hidden
           so we can't use a staggerContainer wrapper (IntersectionObserver can't observe display:contents) */}
       <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-neutral-200 bg-neutral-50"
+        className="grid grid-cols-1 md:grid-cols-3 border border-neutral-200 bg-neutral-50"
         style={{
           borderRadius: "10px",
           overflow: "hidden",
         }}
       >
         {steps.map((p, i) => {
+          // One row of three from md up: stacked rows divide with a bottom
+          // border on mobile, columns with a right border from md.
           const isLast = i === steps.length - 1;
-          const isLastMdCol = i % 2 === 1;
-          const isMdSecondRow = i >= 2;
-          const borderClasses = [
-            !isLast && "border-b",
-            isMdSecondRow ? "md:border-b-0" : "md:border-b",
-            "lg:border-b-0",
-            !isLastMdCol && "md:border-r",
-            !isLast && "lg:border-r",
-          ]
-            .filter(Boolean)
-            .join(" ");
+          const borderClasses = isLast
+            ? ""
+            : "border-b md:border-b-0 md:border-r";
           return (
             <motion.div
               key={p.n}
@@ -79,9 +72,22 @@ export function StepsSection() {
               >
                 {p.t}
               </h3>
-              <p className="text-[15px] leading-[1.55] m-0 text-neutral-600">
-                {p.d}
-              </p>
+              {p.d && (
+                <p className="text-[15px] leading-[1.55] m-0 text-neutral-600">
+                  {p.d}
+                </p>
+              )}
+              {p.link && (
+                <a
+                  href={p.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-4 text-[15px] font-semibold text-brand-700 hover:text-brand-900 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 rounded-sm"
+                >
+                  {p.link.label}
+                  <span aria-hidden="true" className="text-accent-500">→</span>
+                </a>
+              )}
             </motion.div>
           );
         })}
