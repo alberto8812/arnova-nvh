@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuestra cobertura — Declaración centrada</title>
+<!--
+  Dirección 03 · Declaración centrada. Banda navy; el fondo (anillos tipo radar, pines, barrido suave)
+  es decorativo y aria-hidden. "a nivel nacional" usa el degradado de la flecha en 700 y tamaño >= 28px.
+  Contraste: sobre brand-900 el rojo #ed1c24 queda en ~3:1, por eso el degradado del texto arranca en
+  #f04e23 (action-orange-start) y termina en #ffd400; el resto del texto es blanco / brand-200.
+-->
+<style>
+:root{
+  --brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-400:#8495b5;--brand-500:#60759b;--brand-600:#445d86;--brand-700:#344a71;--brand-800:#2b3d66;--brand-900:#233159;
+  --n-50:#f9fafb;
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --arrow-text:linear-gradient(90deg,#f04e23,#f37021 50%,#ffd400);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);-webkit-font-smoothing:antialiased}
+.band{position:relative;overflow:hidden;color:#fff;background:radial-gradient(60% 120% at 50% 50%,var(--brand-800),var(--brand-900) 72%),var(--brand-900)}
+.band::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;z-index:2;background:linear-gradient(90deg,rgba(237,28,36,0),#ed1c24 30%,#f37021 70%,rgba(243,112,33,0))}
+.bg{position:absolute;inset:0;pointer-events:none}
+.bg svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sweep{position:absolute;left:50%;top:50%;width:1500px;height:1500px;margin:-750px 0 0 -750px;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(132,149,181,0) 0 70%,rgba(132,149,181,.05) 88%,rgba(174,187,209,.2) 100%);
+  -webkit-mask-image:radial-gradient(closest-side,#000 10%,transparent 78%);mask-image:radial-gradient(closest-side,#000 10%,transparent 78%);
+  animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.static{fill:none;stroke:var(--brand-600);stroke-width:1.5;opacity:.55}
+.static.d{stroke-dasharray:3 9;opacity:.45}
+.wave{fill:none;stroke:var(--brand-400);stroke-width:2;transform-box:fill-box;transform-origin:center;opacity:0;animation:wave 7.5s var(--ease) infinite;animation-delay:calc(var(--i)*2.5s)}
+@keyframes wave{0%{transform:scale(.12);opacity:.7}85%,100%{transform:scale(1);opacity:0}}
+.pin{fill:var(--brand-400);opacity:.5}
+.pin.hot{fill:url(#pg);opacity:.95;animation:bob 4s ease-in-out infinite;animation-delay:calc(var(--i)*-1.1s)}
+.pin{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.inner{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:84px 32px 88px;text-align:center}
+/* escudo detrás del texto: mantiene el contraste AA aunque pase el barrido */
+.inner::before{content:"";position:absolute;inset:6% 2%;z-index:-1;background:radial-gradient(closest-side,rgba(35,49,89,.94) 60%,rgba(35,49,89,0))}
+h2{display:inline-flex;align-items:center;gap:14px;font-size:24px;font-weight:600;letter-spacing:.01em;color:var(--brand-200)}
+h2::before,h2::after{content:"";width:36px;height:3px;border-radius:2px;background:var(--arrow)}
+h2::after{transform:scaleX(-1)}
+.statement{margin:22px auto 0;max-width:20em;font-size:clamp(30px,4.4vw,56px);line-height:1.18;font-weight:600;letter-spacing:-.02em;color:#fff;text-wrap:balance}
+.statement em{white-space:nowrap;font-style:normal;font-weight:700;background:var(--arrow-text);-webkit-background-clip:text;background-clip:text;color:#f37021;-webkit-text-fill-color:transparent}
+@media (max-width:860px){
+  .inner{padding:60px 20px 64px}
+  h2{font-size:20px;gap:10px}
+  h2::before,h2::after{width:24px}
+  .statement{font-size:clamp(28px,8vw,34px);margin-top:18px}
+  .pinwrap.mid{display:none}
+  .sweep{width:900px;height:900px;margin:-450px 0 0 -450px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sweep{animation:none;opacity:.6;transform:rotate(-40deg)}
+  .wave{animation:none;opacity:.25;transform:scale(calc(.3 + var(--i)*.3))}
+  .pin.hot{animation:none}
+}
+</style>
+</head>
+<body>
+<section class="band" aria-labelledby="cobertura-titulo" id="cobertura">
+  <div class="bg" aria-hidden="true">
+    <div class="sweep"></div>
+    <svg viewBox="-720 -260 1440 520" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <defs>
+        <linearGradient id="pg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f37021"/><stop offset="1" stop-color="#ed1c24"/></linearGradient>
+        <!-- pin con la punta en (0,0) -->
+        <path id="pin" d="M0 0 C-4 -8 -13 -14 -13 -23 A13 13 0 0 1 13 -23 C13 -14 4 -8 0 0Z M0 -23 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0Z" fill-rule="evenodd"/>
+      </defs>
+      <!-- anillos / curvas de nivel -->
+      <circle class="static" r="90"/>
+      <circle class="static d" r="170"/>
+      <circle class="static" r="250"/>
+      <circle class="static d" r="340"/>
+      <circle class="static" r="440"/>
+      <circle class="static d" r="560"/>
+      <circle class="static" r="690"/>
+      <!-- ondas que se expanden desde el centro -->
+      <circle class="wave" style="--i:0" r="700"/>
+      <circle class="wave" style="--i:1" r="700"/>
+      <circle class="wave" style="--i:2" r="700"/>
+      <!-- pines repartidos por los anillos -->
+      <g class="pinwrap mid" transform="translate(-250 -150)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap" transform="translate(-480 72)"><use href="#pin" class="pin hot" style="--i:0"/></g>
+      <g class="pinwrap" transform="translate(-450 -110)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap" transform="translate(-585 60)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap mid" transform="translate(250 -150)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap" transform="translate(470 96)"><use href="#pin" class="pin hot" style="--i:1"/></g>
+      <g class="pinwrap" transform="translate(455 -60)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap" transform="translate(560 110)"><use href="#pin" class="pin hot" style="--i:2"/></g>
+      <g class="pinwrap mid" transform="translate(-130 175)"><use href="#pin" class="pin"/></g>
+      <g class="pinwrap mid" transform="translate(130 -205)"><use href="#pin" class="pin"/></g>
+    </svg>
+  </div>
+  <div class="inner">
+    <h2 id="cobertura-titulo">Nuestra cobertura</h2>
+    <p class="statement">Arnova ofrece atención personalizada <em>a nivel nacional</em>.</p>
+  </div>
+</section>
+</body>
+</html>

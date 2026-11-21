@@ -12,6 +12,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - S6: "veamos como es un loop create dos o tres lo que creas correspondiente esto para variar y no siempre se vea el mismo y que tenga cambios con transiciones suaves y moderna" — 2-3 loops web que rotan en la sección con transiciones suaves.
 - S7: (L11) "crear un diseño apropiado para este tipo de publicidad ... da diversas opciones de diseño que tenga buena experiencia de usuario y no redunde en información que ya está en la página" — la sección no repite datos del TrustBar (+70.000/+5.000, desembolso en minutos, 4.9/5, $0/Q0) ni de Beneficios (atención inmediata, asesoría, pagos de acuerdo a tu capacidad, asesor a la misma hora).
 - S8: (L15) "explorar cual es el mejor diseño para esta sección solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" — solo propuestas (sin tocar src/) para la sección "Pasos para solicitar un crédito" con el texto de L14.
+- S9: (L18) "en la sección de cobertura solo quieren esta información: Nuestra cobertura / Arnova ofrece atención personalizada a nivel nacional." + "implementemos un buen diseño y dame opciones para que no quede tan básico" — SV y GT; se retiran ciudades y requisitos.
 
 ## Tasks
 
@@ -22,6 +23,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T6 (S2, S7) Implementar artboard elegido design/crecimiento-v2/03-banda-inmersiva.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L13.
 - T7 (S8) Propuestas de diseño para la sección de pasos: design/pasos-credito/ (3 artboards, solo opciones). Ruta: worker. Commit: pendiente.
 - T8 (S8, L14) Implementar artboard elegido design/pasos-credito/03-asesoria-y-pasos.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L17.
+- T9 (S9) Propuestas de diseño para Cobertura: design/cobertura/ (3 artboards). Ruta: worker. Commit: pendiente.
 
 ## Log
 
@@ -42,3 +44,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L15: "explorar cual es el mejor diseno para esta senocion solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" (captura de la sección de pasos actual).
 - L16: T7 propuestas listas en design/pasos-credito/ (01-linea-de-tiempo, 02-tarjetas-con-flujo, 03-asesoria-y-pasos); pendiente elección.
 - L17: Handoff del canvas: implementar design/pasos-credito/03-asesoria-y-pasos.html (elegido; 01-linea-de-tiempo y 02-tarjetas-con-flujo quedan como alternativas). StepsSection: bloque de asesoría navy con Contáctanos (WhatsApp de cada país) + stepper vertical con conector degradado y tarjeta final destacada; paso 2 con lead. Verificado con capturas 1440/414.
+- L18: "en la seccion de covertura solo queren esta informacion Nuestra cobertura Arnova ofrece atención personalizada a nivel nacional. ... implmentemos un bien disenog y mae opciones para que no quede tambasico con esta nuevo cambio"
+- L19: T9 propuestas listas en design/cobertura/ (01-mapa-de-presencia, 02-ruta-del-asesor, 03-declaracion-centrada); pendiente elección.

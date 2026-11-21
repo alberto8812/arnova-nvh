@@ -1,0 +1,28 @@
+{
+  "title": "Nuestra cobertura",
+  "brief": "Sección 'Nuestra cobertura' del home de Arnova (SV y GT) para pequeños comerciantes. Copy exacto del cliente (L18) y solo ese: título 'Nuestra cobertura' y texto 'Arnova ofrece atención personalizada a nivel nacional.' (mismo para ambos países; sin ciudades, requisitos, cifras ni botón). Con una sola frase la sección corre el riesgo de verse vacía, así que cada propuesta suma un visual decorativo (aria-hidden, sin datos) que comunica 'nivel nacional + atención personalizada (el asesor te visita)'. Reemplaza el título en cursiva + intro + cuadrícula de tarjetas de ciudades, que al cliente le pareció básico.",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    {
+      "file": "01-mapa-de-presencia.html",
+      "title": "Mapa de presencia",
+      "tradeoff": "Enunciado a la izquierda y, a la derecha, silueta de medio tono (retícula de puntos) del país con puntos de ubicación que laten suavemente con el degradado de la flecha; incluye variante El Salvador y Guatemala (botones solo del artboard, o #gt) para renderizar una por país. Es lo que más rápido dice 'nivel nacional' y encaja con la marca, pero las siluetas son geografía aproximada (simplificada a mano, no oficial) y los puntos podrían leerse como sedes aunque no llevan etiquetas; El Salvador queda más pequeño y alargado que Guatemala, así que el peso visual cambia entre países. En móvil el mapa pasa debajo del texto.",
+      "width": 1440,
+      "height": 636
+    },
+    {
+      "file": "02-ruta-del-asesor.html",
+      "title": "Ruta del asesor",
+      "tradeoff": "Enunciado a la izquierda y una ilustración con ruta punteada animada que conecta cinco tiendas y casas sobre un paisaje suave; un pin (el asesor) recorre la ruta, se detiene en cada negocio y lo 'enciende' en naranja: comunica 'te visitamos donde estés' y la atención personalizada mejor que las otras, sin geografía ni datos. A cambio es la más ilustrativa y menos 'nacional' (no sugiere país), depende de JS para las pausas (con reduced-motion queda estática con todos los negocios visitados) y es la de más trabajo de implementación. En móvil la ilustración pasa debajo del texto.",
+      "width": 1440,
+      "height": 548
+    },
+    {
+      "file": "03-declaracion-centrada.html",
+      "title": "Declaración centrada",
+      "tradeoff": "Banda navy compacta con el enunciado centrado en grande y 'a nivel nacional' en 700 con el degradado de la flecha (naranja a amarillo, para mantener contraste ≥3:1 sobre navy); de fondo, anillos tipo radar con ondas que se expanden, un barrido suave y pines en tonos de marca. Mínima altura y el mayor impacto tipográfico, con el visual solo como atmósfera, y es la más fácil de implementar. A cambio el fondo no representa el país ni la visita del asesor (la idea es más abstracta) y, al ser otra banda navy, conviene no colocarla pegada a la banda inmersiva de crecimiento. En móvil los anillos se recortan y se ocultan los pines centrales.",
+      "width": 1440,
+      "height": 358
+    }
+  ]
+}
