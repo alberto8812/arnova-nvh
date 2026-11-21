@@ -11,6 +11,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - S5: "agregar un video de este estilo C:\Users\soporteqa\Videos\fondius-videos ... se puede diseñar uno con los colores de arnova y que haga referencia" — paleta Arnova en el proyecto Remotion.
 - S6: "veamos como es un loop create dos o tres lo que creas correspondiente esto para variar y no siempre se vea el mismo y que tenga cambios con transiciones suaves y moderna" — 2-3 loops web que rotan en la sección con transiciones suaves.
 - S7: (L11) "crear un diseño apropiado para este tipo de publicidad ... da diversas opciones de diseño que tenga buena experiencia de usuario y no redunde en información que ya está en la página" — la sección no repite datos del TrustBar (+70.000/+5.000, desembolso en minutos, 4.9/5, $0/Q0) ni de Beneficios (atención inmediata, asesoría, pagos de acuerdo a tu capacidad, asesor a la misma hora).
+- S8: (L15) "explorar cual es el mejor diseño para esta sección solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" — solo propuestas (sin tocar src/) para la sección "Pasos para solicitar un crédito" con el texto de L14.
 
 ## Tasks
 
@@ -19,6 +20,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T3 (S6) Loop 3 reemplazado por visita del asesor. HECHO 0ecc342.
 - T4 (S7) Propuestas de diseño v2 sin información redundante: design/crecimiento-v2/ (3 artboards). Ruta: worker (context backstop). Commit: pendiente.
 - T6 (S2, S7) Implementar artboard elegido design/crecimiento-v2/03-banda-inmersiva.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L13.
+- T7 (S8) Propuestas de diseño para la sección de pasos: design/pasos-credito/ (3 artboards, solo opciones). Ruta: worker. Commit: pendiente.
 
 ## Log
 
@@ -36,3 +38,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L12: "TAMBIEN PODEMOS CAMBIAR EL VIDEO 1 POR OTRO CON MEJOR EXPERIENCIA DE USUARIO EN VEZ DE MOSTRAR GRAFICOS" -> T5: crecimiento-01 = arnova-loop-expansion (el negocio se agranda), 683 KB.
 - L13: Handoff del canvas: implementar design/crecimiento-v2/03-banda-inmersiva.html (elegido; 01-editorial-equilibrado y 02-la-frase-es-el-indicador quedan como alternativas). Implementado en growth-section.tsx: banda navy a sangre, video 4:5 fundido sin caja, 3 segmentos sin texto; se eliminaron los captions redundantes. Verificado con capturas headless 1440 y 414 (rotación OK).
 - L14: "en esta seccion ... remplazar por esta seccion Pasos para solicitar un crédito: Identifica qué necesita tu negocio para crecer / Si no tienes clara la necesidad, llámanos, te visitaremos y te daremos una asesoría profesional en tu propio negocio, (dejar referenciado contáctanos ... con los numeros ya ingresados arriba) / Ya identificadas tus necesidades … / Evaluamos juntos tu capacidad financiera / Y listo! Te desembolsamos en minutos" -> StepsSection: 3 pasos SV/GT, enlace Contáctanos al WhatsApp del Hero de cada país. Verificado con capturas 1440/414.
+- L15: "explorar cual es el mejor diseno para esta senocion solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" (captura de la sección de pasos actual).
+- L16: T7 propuestas listas en design/pasos-credito/ (01-linea-de-tiempo, 02-tarjetas-con-flujo, 03-asesoria-y-pasos); pendiente elección.

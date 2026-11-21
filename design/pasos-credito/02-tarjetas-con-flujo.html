@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasos para solicitar un crédito — Tarjetas con flujo</title>
+<style>
+:root{
+  --brand-50:#f4f6fa;--brand-100:#e4e8f0;--brand-200:#cbd3e1;--brand-300:#aebbd1;--brand-600:#445d86;--brand-800:#2b3d66;--brand-900:#233159;
+  --n-50:#f9fafb;--n-200:#e6eaef;--n-300:#d3d8de;--n-600:#535a65;--n-700:#353b46;
+  --arrow:linear-gradient(90deg,#ed1c24,#f37021);
+  --font:"Source Sans 3 Variable","Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --shadow-lg:0 20px 40px -12px rgba(35,49,89,.12),0 2px 6px rgba(35,49,89,.05);
+  --shadow-xl:0 30px 60px -18px rgba(35,49,89,.35),0 8px 24px rgba(35,49,89,.12);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--font);background:var(--n-50);color:var(--n-700);-webkit-font-smoothing:antialiased}
+.section{max-width:1280px;margin:0 auto;padding:76px 32px}
+h2{font-size:34px;font-weight:600;letter-spacing:-.02em;color:var(--brand-900);text-align:center;line-height:1.15}
+.flow{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:stretch}
+.card{position:relative;display:flex;flex-direction:column;padding:28px 28px 32px;background:#fff;border:1px solid var(--n-200);border-radius:10px;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.top{display:flex;align-items:center;justify-content:space-between}
+.ico{width:64px;height:64px;border-radius:16px;background:var(--brand-100);color:var(--brand-900);display:grid;place-items:center}
+.ico svg{width:32px;height:32px}
+.num{font-size:56px;line-height:1;font-weight:700;color:var(--brand-200);letter-spacing:-.04em}
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:24px}
+.lead{font-size:15px;line-height:1.4;font-weight:600;color:var(--n-600);margin-bottom:6px}
+h3{font-size:22px;line-height:1.25;font-weight:600;color:var(--brand-900);letter-spacing:-.01em}
+p.t{font-size:17px;line-height:1.55;color:var(--n-600);margin-top:12px}
+.btn{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;margin-top:20px;border-radius:10px;border:2px solid var(--brand-900);background:transparent;color:var(--brand-900);font:600 17px/1 var(--font);text-decoration:none;transition:background .2s,color .2s}
+.btn:hover{background:var(--brand-900);color:#fff}
+.btn svg{width:20px;height:20px}
+.chev{display:grid;place-items:center;color:#f37021}
+.chev svg{width:32px;height:32px}
+/* payoff */
+.card.payoff{background:var(--brand-900);border-color:var(--brand-900);color:#fff;box-shadow:var(--shadow-xl)}
+.card.payoff::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--arrow)}
+.payoff .ico{background:linear-gradient(135deg,#ba141a,#f04e23);color:#fff}
+.payoff .num{color:var(--brand-600)}
+.payoff h3{font-size:32px;line-height:1.15;font-weight:700;color:#fff}
+.payoff:hover{transform:translateY(-3px)}
+a:focus-visible{outline:3px solid var(--brand-600);outline-offset:3px}
+@media (max-width:860px){
+  .section{padding:56px 20px}
+  h2{font-size:clamp(26px,6vw,34px);text-align:left}
+  .flow{grid-template-columns:1fr;margin-top:32px}
+  .chev{height:40px}.chev svg{transform:rotate(90deg)}
+  .card{padding:22px 22px 26px}
+  .ico{width:56px;height:56px}.num{font-size:44px}
+  .body{justify-content:flex-start;padding-top:18px}
+  .payoff h3{font-size:28px}
+  .btn{align-self:stretch}
+}
+@media (prefers-reduced-motion:reduce){
+  .card,.btn{transition:none}.card:hover,.payoff:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<section class="section" aria-labelledby="pasos-titulo" id="pasos">
+  <h2 id="pasos-titulo">Pasos para solicitar un crédito</h2>
+  <ol class="flow">
+    <li class="card">
+      <div class="top">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.9-4.9"/></svg></div>
+        <span class="num" aria-hidden="true">1</span>
+      </div>
+      <div class="body">
+        <h3>Identifica qué necesita tu negocio para crecer</h3>
+        <p class="t">Si no tienes clara la necesidad, llámanos, te visitaremos y te daremos una asesoría profesional en tu propio negocio.</p>
+        <a class="btn" href="#whatsapp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+          Contáctanos
+        </a>
+      </div>
+    </li>
+    <li class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></li>
+    <li class="card">
+      <div class="top">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><rect x="8" y="5.5" width="8" height="3.5" rx=".8"/><path d="M8.5 13h.01M12 13h.01M15.5 13h.01M8.5 17h.01M12 17h.01M15.5 17h.01"/></svg></div>
+        <span class="num" aria-hidden="true">2</span>
+      </div>
+      <div class="body">
+        <p class="lead">Ya identificadas tus necesidades</p>
+        <h3>Evaluamos juntos tu capacidad financiera</h3>
+      </div>
+    </li>
+    <li class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></li>
+    <li class="card payoff">
+      <div class="top">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+        <span class="num" aria-hidden="true">3</span>
+      </div>
+      <div class="body">
+        <h3>¡Y listo! Te desembolsamos en minutos</h3>
+      </div>
+    </li>
+  </ol>
+</section>
+</body>
+</html>
