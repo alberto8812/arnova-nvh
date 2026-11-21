@@ -13,6 +13,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - S7: (L11) "crear un diseño apropiado para este tipo de publicidad ... da diversas opciones de diseño que tenga buena experiencia de usuario y no redunde en información que ya está en la página" — la sección no repite datos del TrustBar (+70.000/+5.000, desembolso en minutos, 4.9/5, $0/Q0) ni de Beneficios (atención inmediata, asesoría, pagos de acuerdo a tu capacidad, asesor a la misma hora).
 - S8: (L15) "explorar cual es el mejor diseño para esta sección solo dame opciones ... acorde a una buena experiencia de usuario y experto en ui" — solo propuestas (sin tocar src/) para la sección "Pasos para solicitar un crédito" con el texto de L14.
 - S9: (L18) "en la sección de cobertura solo quieren esta información: Nuestra cobertura / Arnova ofrece atención personalizada a nivel nacional." + "implementemos un buen diseño y dame opciones para que no quede tan básico" — SV y GT; se retiran ciudades y requisitos.
+- S10: (L22) "Se retiran las tarjetas y solo se deja el texto: Para solicitar tu asesoría y crédito solo necesitas tener negocio propio" + "implementemos un diseño porque es un solo texto que reemplazará varios componentes" — SV y GT.
 
 ## Tasks
 
@@ -25,6 +26,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T8 (S8, L14) Implementar artboard elegido design/pasos-credito/03-asesoria-y-pasos.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L17.
 - T9 (S9) Propuestas de diseño para Cobertura: design/cobertura/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T10 (S9) Implementar artboard elegido design/cobertura/01-mapa-de-presencia.html (02 y 03 son alternativas): CoverageSection solo título + frase, mapa de puntos por país (SV/GT), se retiran ciudades y requisitos. Ruta: worker (context backstop). HECHO; commit: ver Log L21.
+- T11 (S10) Propuestas de diseño para Requisitos (una sola frase): design/requisitos/ (3 artboards). Ruta: worker. Commit: pendiente.
 
 ## Log
 
@@ -49,3 +51,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L19: T9 propuestas listas en design/cobertura/ (01-mapa-de-presencia, 02-ruta-del-asesor, 03-declaracion-centrada); pendiente elección.
 - L20: Handoff del canvas: implementar design/cobertura/01-mapa-de-presencia.html (elegido; 02-ruta-del-asesor y 03-declaracion-centrada quedan como alternativas).
 - L21: T10 implementado (coverage-section.tsx + coverage-map.tsx nuevo; intro SV/GT). locations se conservan por el footer; requirements quedan en datos sin renderizar. Verificado tsc/oxlint y capturas SV/GT 1440/414.
+- L22: "ahora solitan este cambio [captura: Requisitos para solicitar tu crédito, 5 tarjetas] Se retiran las tarjetas y solo se deja el texto: Para solicitar tu asesoría y crédito solo necesitas tener negocio propio ... lo mismo implmentemos un diseno por que es un solo texto que templazara parios componnetes"
+- L23: T11 propuestas listas en design/requisitos/ (01-dentro-de-cobertura, 02-franja-de-confianza, 03-titular-gigante); pendiente elección.

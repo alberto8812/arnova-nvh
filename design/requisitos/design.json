@@ -1,0 +1,28 @@
+{
+  "title": "Requisito único",
+  "brief": "Reemplazo del bloque 'Requisitos para solicitar tu crédito' (5 tarjetas) en el home de Arnova (SV y GT, mismo diseño) por UNA sola frase del cliente (L22), literal: 'Para solicitar tu asesoría y crédito solo necesitas tener negocio propio'. Es una promesa de marketing fuerte (de 5 requisitos a 1), así que el diseño debe hacer que 'solo … negocio propio' aterrice, sin sumar copy (sin lista de documentos retirados, cifras, CTA ni encabezados nuevos). Los visuales son decorativos y aria-hidden.",
+  "feature": "odd/tasks/seccion-crecimiento.md",
+  "artboards": [
+    {
+      "file": "01-dentro-de-cobertura.html",
+      "title": "Dentro de Cobertura",
+      "tradeoff": "La frase va como una píldora resaltada (borde con degradado de la flecha, círculo con ícono de tienda, 'solo' y 'negocio propio' en negrita con subrayado naranja) justo bajo el texto de Cobertura, como cierre de esa sección; el contexto (título, frase y mapa de puntos) se reproduce solo para ver el encaje. Es la de menor huella: no suma sección ni altura y se lee como continuación natural de 'atención personalizada a nivel nacional'. A cambio, el mensaje comparte espacio con el mapa y queda en segundo plano frente al título de Cobertura, y la píldora vive acotada a media columna, así que la promesa 'solo negocio propio' pesa menos que en las otras. En móvil la píldora queda entre el texto y el mapa.",
+      "width": 1440,
+      "height": 640
+    },
+    {
+      "file": "02-franja-de-confianza.html",
+      "title": "Franja de confianza",
+      "tradeoff": "Franja delgada a sangre (fondo accent-100) entre dos secciones: círculo grande con degradado e ícono de tienda, la frase a 44px y una palomita que se dibuja al entrar en pantalla (queda dibujada con reduced-motion). Se lee como un banner de tranquilidad: la palomita comunica 'cumples' sin escribir nada más y 'solo' y 'negocio propio' van en negrita con subrayado. Es un bloque propio y visible sin ser alto (~200px), pero añade una banda más al ritmo vertical de la página y su color cálido tiene que convivir con las secciones vecinas. En móvil se apila centrado (ícono arriba, frase debajo).",
+      "width": 1440,
+      "height": 442
+    },
+    {
+      "file": "03-titular-gigante.html",
+      "title": "Titular gigante",
+      "tradeoff": "Momento tipográfico: 'Para solicitar tu asesoría y crédito' pequeño como entrada, 'solo necesitas tener' a 72px y 'negocio propio' a 104px en negrita 800 con el degradado de la flecha (tramo oscuro #ba141a→#f04e23, ≥3:1 y texto grande), con una tienda ilustrada sutil a la derecha. Es la que más hace aterrizar el contraste 'solo … negocio propio' y la más memorable, pero es alta y ocupa mucho espacio para una sola frase, y el degradado en texto depende de background-clip (con fallback a rojo sólido). En móvil la tienda pasa arriba a la derecha y el titular baja a ~47px en una línea.",
+      "width": 1440,
+      "height": 640
+    }
+  ]
+}
