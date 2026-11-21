@@ -1,7 +1,7 @@
 {
   "eyebrow": "Conócenos",
-  "headline": "Nuestro propósito es ayudarte a crecer",
-  "body": "Estamos aquí para ayudarte a crecer tu negocio. Ofrecemos créditos rápidos y sin tanto papeleo. Somos el aliado que necesitas para seguir avanzando y hacer realidad tus sueños.",
+  "headline": "Nuestro propósito",
+  "body": "Transformamos vidas, impulsando el crecimiento económico de nuestros clientes.",
   "cta": {
     "label": "Conocé más de Arnova →",
     "href": "#contacto"
@@ -16,22 +16,17 @@
     {
       "icon": "handshake",
       "title": "Confianza",
-      "text": "Nuestros procesos son seguros. Tu información está protegida. Nos encargamos de construir relaciones confiables con nuestros clientes."
+      "text": "Confiamos en nuestros clientes mediante procesos simples y ágiles, y ellos confían en nosotros porque siempre estamos presentes para acompañarlos y responder con compromiso."
     },
     {
       "icon": "badge",
-      "title": "Lealtad",
-      "text": "No somos una solución temporal, sino un aliado que te acompaña en el crecimiento de tu negocio y mejora de tu situación personal."
+      "title": "Responsabilidad",
+      "text": "Asumimos con seriedad y dedicación todo el proceso de un crédito. Brindando a nuestros clientes la oportunidad de impulsar su negocio de manera responsable."
     },
     {
       "icon": "users",
       "title": "Inclusión",
-      "text": "Ofrecemos productos accesibles y ajustados a la necesiad de cada cliente. Creamos oportunidades financieras para comerciantes."
-    },
-    {
-      "icon": "shield",
-      "title": "Responsabilidad",
-      "text": "Asumimos con seriedad y dedicación todo el proceso de un crédito. Aseguramos responsablemente no solo el otorgamiento, sino también la cobranza."
+      "text": "Ofrecemos productos accesibles y ajustados a la necesidad de cada cliente. Creamos oportunidades financieras para comerciantes."
     }
   ]
 }

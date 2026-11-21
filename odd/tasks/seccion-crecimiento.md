@@ -56,3 +56,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L23: T11 propuestas listas en design/requisitos/ (01-dentro-de-cobertura, 02-franja-de-confianza, 03-titular-gigante); pendiente elección.
 - L24: Handoff del canvas: implementar design/requisitos/02-franja-de-confianza.html (elegido; 01-dentro-de-cobertura y 03-titular-gigante quedan como alternativas).
 - L25: T12 implementado: RequirementStrip (requirement-strip.tsx) tras CoverageSection; coverage.requirementNote SV/GT. Verificado tsc/oxlint y capturas 1440/414.
+- L26: "en esta seccion colocar Nuestro propósito / Transformamos vidas, impulsando el crecimiento económico de nuestros clientes. y estos valores [Honestidad, Confianza, Responsabilidad, Inclusión] sin cambiar el diseño actual de la página simplemente reemplazar el contenido" -> about.json SV/GT. Verificado captura 1440.
