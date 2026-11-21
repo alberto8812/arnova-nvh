@@ -2,6 +2,10 @@
   "eyebrow": "",
   "headline": "Nuestra cobertura",
   "intro": "Arnova ofrece atención personalizada a nivel nacional.",
+  "requirementNote": {
+    "text": "Para solicitar tu asesoría y crédito solo necesitas tener negocio propio",
+    "highlights": ["solo", "negocio propio"]
+  },
   "locations": [
     {
       "city": "San Salvador",

@@ -27,6 +27,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T9 (S9) Propuestas de diseño para Cobertura: design/cobertura/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T10 (S9) Implementar artboard elegido design/cobertura/01-mapa-de-presencia.html (02 y 03 son alternativas): CoverageSection solo título + frase, mapa de puntos por país (SV/GT), se retiran ciudades y requisitos. Ruta: worker (context backstop). HECHO; commit: ver Log L21.
 - T11 (S10) Propuestas de diseño para Requisitos (una sola frase): design/requisitos/ (3 artboards). Ruta: worker. Commit: pendiente.
+- T12 (S10) Implementar artboard elegido design/requisitos/02-franja-de-confianza.html (01 y 03 son alternativas): franja accent-100 después de Cobertura. Ruta: worker. HECHO; commit: ver Log L25.
 
 ## Log
 
@@ -53,3 +54,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L21: T10 implementado (coverage-section.tsx + coverage-map.tsx nuevo; intro SV/GT). locations se conservan por el footer; requirements quedan en datos sin renderizar. Verificado tsc/oxlint y capturas SV/GT 1440/414.
 - L22: "ahora solitan este cambio [captura: Requisitos para solicitar tu crédito, 5 tarjetas] Se retiran las tarjetas y solo se deja el texto: Para solicitar tu asesoría y crédito solo necesitas tener negocio propio ... lo mismo implmentemos un diseno por que es un solo texto que templazara parios componnetes"
 - L23: T11 propuestas listas en design/requisitos/ (01-dentro-de-cobertura, 02-franja-de-confianza, 03-titular-gigante); pendiente elección.
+- L24: Handoff del canvas: implementar design/requisitos/02-franja-de-confianza.html (elegido; 01-dentro-de-cobertura y 03-titular-gigante quedan como alternativas).
+- L25: T12 implementado: RequirementStrip (requirement-strip.tsx) tras CoverageSection; coverage.requirementNote SV/GT. Verificado tsc/oxlint y capturas 1440/414.

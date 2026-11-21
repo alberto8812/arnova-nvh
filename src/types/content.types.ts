@@ -78,6 +78,7 @@ export interface CoverageContent {
   eyebrow: string
   headline: string
   intro: string
+  requirementNote: { text: string; highlights: string[] }
   locations: { city: string; region: string }[]
   requirements: { icon: string; label: string }[]
 }
