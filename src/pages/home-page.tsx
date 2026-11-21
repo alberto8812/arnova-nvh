@@ -8,6 +8,7 @@ import {
   StepsSection,
   // ServicesSection, — section commented out in the JSX below
   AboutSection,
+  MissionVisionSection,
   CoverageSection,
   RequirementStrip,
   TestimonialsSection,
@@ -30,6 +31,7 @@ export function HomePage() {
       <CoverageSection />
       <RequirementStrip />
       <AboutSection />
+      <MissionVisionSection />
       <TestimonialsSection />
       <VideosSection />
       <FaqSection />

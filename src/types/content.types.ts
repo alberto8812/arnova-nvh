@@ -288,6 +288,12 @@ export interface GrowthSectionContent {
   videos: { src: string; poster: string }[]
 }
 
+// Mission & vision — two parallel statements rendered as twin cards after
+// the purpose section. `icon` selects the card's glyph.
+export interface MissionVisionContent {
+  items: { icon: "mission" | "vision"; title: string; text: string }[]
+}
+
 export interface ContentBundle {
   hero: HeroContent
   growthSection: GrowthSectionContent
@@ -297,6 +303,7 @@ export interface ContentBundle {
   steps: Step[]
   services: Service[]
   about: AboutContent
+  missionVision: MissionVisionContent
   coverage: CoverageContent
   testimonials: Testimonial[]
   videos: VideoItem[]
