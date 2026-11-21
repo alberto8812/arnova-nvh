@@ -24,6 +24,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T7 (S8) Propuestas de diseño para la sección de pasos: design/pasos-credito/ (3 artboards, solo opciones). Ruta: worker. Commit: pendiente.
 - T8 (S8, L14) Implementar artboard elegido design/pasos-credito/03-asesoria-y-pasos.html (01 y 02 son alternativas). Ruta: inline. Commit: ver Log L17.
 - T9 (S9) Propuestas de diseño para Cobertura: design/cobertura/ (3 artboards). Ruta: worker. Commit: pendiente.
+- T10 (S9) Implementar artboard elegido design/cobertura/01-mapa-de-presencia.html (02 y 03 son alternativas): CoverageSection solo título + frase, mapa de puntos por país (SV/GT), se retiran ciudades y requisitos. Ruta: worker (context backstop). HECHO; commit: ver Log L21.
 
 ## Log
 
@@ -46,3 +47,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L17: Handoff del canvas: implementar design/pasos-credito/03-asesoria-y-pasos.html (elegido; 01-linea-de-tiempo y 02-tarjetas-con-flujo quedan como alternativas). StepsSection: bloque de asesoría navy con Contáctanos (WhatsApp de cada país) + stepper vertical con conector degradado y tarjeta final destacada; paso 2 con lead. Verificado con capturas 1440/414.
 - L18: "en la seccion de covertura solo queren esta informacion Nuestra cobertura Arnova ofrece atención personalizada a nivel nacional. ... implmentemos un bien disenog y mae opciones para que no quede tambasico con esta nuevo cambio"
 - L19: T9 propuestas listas en design/cobertura/ (01-mapa-de-presencia, 02-ruta-del-asesor, 03-declaracion-centrada); pendiente elección.
+- L20: Handoff del canvas: implementar design/cobertura/01-mapa-de-presencia.html (elegido; 02-ruta-del-asesor y 03-declaracion-centrada quedan como alternativas).
+- L21: T10 implementado (coverage-section.tsx + coverage-map.tsx nuevo; intro SV/GT). locations se conservan por el footer; requirements quedan en datos sin renderizar. Verificado tsc/oxlint y capturas SV/GT 1440/414.
