@@ -107,6 +107,8 @@ export interface VideoItem {
 export interface ContactQuestion {
   id: string
   label: string
+  // Short label used in the WhatsApp message (falls back to `label`).
+  waLabel?: string
   type: 'text' | 'boolean'
 }
 
@@ -238,12 +240,16 @@ export interface ContactContent {
   phone: string
   telHref: string
   waNumber: string
+  // Number that receives the chatbot (Nova) answers; `waNumber` stays for the footer.
+  chatWaNumber: string
   waIntro: string
   assistantName: string
   assistantRole: string
   greeting: string
   teaser: string
   questions: ContactQuestion[]
+  // Closing message when the visitor answers "No" to having a business.
+  noBusinessMessage: string
   email: string
   social: { instagram: string; facebook: string }
   cnpj?: string

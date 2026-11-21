@@ -79,6 +79,7 @@ type ChatMode = 'loan' | 'application'
 interface WidgetQuestion {
   id: string
   label: string
+  waLabel?: string
   type: 'text' | 'boolean' | 'choice'
   options?: string[]
 }
@@ -94,12 +95,17 @@ interface ChatState {
   inputValue: string
   typing: boolean
   done: boolean
+  // Loan mode only: visitor answered "No" to having a business — the chat ends
+  // with `contact.noBusinessMessage` and nothing is sent.
+  declined: boolean
   monto?: string
   plazoDias?: number
   turnstileToken: string | null
 }
 
 const VACANTE_QUESTION_ID = 'vacante'
+const BUSINESS_QUESTION_ID = 'trabajoEstable'
+const NO_OPTION = 'No'
 
 function activeJobTitles(jobs: ChatContent['jobs']) {
   return jobs.filter((job) => job.active).map((job) => `${job.title} — ${job.location}`)
@@ -136,6 +142,7 @@ function initialState(mode: ChatMode, content: ChatContent, jobTitle?: string): 
     inputValue: '',
     typing: true,
     done: false,
+    declined: false,
     turnstileToken: null,
   }
 }
@@ -184,7 +191,7 @@ export function FloatingChatWidget() {
 
       setChat((prev) => {
         const contextChanged = prev.mode !== mode || prev.jobTitle !== jobTitle
-        const shouldReset = contextChanged || prev.done
+        const shouldReset = contextChanged || prev.done || prev.declined
 
         if (shouldReset) {
           return {
@@ -213,11 +220,11 @@ export function FloatingChatWidget() {
     if (!chat.open || !chat.typing) return
     const t = setTimeout(() => setChat((prev) => ({ ...prev, typing: false })), 650)
     return () => clearTimeout(t)
-  }, [chat.open, chat.typing, chat.step, chat.done])
+  }, [chat.open, chat.typing, chat.step, chat.done, chat.declined])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
-  }, [chat.step, chat.done, chat.typing])
+  }, [chat.step, chat.done, chat.typing, chat.declined])
 
   // Client-side only: no backend to verify the token server-side, so this only
   // filters headless/simple bots, not a bot that calls the wa.me link directly.
@@ -265,6 +272,10 @@ export function FloatingChatWidget() {
     const trimmed = value.trim()
     if (!trimmed || !currentQuestion) return
     const nextAnswers = { ...chat.answers, [currentQuestion.id]: trimmed }
+    if (chat.mode === 'loan' && currentQuestion.id === BUSINESS_QUESTION_ID && trimmed === NO_OPTION) {
+      setChat((prev) => ({ ...prev, answers: nextAnswers, inputValue: '', typing: true, declined: true }))
+      return
+    }
     const isLast = chat.step + 1 >= chat.questions.length
     setChat((prev) => ({
       ...prev,
@@ -295,9 +306,10 @@ export function FloatingChatWidget() {
           ? [contact.productSummaryTemplate.replace('{days}', String(chat.plazoDias))]
           : []),
         ...(chat.monto || chat.plazoDias ? [''] : []),
-        ...chat.questions.map((q) => `${q.label}: ${chat.answers[q.id] ?? ''}`),
+        ...chat.questions.map((q) => `${q.waLabel ?? q.label}: ${chat.answers[q.id] ?? ''}`),
       ].join('\n')
-  const waHref = `https://wa.me/${contact.waNumber}?text=${encodeURIComponent(waText)}`
+  const waNumber = isApplication ? contact.waNumber : contact.chatWaNumber
+  const waHref = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`
 
   return (
     <div className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-50 flex flex-col items-end gap-3">
@@ -410,7 +422,7 @@ export function FloatingChatWidget() {
                     style={{ maxHeight: '340px', overflowY: 'auto' }}
                   >
                     <BotBubble>{greeting}</BotBubble>
-                    {chat.questions.slice(0, chat.step).map((q) => (
+                    {chat.questions.slice(0, chat.declined ? chat.step + 1 : chat.step).map((q) => (
                       <div key={q.id} className="flex flex-col gap-2.5">
                         <BotBubble>{q.label}</BotBubble>
                         <UserBubble>{chat.answers[q.id]}</UserBubble>
@@ -418,6 +430,8 @@ export function FloatingChatWidget() {
                     ))}
                     {chat.typing ? (
                       <TypingDots />
+                    ) : chat.declined ? (
+                      <BotBubble>{contact.noBusinessMessage}</BotBubble>
                     ) : (
                       currentQuestion && <BotBubble>{currentQuestion.label}</BotBubble>
                     )}
@@ -427,9 +441,18 @@ export function FloatingChatWidget() {
                   <div className="px-3 py-3 border-t border-neutral-100">
                     {chat.typing ? (
                       <div className="h-10" />
+                    ) : chat.declined ? (
+                      <input
+                        type="text"
+                        disabled
+                        placeholder={contact.answerPlaceholder}
+                        aria-label={contact.answerPlaceholder}
+                        className="arnova-input w-full rounded-md text-[14px] font-sans border border-neutral-300 bg-neutral-100 text-neutral-400 cursor-not-allowed"
+                        style={{ padding: '9px 12px' }}
+                      />
                     ) : currentQuestion?.type === 'boolean' ? (
                       <div className="flex gap-2">
-                        {['Sí', 'No'].map((option) => (
+                        {['Sí', NO_OPTION].map((option) => (
                           <button
                             key={option}
                             onClick={() => answer(option)}

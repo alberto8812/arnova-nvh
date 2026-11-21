@@ -15,6 +15,15 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - S9: (L18) "en la sección de cobertura solo quieren esta información: Nuestra cobertura / Arnova ofrece atención personalizada a nivel nacional." + "implementemos un buen diseño y dame opciones para que no quede tan básico" — SV y GT; se retiran ciudades y requisitos.
 - S10: (L22) "Se retiran las tarjetas y solo se deja el texto: Para solicitar tu asesoría y crédito solo necesitas tener negocio propio" + "implementemos un diseño porque es un solo texto que reemplazará varios componentes" — SV y GT.
 - S11: (L28) "muéstrame diseño sobre este ya que siento que no respeta el diseño de la página ni la iconografía previamente establecida" — Misión y Visión con el texto de L27, usando solo patrones e íconos existentes del sitio.
+- S12: (L31) "en las preguntas del chatbot deben ser estas y el chatbot se llamará nova
+  Preguntas y orden del chatbot
+  1. Nombre y apellido
+  2. ¿En qué ciudad y departamento te encuentras?
+  3. ¿Cuál es tú colonia?
+  4. ¿Tienes un negocio en funcionamiento? si se elige No finaliza el chat con mensaje cuando responde Si realiza pregunta 5 envia las respuestas
+    4.1 Mensaje si se elige No: Actualmente sólo contamos con productos financieros para personas que posean un negocio,  en cuanto tengamos un producto adecuado para ti, nos pondremos en contacto. Hasta pronto! 🤩🙏
+  5 ¿A qué se dedica tu negocio?
+  Las respuestas se van a enviar a los números de contacto de cada país" — números: SV 50370594072, GT 50252993553 (los del CTA del Hero); contact.waNumber del footer no se toca.
 
 ## Tasks
 
@@ -31,6 +40,7 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - T12 (S10) Implementar artboard elegido design/requisitos/02-franja-de-confianza.html (01 y 03 son alternativas): franja accent-100 después de Cobertura. Ruta: worker. HECHO; commit: ver Log L25.
 - T13 (S11) Propuestas de rediseño de Misión y Visión respetando el sistema de la página e iconografía existente: design/mision-vision/ (3 artboards). Ruta: worker. Commit: pendiente.
 - T14 (S11) Implementar artboard elegido design/mision-vision/03-editorial-en-lista.html (01 y 02 son alternativas). Ruta: inline. HECHO; commit: ver Log L30.
+- T15 (S12) Chatbot Nova: nuevo flujo de preguntas con rama No, envío por WhatsApp al número de cada país. Ruta: worker. HECHO; commit: ver Log L32.
 
 ## Log
 
@@ -64,3 +74,5 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L28: "mustrase diseno [captura Misión/Visión actual], sobre este ya que siento que no respeta el diseno de la pagina ni la iconografica previamente establecida"
 - L29: T13 propuestas listas en design/mision-vision/ (01-como-beneficios, 02-continuacion-del-proposito, 03-editorial-en-lista); pendiente elección.
 - L30: Handoff del canvas: implementar design/mision-vision/03-editorial-en-lista.html (elegido; 01-como-beneficios y 02-continuacion-del-proposito quedan como alternativas). MissionVisionSection reescrita como lista de definición con AppIcon shield-lock/briefcase; icon pasa a nombre de AppIcon. Verificado tsc/oxlint y capturas 1440/414.
+- L31: Pedido del chatbot Nova (ver S12, texto verbatim).
+- L32: T15 implementado: Nova, 5 preguntas verbatim, rama No con mensaje de cierre sin envío, envío a contact.chatWaNumber (SV 50370594072 / GT 50252993553). Evidencia CDP: rama No sin wa.me; rama Sí SV/GT con URL correcta y 5 respuestas (token Turnstile inyectado en headless). oxlint OK; tsc -b falla solo por FaqSection sin usar en home-page.tsx (cambio del usuario, sin commit).

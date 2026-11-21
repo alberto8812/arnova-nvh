@@ -6,38 +6,45 @@
   "phone": "+503 7001 9549",
   "telHref": "tel:+50370019549",
   "waNumber": "50370019549",
+  "chatWaNumber": "50370594072",
   "waIntro": "Hola, quiero más información",
-  "assistantName": "Camila",
+  "assistantName": "Nova",
   "assistantRole": "Asesora Arnova",
-  "greeting": "¡Hola! 👋 Soy Camila, asesora de Arnova. Te ayudo a armar tu solicitud en menos de un minuto y te paso directo con un asesor por WhatsApp. Ayudame respondiendo las siguientes preguntas.",
+  "greeting": "¡Hola! 👋 Soy Nova, asesora de Arnova. Te ayudo a armar tu solicitud en menos de un minuto y te paso directo con un asesor por WhatsApp. Ayudame respondiendo las siguientes preguntas.",
   "teaser": "¿Buscás un crédito rápido? 💬",
   "questions": [
     {
       "id": "nombre",
-      "label": "Tu nombre",
+      "label": "Nombre y apellido",
+      "waLabel": "Nombre y apellido",
       "type": "text"
     },
     {
       "id": "ciudad",
-      "label": "¿En qué ciudad y departamento vivís?",
+      "label": "¿En qué ciudad y departamento te encuentras?",
+      "waLabel": "Ciudad y departamento",
       "type": "text"
     },
     {
-      "id": "cp",
-      "label": "¿Cuál es tu código postal?",
+      "id": "colonia",
+      "label": "¿Cuál es tú colonia?",
+      "waLabel": "Colonia",
       "type": "text"
     },
     {
       "id": "trabajoEstable",
-      "label": "¿Tenés un comercio en funcionamiento?",
+      "label": "¿Tienes un negocio en funcionamiento?",
+      "waLabel": "¿Negocio en funcionamiento?",
       "type": "boolean"
     },
     {
       "id": "trabajo",
-      "label": "¿A qué te dedicás?",
+      "label": "¿A qué se dedica tu negocio?",
+      "waLabel": "Actividad del negocio",
       "type": "text"
     }
   ],
+  "noBusinessMessage": "Actualmente sólo contamos con productos financieros para personas que posean un negocio,  en cuanto tengamos un producto adecuado para ti, nos pondremos en contacto. Hasta pronto! 🤩🙏",
   "email": "contacto@arnovagroup.com",
   "social": {
     "instagram": "https://www.instagram.com/arnovagroup?igsh=MWRpMWFxOXo3bXlndQ==",
