@@ -86,3 +86,4 @@ Home SV y GT: comentar el simulador y poner la sección del diseño 02 (texto en
 - L37: T16 propuestas listas en design/selector-pais/ (01-menu-desplegable, 02-selector-segmentado, 03-boton-abre-modal); pendiente elección. Hallazgo: los emoji de bandera no se ven en Windows (por eso "sv SV").
 - L38: Handoff del canvas: implementar design/selector-pais/01-menu-desplegable.html (elegido; 02-selector-segmentado y 03-boton-abre-modal quedan como alternativas).
 - L39: T17 implementado: country-selector.tsx (menú role=menu, teclado, Escape/clic fuera), country-flag.tsx (SVG), navbar.tsx, country-modal.tsx (subtítulo nuevo, neutral-600). Evidencia worker CDP 30/30; verificación propia: subtítulo exacto en primera visita, botón "País·SV", 2 opciones, capturas 1440/414.
+- L40: "HAZ EL COMMIT Y EL PUSH" -> incluido el cambio del usuario que oculta FaqSection (import comentado para que el build pase). npm run build OK.

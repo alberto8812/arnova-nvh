@@ -13,7 +13,7 @@ import {
   RequirementStrip,
   TestimonialsSection,
   VideosSection,
-  FaqSection,
+  // FaqSection, — hidden by client request; kept for future reuse
   ContactSection,
 } from "@/components/sections";
 
@@ -34,7 +34,7 @@ export function HomePage() {
       <MissionVisionSection />
       <TestimonialsSection />
       <VideosSection />
-      <FaqSection />
+      {/* <FaqSection /> */}
       <ContactSection />
     </main>
   );
