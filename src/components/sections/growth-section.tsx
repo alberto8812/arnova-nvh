@@ -33,29 +33,39 @@ function Highlighted({ text, highlight }: { text: string; highlight: string }) {
   );
 }
 
-// Each clip starts itself on mount through its own ref: during the crossfade
-// the outgoing and incoming <video> coexist, so a shared DOM lookup would
-// pick the outgoing one and leave the new clip frozen on its poster.
+// Each clip drives itself through its own ref: during the crossfade the
+// outgoing and incoming <video> coexist, so a shared DOM lookup would pick
+// the outgoing one and leave the new clip frozen on its poster.
+// The <video> stays mounted while the band scrolls in and out (it is only
+// paused), so entering the viewport never swaps an <img> for a fresh
+// <video>. No poster is shown here: the stills are the clips' last frame,
+// so painting one before playback flashes the ending. The video stays
+// transparent (navy band behind) and fades in once it is actually playing.
 function LoopVideo({
   src,
-  poster,
+  active,
   onEnded,
   onFail,
   onProgress,
 }: {
   src: string;
-  poster: string;
+  active: boolean;
   onEnded: () => void;
   onFail: () => void;
   onProgress: (ratio: number) => void;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
+    if (!active) {
+      video.pause();
+      return;
+    }
     video.muted = true;
     video.play().catch((err: DOMException) => {
-      // AbortError is a normal interruption (crossfade, re-render); only a
+      // AbortError is a normal interruption (crossfade, pause); only a
       // real autoplay block falls back to the still poster.
       if (err?.name === "NotAllowedError") onFail();
     });
@@ -63,24 +73,23 @@ function LoopVideo({
     // still advance so the rotation can't freeze on one clip.
     const guard = window.setTimeout(onEnded, CLIP_MAX_MS);
     return () => window.clearTimeout(guard);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- once per mounted clip
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- re-run only on visibility
+  }, [active]);
   return (
     <video
       ref={ref}
       src={src}
-      poster={poster}
       muted
       playsInline
-      autoPlay
-      preload="auto"
+      preload={active ? "auto" : "metadata"}
+      onPlaying={() => setReady(true)}
       onEnded={onEnded}
       onError={onFail}
       onTimeUpdate={(e) => {
         const v = e.currentTarget;
         if (v.duration) onProgress(v.currentTime / v.duration);
       }}
-      className="w-full h-full object-cover"
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${ready ? "opacity-100" : "opacity-0"}`}
     />
   );
 }
@@ -97,7 +106,9 @@ export function GrowthSection() {
   const [progress, setProgress] = useState(0);
   const [failed, setFailed] = useState(false);
   const current = videos[index];
-  const animate = inView && !reduce && !failed;
+  // `playable` keeps the <video> mounted; `animate` only plays/pauses it.
+  const playable = !reduce && !failed;
+  const animate = inView && playable;
 
   // The outgoing clip keeps playing during the crossfade; only the clip that
   // matches the current index may drive the progress segments.
@@ -152,10 +163,10 @@ export function GrowthSection() {
             exit={{ opacity: 0, filter: "blur(6px)" }}
             transition={{ duration: 1.1, ease: EASE }}
           >
-            {animate ? (
+            {playable ? (
               <LoopVideo
                 src={current.src}
-                poster={current.poster}
+                active={inView}
                 onEnded={next}
                 onFail={() => setFailed(true)}
                 onProgress={progressFor(index)}
